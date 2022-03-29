@@ -25,14 +25,15 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="">
     <!-- <img src="app/src/main/java/com/projet/miniprojet/androidVox/Screenshots/Color.png" alt="Logo" width="200" height="150"> -->
+    <img src="Vox/Assets.xcassets/Group 4922.imageset/Group 4922.png" alt="Logo" width="200" height="150">
   </a>
 
   <h3 align="center">Vox is a broadcast streaming, chat messaging and podcast streaming mobile app</h3>
 
   <p align="center">
-    Mini project Android Application!
+    Mini project iOS Application!
     <br/>
 </div>
 
