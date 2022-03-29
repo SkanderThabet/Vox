@@ -33,7 +33,7 @@
   <h3 align="center">Vox is a broadcast streaming, chat messaging and podcast streaming mobile app</h3>
 
   <p align="center">
-    Mini project Android Application!
+    Mini project iOS Application!
     <br/>
 </div>
 
