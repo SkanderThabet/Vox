@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Group 4922.png",
+      "filename" : "Profile Image@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Profile Image@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Profile Image@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

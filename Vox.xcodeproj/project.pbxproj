@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0136FD3127FE755300D7DDFC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */; };
 		01C787E627F2FDCA00225B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C787E527F2FDCA00225B50 /* AppDelegate.swift */; };
 		01C787E827F2FDCA00225B50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C787E727F2FDCA00225B50 /* SceneDelegate.swift */; };
 		01C787EA27F2FDCA00225B50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C787E927F2FDCA00225B50 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		01C787E227F2FDCA00225B50 /* Vox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C787E527F2FDCA00225B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01C787E727F2FDCA00225B50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				01C787E727F2FDCA00225B50 /* SceneDelegate.swift */,
 				01C787E927F2FDCA00225B50 /* ViewController.swift */,
 				01C787EB27F2FDCA00225B50 /* Main.storyboard */,
+				0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */,
 				01C787F127F2FDCA00225B50 /* Assets.xcassets */,
 				01C787F327F2FDCA00225B50 /* LaunchScreen.storyboard */,
 				01C787F627F2FDCA00225B50 /* Info.plist */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C787EA27F2FDCA00225B50 /* ViewController.swift in Sources */,
+				0136FD3127FE755300D7DDFC /* WelcomeViewController.swift in Sources */,
 				01C787F027F2FDCA00225B50 /* Vox.xcdatamodeld in Sources */,
 				01C787E627F2FDCA00225B50 /* AppDelegate.swift in Sources */,
 				01C787E827F2FDCA00225B50 /* SceneDelegate.swift in Sources */,
