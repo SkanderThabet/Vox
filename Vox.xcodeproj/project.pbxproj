@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		0136FD3127FE755300D7DDFC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */; };
+		016A95E528050C3200373F36 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E428050C3200373F36 /* UserProfile.swift */; };
+		016A95E728050E1500373F36 /* NewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E628050E1500373F36 /* NewAccount.swift */; };
+		016A95E9280510B900373F36 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E8280510B900373F36 /* SignInViewController.swift */; };
+		016A95EB280510D600373F36 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95EA280510D600373F36 /* HomeViewController.swift */; };
+		016A95ED280511F900373F36 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95EC280511F900373F36 /* ProfileViewController.swift */; };
+		016A95EF2805122B00373F36 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95EE2805122B00373F36 /* SignUpViewController.swift */; };
+		016A95F6280512A700373F36 /* FristOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95F5280512A700373F36 /* FristOTPViewController.swift */; };
+		016A95F8280512CB00373F36 /* SecondOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95F7280512CB00373F36 /* SecondOTPViewController.swift */; };
+		016A95FA280512E900373F36 /* SignUpCompletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95F9280512E900373F36 /* SignUpCompletionViewController.swift */; };
+		016A95FC2805130200373F36 /* FirstOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95FB2805130200373F36 /* FirstOnboardViewController.swift */; };
+		016A95FE2805131700373F36 /* SecondOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95FD2805131700373F36 /* SecondOnboardViewController.swift */; };
+		016A96002805132000373F36 /* LastOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95FF2805132000373F36 /* LastOnboardViewController.swift */; };
 		01C787E627F2FDCA00225B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C787E527F2FDCA00225B50 /* AppDelegate.swift */; };
 		01C787E827F2FDCA00225B50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C787E727F2FDCA00225B50 /* SceneDelegate.swift */; };
 		01C787EA27F2FDCA00225B50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C787E927F2FDCA00225B50 /* ViewController.swift */; };
@@ -39,6 +51,18 @@
 
 /* Begin PBXFileReference section */
 		0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		016A95E428050C3200373F36 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		016A95E628050E1500373F36 /* NewAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccount.swift; sourceTree = "<group>"; };
+		016A95E8280510B900373F36 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		016A95EA280510D600373F36 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		016A95EC280511F900373F36 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		016A95EE2805122B00373F36 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		016A95F5280512A700373F36 /* FristOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FristOTPViewController.swift; sourceTree = "<group>"; };
+		016A95F7280512CB00373F36 /* SecondOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOTPViewController.swift; sourceTree = "<group>"; };
+		016A95F9280512E900373F36 /* SignUpCompletionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletionViewController.swift; sourceTree = "<group>"; };
+		016A95FB2805130200373F36 /* FirstOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardViewController.swift; sourceTree = "<group>"; };
+		016A95FD2805131700373F36 /* SecondOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardViewController.swift; sourceTree = "<group>"; };
+		016A95FF2805132000373F36 /* LastOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastOnboardViewController.swift; sourceTree = "<group>"; };
 		01C787E227F2FDCA00225B50 /* Vox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C787E527F2FDCA00225B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01C787E727F2FDCA00225B50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +104,109 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01664C2A2805194300B796D4 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		01664C2B2805195800B796D4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		016A95DF2804FB3800373F36 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				016A95E428050C3200373F36 /* UserProfile.swift */,
+				016A95E628050E1500373F36 /* NewAccount.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		016A95E02804FB4B00373F36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		016A95E12804FB5600373F36 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		016A95E2280509C600373F36 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01664C2A2805194300B796D4 /* Welcome */,
+				016A95F42805128700373F36 /* Sign Up */,
+				016A95F32805127C00373F36 /* Onboarding */,
+				016A95F22805127000373F36 /* Sign In */,
+				016A95F12805126500373F36 /* Home */,
+				016A95F02805125500373F36 /* Profile */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		016A95E3280509D400373F36 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		016A95F02805125500373F36 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				016A95EC280511F900373F36 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		016A95F12805126500373F36 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				016A95EA280510D600373F36 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		016A95F22805127000373F36 /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				016A95E8280510B900373F36 /* SignInViewController.swift */,
+			);
+			path = "Sign In";
+			sourceTree = "<group>";
+		};
+		016A95F32805127C00373F36 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				016A95FB2805130200373F36 /* FirstOnboardViewController.swift */,
+				016A95FD2805131700373F36 /* SecondOnboardViewController.swift */,
+				016A95FF2805132000373F36 /* LastOnboardViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		016A95F42805128700373F36 /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				016A95F9280512E900373F36 /* SignUpCompletionViewController.swift */,
+				016A95F7280512CB00373F36 /* SecondOTPViewController.swift */,
+				016A95EE2805122B00373F36 /* SignUpViewController.swift */,
+				016A95F5280512A700373F36 /* FristOTPViewController.swift */,
+			);
+			path = "Sign Up";
+			sourceTree = "<group>";
+		};
 		01C787D927F2FDC900225B50 = {
 			isa = PBXGroup;
 			children = (
@@ -103,11 +230,16 @@
 		01C787E427F2FDCA00225B50 /* Vox */ = {
 			isa = PBXGroup;
 			children = (
+				01664C2B2805195800B796D4 /* Networking */,
+				016A95E3280509D400373F36 /* Views */,
+				016A95E2280509C600373F36 /* Controllers */,
+				016A95E12804FB5600373F36 /* ViewModels */,
+				016A95E02804FB4B00373F36 /* Resources */,
+				016A95DF2804FB3800373F36 /* Models */,
 				01C787E527F2FDCA00225B50 /* AppDelegate.swift */,
 				01C787E727F2FDCA00225B50 /* SceneDelegate.swift */,
 				01C787E927F2FDCA00225B50 /* ViewController.swift */,
 				01C787EB27F2FDCA00225B50 /* Main.storyboard */,
-				0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */,
 				01C787F127F2FDCA00225B50 /* Assets.xcassets */,
 				01C787F327F2FDCA00225B50 /* LaunchScreen.storyboard */,
 				01C787F627F2FDCA00225B50 /* Info.plist */,
@@ -264,9 +396,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				016A95EF2805122B00373F36 /* SignUpViewController.swift in Sources */,
+				016A95F6280512A700373F36 /* FristOTPViewController.swift in Sources */,
 				01C787EA27F2FDCA00225B50 /* ViewController.swift in Sources */,
 				0136FD3127FE755300D7DDFC /* WelcomeViewController.swift in Sources */,
+				016A95FE2805131700373F36 /* SecondOnboardViewController.swift in Sources */,
+				016A95ED280511F900373F36 /* ProfileViewController.swift in Sources */,
+				016A95F8280512CB00373F36 /* SecondOTPViewController.swift in Sources */,
+				016A95E528050C3200373F36 /* UserProfile.swift in Sources */,
 				01C787F027F2FDCA00225B50 /* Vox.xcdatamodeld in Sources */,
+				016A95E9280510B900373F36 /* SignInViewController.swift in Sources */,
+				016A95FC2805130200373F36 /* FirstOnboardViewController.swift in Sources */,
+				016A95EB280510D600373F36 /* HomeViewController.swift in Sources */,
+				016A95FA280512E900373F36 /* SignUpCompletionViewController.swift in Sources */,
+				016A95E728050E1500373F36 /* NewAccount.swift in Sources */,
+				016A96002805132000373F36 /* LastOnboardViewController.swift in Sources */,
 				01C787E627F2FDCA00225B50 /* AppDelegate.swift in Sources */,
 				01C787E827F2FDCA00225B50 /* SceneDelegate.swift in Sources */,
 			);

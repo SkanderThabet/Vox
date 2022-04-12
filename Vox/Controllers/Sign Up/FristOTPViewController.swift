@@ -1,17 +1,23 @@
 //
-//  WelcomeViewController.swift
+//  FristOTPViewController.swift
 //  Vox
 //
-//  Created by Skander Thabet on 7/4/2022.
+//  Created by Skander Thabet on 12/4/2022.
 //
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
-
+class FristOTPViewController: UIViewController {
+    // MARK: - Outlets
+    @IBOutlet weak var mobileNumberTF: UITextField!
+    
+    // MARK: - Actions
+    @IBAction func getOtpBtn(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
     

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="gUx-0Q-8BG">
             <objects>
-                <viewController id="xDy-Cr-SXl" sceneMemberID="viewController">
+                <viewController id="xDy-Cr-SXl" customClass="SignUpViewController" customModule="Vox" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lai-9g-04r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,6 +68,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="signUpBtn:" destination="xDy-Cr-SXl" eventType="touchUpInside" id="AhA-p4-971"/>
                                     <segue destination="cso-tg-4UZ" kind="show" id="7CW-lI-4Qn"/>
                                 </connections>
                             </button>
@@ -99,15 +100,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pd1-7M-U1M"/>
+                    <connections>
+                        <outlet property="emailTF" destination="d0V-99-j7o" id="sf3-0v-d2E"/>
+                        <outlet property="passwordTF" destination="Sio-Ug-nRm" id="bev-OL-XoX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Im-rR-Dyd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1789.8550724637682" y="825"/>
         </scene>
-        <!--View Controller-->
+        <!--SecondOTP View Controller-->
         <scene sceneID="67N-7w-WYn">
             <objects>
-                <viewController id="LWr-VE-7mF" sceneMemberID="viewController">
+                <viewController id="LWr-VE-7mF" customClass="SecondOTPViewController" customModule="Vox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qTX-Vf-PUz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,6 +146,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="verifyBtn:" destination="LWr-VE-7mF" eventType="touchUpInside" id="9tO-Gu-Nzh"/>
                                     <segue destination="rya-8Y-Xbo" kind="show" id="Hsu-mj-TvW"/>
                                 </connections>
                             </button>
@@ -209,15 +215,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wsI-vC-h0I"/>
+                    <connections>
+                        <outlet property="fifthDigitTF" destination="UGc-Fe-hq3" id="5pI-PI-8lX"/>
+                        <outlet property="firstDigitTF" destination="QOX-ux-36Y" id="VlH-e9-2lV"/>
+                        <outlet property="fourthDigitTF" destination="RjL-iP-8Xd" id="Drm-X0-vo5"/>
+                        <outlet property="numberRecieverLabel" destination="hAm-mO-uPj" id="kMR-FQ-VJO"/>
+                        <outlet property="secondDigitTF" destination="Ewl-yN-aQB" id="3Z4-pT-rrC"/>
+                        <outlet property="sixthDigitTF" destination="EOO-jz-6na" id="sqR-6d-xRQ"/>
+                        <outlet property="thirdDigitTF" destination="R1j-1U-yoS" id="raK-8j-cHP"/>
+                        <outlet property="verifyBtn" destination="7F6-my-mvJ" id="aTt-dj-8Ja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YC-5u-Qfe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3582.608695652174" y="825"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up Completion View Controller-->
         <scene sceneID="Uhi-bJ-02I">
             <objects>
-                <viewController id="rya-8Y-Xbo" sceneMemberID="viewController">
+                <viewController id="rya-8Y-Xbo" customClass="SignUpCompletionViewController" customModule="Vox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pdB-az-Ehh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -278,6 +294,9 @@
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="completeBtn:" destination="rya-8Y-Xbo" eventType="touchUpInside" id="FLp-5m-rr1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WLK-jI-bNe"/>
@@ -304,15 +323,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lqX-0x-Y25"/>
+                    <connections>
+                        <outlet property="avatarImage" destination="1gP-nw-vVd" id="MYH-nc-Xdk"/>
+                        <outlet property="completeBtn" destination="7RL-8S-t5w" id="ebB-fA-RTS"/>
+                        <outlet property="dobTF" destination="aJv-bh-h5f" id="Vfi-4S-Jbl"/>
+                        <outlet property="emailTF" destination="tdl-Kf-85V" id="QZi-tv-F8g"/>
+                        <outlet property="firstnameTF" destination="Zvg-ow-L4s" id="lBW-54-bS4"/>
+                        <outlet property="lastnameTF" destination="yxG-dD-3sE" id="0sP-uY-wNp"/>
+                        <outlet property="passwordTF" destination="wih-XB-e4d" id="qCe-iN-ONS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I41-PV-qtz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4440.579710144928" y="825"/>
         </scene>
-        <!--View Controller-->
+        <!--FristOTP View Controller-->
         <scene sceneID="E0X-04-mvU">
             <objects>
-                <viewController id="cso-tg-4UZ" sceneMemberID="viewController">
+                <viewController id="cso-tg-4UZ" customClass="FristOTPViewController" customModule="Vox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x1i-qD-tQe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -357,6 +385,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="getOtpBtn:" destination="cso-tg-4UZ" eventType="touchUpInside" id="uGr-00-WkS"/>
                                     <segue destination="LWr-VE-7mF" kind="show" id="uwm-du-Onx"/>
                                 </connections>
                             </button>
@@ -385,15 +414,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9BJ-1y-4E3"/>
+                    <connections>
+                        <outlet property="mobileNumberTF" destination="WCC-m0-xgs" id="7nx-5h-XrQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peC-Of-PfS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2729" y="825"/>
         </scene>
-        <!--View Controller-->
+        <!--First Onboard View Controller-->
         <scene sceneID="9qf-Or-b8m">
             <objects>
-                <viewController id="FTD-Au-ZOt" sceneMemberID="viewController">
+                <viewController id="FTD-Au-ZOt" customClass="FirstOnboardViewController" customModule="Vox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="idD-Vo-18E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -523,6 +555,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
                                         <connections>
+                                            <action selector="signUpBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HRB-Mt-MjZ"/>
                                             <segue destination="xDy-Cr-SXl" kind="show" id="awd-0d-mwn"/>
                                         </connections>
                                     </button>
@@ -535,6 +568,9 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                             <color key="baseBackgroundColor" systemColor="labelColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="appleAuthBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T9Y-On-Qm8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fY-Am-TkW">
                                         <rect key="frame" x="20" y="194" width="375" height="104"/>
@@ -543,6 +579,7 @@
                                         <inset key="imageEdgeInsets" minX="43" minY="-16" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Sign In" image="Mask Submit button Welcome" backgroundImage="Rectangle for subBtn welcome"/>
                                         <connections>
+                                            <action selector="signInAuthBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pDn-pH-Rk0"/>
                                             <segue destination="lGv-rB-HWf" kind="show" id="43H-dk-ItS"/>
                                         </connections>
                                     </button>
@@ -561,6 +598,9 @@
                                             <color key="baseForegroundColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="baseBackgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="googleAuthBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ogn-fV-0Lj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -604,15 +644,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="v8L-Pd-XZ9"/>
+                    <connections>
+                        <outlet property="appleAuth" destination="gKH-YB-cS7" id="ROL-pW-7Mp"/>
+                        <outlet property="googleAuth" destination="nG0-XB-HID" id="Sf6-m0-9KI"/>
+                        <outlet property="signINAuth" destination="3fY-Am-TkW" id="XB1-cg-Wbp"/>
+                        <outlet property="signUP" destination="ZW0-Sb-cNI" id="bFS-5P-xOo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="97.767857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="WmZ-hy-vlu">
             <objects>
-                <viewController id="lGv-rB-HWf" sceneMemberID="viewController">
+                <viewController id="lGv-rB-HWf" customClass="SignInViewController" customModule="Vox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Bh-aU-iOf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -694,15 +740,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bNu-2f-Ow5"/>
+                    <connections>
+                        <outlet property="emailTF" destination="1gS-cx-xl2" id="bwT-6h-Oh4"/>
+                        <outlet property="forgotPwd" destination="UQ5-2I-HNa" id="GgM-75-BNq"/>
+                        <outlet property="passwordTF" destination="bDa-ol-iIa" id="wOU-1u-GoL"/>
+                        <outlet property="signInBtn" destination="bpq-fy-csB" id="lQG-ik-B5E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiu-cn-o7H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791.304347826087" y="106.47321428571428"/>
+            <point key="canvasLocation" x="1790" y="98"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="ktj-rm-9Wr">
             <objects>
-                <viewController id="1xh-2k-K71" sceneMemberID="viewController">
+                <viewController id="1xh-2k-K71" customClass="HomeViewController" customModule="Vox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aef-Qx-908">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -778,15 +830,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2ra-wW-s0a"/>
+                    <connections>
+                        <outlet property="greetingUserLabel" destination="Ln7-Ic-ukm" id="39c-2R-2pk"/>
+                        <outlet property="randomChannel" destination="8u4-6K-zTH" id="u8O-0j-k8V"/>
+                        <outlet property="startStreamingBtn" destination="EtH-Yv-Fqg" id="rJQ-UP-28c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ig-5z-l79" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2637.68115942029" y="105.80357142857143"/>
+            <point key="canvasLocation" x="2638" y="98"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="E71-yY-fkR">
             <objects>
-                <viewController id="O07-ut-P2Z" sceneMemberID="viewController">
+                <viewController id="O07-ut-P2Z" customClass="ProfileViewController" customModule="Vox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C1A-Al-wv0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -814,6 +871,9 @@
                                 <state key="normal" title="Button" backgroundImage="Sign-out button">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signOutBtn:" destination="O07-ut-P2Z" eventType="touchUpInside" id="Rbj-ra-B2B"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DcQ-k8-MIN">
                                 <rect key="frame" x="20" y="247" width="190" height="93"/>
@@ -923,10 +983,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1se-aF-O1T"/>
+                    <connections>
+                        <outlet property="avatarPlaceHolder" destination="Iks-0X-i8o" id="Ted-i5-MsD"/>
+                        <outlet property="dobTF" destination="tj0-8i-f45" id="bEl-vI-czm"/>
+                        <outlet property="emailTF" destination="tLW-q1-xTz" id="MSd-r8-lUm"/>
+                        <outlet property="firstnameTF" destination="oUQ-H5-hWn" id="SOh-he-xYr"/>
+                        <outlet property="fullnameLabel" destination="DV3-Qs-aK2" id="n47-JN-Gg0"/>
+                        <outlet property="lastnameTF" destination="dvb-3k-81r" id="shE-uY-t5s"/>
+                        <outlet property="signOutBtn" destination="hol-FH-sFj" id="MDq-e1-Etq"/>
+                        <outlet property="statusLabel" destination="DV3-Qs-aK2" id="uAp-Qo-jSR"/>
+                        <outlet property="usernameTF" destination="wyZ-Fp-J9b" id="FtP-xY-Z0W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZhT-5r-ZcE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3500.0000000000005" y="105.80357142857143"/>
+            <point key="canvasLocation" x="3501" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kYX-B3-4ln">
@@ -949,10 +1020,10 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Second Onboard View Controller-->
         <scene sceneID="icV-le-11O">
             <objects>
-                <viewController id="TvO-mS-C0w" sceneMemberID="viewController">
+                <viewController id="TvO-mS-C0w" customClass="SecondOnboardViewController" customModule="Vox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MgG-oB-oov">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1033,10 +1104,10 @@
             </objects>
             <point key="canvasLocation" x="2492.753623188406" y="-587.27678571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Last Onboard View Controller-->
         <scene sceneID="IHp-hO-LG1">
             <objects>
-                <viewController id="M6N-p1-hoK" sceneMemberID="viewController">
+                <viewController id="M6N-p1-hoK" customClass="LastOnboardViewController" customModule="Vox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bwb-0n-AwG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
