@@ -16,4 +16,8 @@ target 'Vox' do
     # Pods for testing
   end
 
+  pod 'Alamofire'
+  pod 'CountryPickerView'
+  pod 'JGProgressHUD'
+
 end
