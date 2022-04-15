@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "google [action_login_google-oauth2]@1x.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "google [action_login_google-oauth2]@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "google [action_login_google-oauth2]@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

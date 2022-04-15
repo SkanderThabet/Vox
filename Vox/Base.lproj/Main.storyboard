@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bfM-mq-syZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TRS-kN-dWt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -526,129 +525,85 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saw-4s-eVg">
-                                <rect key="frame" x="0.0" y="477" width="414" height="385"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="lzq-ob-yuh">
-                                        <rect key="frame" x="315" y="232" width="29" height="19"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="29" id="gVk-9k-ODp"/>
-                                        </constraints>
-                                        <imageReference key="image" image="arrow.right" catalog="system"/>
-                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="regular"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZW0-Sb-cNI">
-                                        <rect key="frame" x="36" y="287" width="342" height="69"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="69" id="xc4-19-0Cg"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="tintColor" red="0.15294117647058825" green="0.2627450980392157" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <inset key="titleEdgeInsets" minX="-280" minY="-20" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="43" minY="-16" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Sign In" image="Mask Submit button Welcome" backgroundImage="Rectangle for subBtn welcome"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" imagePlacement="trailing" title="Sign Up" imagePadding="200">
-                                            <backgroundConfiguration key="background" cornerRadius="28">
-                                                <color key="strokeColor" red="0.15294117647058825" green="0.2627450980392157" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="signUpBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HRB-Mt-MjZ"/>
-                                            <segue destination="xDy-Cr-SXl" kind="show" id="awd-0d-mwn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKH-YB-cS7">
-                                        <rect key="frame" x="36" y="117" width="342" height="69"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" imagePlacement="leading" title="Sign in with Apple" imagePadding="10">
-                                            <imageReference key="image" image="applelogo" catalog="system" symbolScale="large"/>
-                                            <backgroundConfiguration key="background" cornerRadius="28"/>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                            <color key="baseBackgroundColor" systemColor="labelColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="appleAuthBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T9Y-On-Qm8"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fY-Am-TkW">
-                                        <rect key="frame" x="20" y="194" width="375" height="104"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <inset key="titleEdgeInsets" minX="-283" minY="-20" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="43" minY="-16" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Sign In" image="Mask Submit button Welcome" backgroundImage="Rectangle for subBtn welcome"/>
-                                        <connections>
-                                            <action selector="signInAuthBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pDn-pH-Rk0"/>
-                                            <segue destination="lGv-rB-HWf" kind="show" id="43H-dk-ItS"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nG0-XB-HID">
-                                        <rect key="frame" x="36" y="34" width="342" height="69"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="342" id="VyX-2j-LO8"/>
-                                            <constraint firstAttribute="height" constant="69" id="XSS-MR-Ubx"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" image="Google Logo" imagePlacement="leading" title="Sign in with Google" imagePadding="10">
-                                            <backgroundConfiguration key="background" cornerRadius="28">
-                                                <color key="strokeColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
-                                            <color key="baseForegroundColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="baseBackgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="googleAuthBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ogn-fV-0Lj"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="3fY-Am-TkW" secondAttribute="bottom" constant="87" id="2lE-3K-rCf"/>
-                                    <constraint firstAttribute="trailing" secondItem="lzq-ob-yuh" secondAttribute="trailing" constant="70" id="5St-hJ-duv"/>
-                                    <constraint firstItem="nG0-XB-HID" firstAttribute="trailing" secondItem="gKH-YB-cS7" secondAttribute="trailing" id="FZH-iA-EoX"/>
-                                    <constraint firstItem="lzq-ob-yuh" firstAttribute="top" secondItem="gKH-YB-cS7" secondAttribute="bottom" constant="43.5" id="LKX-5f-cgL"/>
-                                    <constraint firstItem="ZW0-Sb-cNI" firstAttribute="top" secondItem="lzq-ob-yuh" secondAttribute="bottom" constant="33.5" id="LoV-D6-Kgh"/>
-                                    <constraint firstItem="nG0-XB-HID" firstAttribute="leading" secondItem="saw-4s-eVg" secondAttribute="leading" constant="36" id="Mtq-HM-k9O"/>
-                                    <constraint firstItem="nG0-XB-HID" firstAttribute="leading" secondItem="gKH-YB-cS7" secondAttribute="leading" id="PE8-Kg-fK1"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZW0-Sb-cNI" secondAttribute="bottom" constant="29" id="TVj-qP-JDQ"/>
-                                    <constraint firstItem="nG0-XB-HID" firstAttribute="trailing" secondItem="ZW0-Sb-cNI" secondAttribute="trailing" id="YAE-cN-YH2"/>
-                                    <constraint firstItem="3fY-Am-TkW" firstAttribute="leading" secondItem="saw-4s-eVg" secondAttribute="leading" constant="20" id="fs5-KJ-gd2"/>
-                                    <constraint firstItem="nG0-XB-HID" firstAttribute="leading" secondItem="ZW0-Sb-cNI" secondAttribute="leading" id="qaI-Ot-XdA"/>
-                                    <constraint firstItem="3fY-Am-TkW" firstAttribute="centerX" secondItem="ZW0-Sb-cNI" secondAttribute="centerX" id="tG3-r3-fPg"/>
-                                    <constraint firstItem="gKH-YB-cS7" firstAttribute="top" secondItem="nG0-XB-HID" secondAttribute="bottom" constant="14" id="tpF-CT-dck"/>
-                                    <constraint firstItem="nG0-XB-HID" firstAttribute="top" secondItem="saw-4s-eVg" secondAttribute="top" constant="34" id="vjm-g0-fGc"/>
-                                    <constraint firstItem="nG0-XB-HID" firstAttribute="centerX" secondItem="saw-4s-eVg" secondAttribute="centerX" id="ygr-07-3eb"/>
-                                    <constraint firstItem="3fY-Am-TkW" firstAttribute="top" secondItem="gKH-YB-cS7" secondAttribute="bottom" constant="8" id="zGb-Pp-Dcw"/>
-                                </constraints>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ev1-qe-psS">
+                                <rect key="frame" x="47" y="437" width="320" height="54"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="sign facebook" image="facebook ">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMF-sO-JJ2">
+                                <rect key="frame" x="47" y="499" width="320" height="62"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="sign google" image="google ">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGw-J1-bGN">
+                                <rect key="frame" x="47" y="569" width="320" height="62"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="sign apple" image="apple ">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZW9-7q-lD3">
+                                <rect key="frame" x="34" y="639" width="346" height="104"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Sign in" image="Sign-in Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lGv-rB-HWf" kind="show" id="OUB-ai-2Ma"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e69-AU-oHv">
+                                <rect key="frame" x="47" y="738" width="320" height="72"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Sign up" image="Sign-up Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xDy-Cr-SXl" kind="show" id="iMW-Ms-Z0K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="saw-4s-eVg" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4xc-Wt-rWA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e69-AU-oHv" secondAttribute="trailing" constant="47" id="40x-Wj-gTS"/>
+                            <constraint firstItem="ev1-qe-psS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="5EF-8x-H1k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eW2-or-qUa" secondAttribute="trailing" constant="221" id="7Yw-Bv-8TI"/>
                             <constraint firstAttribute="trailing" secondItem="Mby-Pg-Dm9" secondAttribute="trailing" id="DUL-gg-nyl"/>
                             <constraint firstItem="Mby-Pg-Dm9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Dgn-uK-Qm2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eGw-J1-bGN" secondAttribute="trailing" constant="47" id="GNN-ou-Z5v"/>
                             <constraint firstItem="UGp-Yv-4Uw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="HEF-TI-ADQ"/>
-                            <constraint firstItem="saw-4s-eVg" firstAttribute="leading" secondItem="Mby-Pg-Dm9" secondAttribute="leading" id="N7t-vM-t45"/>
+                            <constraint firstItem="e69-AU-oHv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="JcM-iR-TUT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZW9-7q-lD3" secondAttribute="trailing" constant="34" id="QLK-2x-cKc"/>
                             <constraint firstItem="eW2-or-qUa" firstAttribute="leading" secondItem="UGp-Yv-4Uw" secondAttribute="leading" id="Qfd-Pj-Zfy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZW9-7q-lD3" secondAttribute="bottom" constant="119" id="RWL-u0-6vc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e69-AU-oHv" secondAttribute="bottom" constant="52" id="Vz8-iZ-BFU"/>
                             <constraint firstAttribute="bottom" secondItem="Mby-Pg-Dm9" secondAttribute="bottom" constant="310" id="Y0c-9z-6RP"/>
                             <constraint firstAttribute="trailing" secondItem="Mby-Pg-Dm9" secondAttribute="trailing" id="YQx-Jg-hSj"/>
+                            <constraint firstItem="ZW9-7q-lD3" firstAttribute="top" secondItem="eGw-J1-bGN" secondAttribute="bottom" constant="8" symbolic="YES" id="c69-3k-Xbt"/>
+                            <constraint firstItem="ZW9-7q-lD3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="dDt-5y-8Od"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wMF-sO-JJ2" secondAttribute="trailing" constant="47" id="eEe-33-hOB"/>
+                            <constraint firstItem="eGw-J1-bGN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="ha7-Bt-pfV"/>
                             <constraint firstItem="UGp-Yv-4Uw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="hxp-wI-2jh"/>
                             <constraint firstItem="Mby-Pg-Dm9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lHz-Lv-auQ"/>
+                            <constraint firstItem="eGw-J1-bGN" firstAttribute="top" secondItem="wMF-sO-JJ2" secondAttribute="bottom" constant="8" symbolic="YES" id="lZe-pZ-x1o"/>
                             <constraint firstItem="Mby-Pg-Dm9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="maM-k6-OoV"/>
-                            <constraint firstItem="saw-4s-eVg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="477" id="q4w-X7-IGk"/>
+                            <constraint firstItem="wMF-sO-JJ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="rBE-aL-OxI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ev1-qe-psS" secondAttribute="trailing" constant="47" id="rLa-Qs-5lV"/>
+                            <constraint firstItem="wMF-sO-JJ2" firstAttribute="top" secondItem="ev1-qe-psS" secondAttribute="bottom" constant="8" symbolic="YES" id="t7O-Ji-2fU"/>
                             <constraint firstItem="eW2-or-qUa" firstAttribute="top" secondItem="UGp-Yv-4Uw" secondAttribute="bottom" constant="16" id="vMg-2g-uUG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="v8L-Pd-XZ9"/>
                     <connections>
-                        <outlet property="appleAuth" destination="gKH-YB-cS7" id="ROL-pW-7Mp"/>
-                        <outlet property="googleAuth" destination="nG0-XB-HID" id="Sf6-m0-9KI"/>
-                        <outlet property="signINAuth" destination="3fY-Am-TkW" id="XB1-cg-Wbp"/>
-                        <outlet property="signUP" destination="ZW0-Sb-cNI" id="bFS-5P-xOo"/>
+                        <outlet property="appleAuth" destination="eGw-J1-bGN" id="38W-hX-lYL"/>
+                        <outlet property="googleAuth" destination="wMF-sO-JJ2" id="TLS-Vp-pcJ"/>
+                        <outlet property="signINAuth" destination="ZW9-7q-lD3" id="tLP-No-aQP"/>
+                        <outlet property="signUP" destination="e69-AU-oHv" id="cdW-mY-kQb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1185,6 +1140,22 @@
             </objects>
             <point key="canvasLocation" x="3305.7971014492755" y="-587.27678571428567"/>
         </scene>
+        <!--Main Tab Bar View Controller-->
+        <scene sceneID="sfU-8B-1Jq">
+            <objects>
+                <viewController id="FsD-oq-ldY" customClass="MainTabBarViewController" customModule="Vox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZoS-1t-miV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5gf-aa-ybC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8su-2Z-faZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F9q-GK-8d0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832" y="1348"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="xqL-Ur-cok">
             <objects>
@@ -1203,6 +1174,24 @@
             </objects>
             <point key="canvasLocation" x="831.88405797101461" y="-586.60714285714278"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rgd-5e-kDI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TRS-kN-dWt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lQh-Ud-SVh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FsD-oq-ldY" kind="relationship" relationship="rootViewController" id="CT6-Ap-FLE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3EL-H2-CCo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-316" y="993"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Bank Account's Card" width="347" height="178"/>
@@ -1210,7 +1199,6 @@
         <image name="Ellipse 10" width="345" height="400"/>
         <image name="Get OTP Button" width="347" height="99"/>
         <image name="Get Started" width="243" height="104"/>
-        <image name="Google Logo" width="24" height="24"/>
         <image name="Indicators" width="40" height="5"/>
         <image name="Indicators-1" width="40" height="5"/>
         <image name="Indicators-2" width="40" height="5"/>
@@ -1228,22 +1216,20 @@
         <image name="Saving 1" width="262" height="229"/>
         <image name="Shapes" width="340" height="296"/>
         <image name="Shapes for welcome" width="411" height="513"/>
+        <image name="Sign-in Button" width="347" height="104"/>
         <image name="Sign-out button" width="315" height="72"/>
+        <image name="Sign-up Button" width="315" height="72"/>
         <image name="Verify" width="347" height="104"/>
-        <image name="applelogo" catalog="system" width="103" height="128"/>
+        <image name="apple " width="321" height="62"/>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="facebook " width="315" height="54"/>
+        <image name="google " width="321" height="62"/>
         <image name="homepage rectangle" width="411" height="278"/>
         <image name="undraw_podcast_audience_re_4i5q 1" width="364" height="234"/>
         <image name="unsplash_0caikkln3Ag" width="411" height="376"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
