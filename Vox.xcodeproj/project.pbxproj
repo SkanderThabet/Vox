@@ -32,6 +32,8 @@
 		01C7880C27F2FDCA00225B50 /* VoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C7880B27F2FDCA00225B50 /* VoxUITestsLaunchTests.swift */; };
 		01F15D1B2808E3AB001A10C6 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1A2808E3AB001A10C6 /* MainTabBarViewController.swift */; };
 		01F15D1D2808E502001A10C6 /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1C2808E502001A10C6 /* PodcastViewController.swift */; };
+		01F15D1F2808FD13001A10C6 /* PodcastSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1E2808FD13001A10C6 /* PodcastSearchController.swift */; };
+		01F15D212808FDA1001A10C6 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D202808FDA1001A10C6 /* Podcast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		01C7880B27F2FDCA00225B50 /* VoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		01F15D1A2808E3AB001A10C6 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		01F15D1C2808E502001A10C6 /* PodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewController.swift; sourceTree = "<group>"; };
+		01F15D1E2808FD13001A10C6 /* PodcastSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastSearchController.swift; sourceTree = "<group>"; };
+		01F15D202808FDA1001A10C6 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 			children = (
 				016A95E428050C3200373F36 /* UserProfile.swift */,
 				016A95E628050E1500373F36 /* NewAccount.swift */,
+				01F15D202808FDA1001A10C6 /* Podcast.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 			children = (
 				01F15D1A2808E3AB001A10C6 /* MainTabBarViewController.swift */,
 				01F15D1C2808E502001A10C6 /* PodcastViewController.swift */,
+				01F15D1E2808FD13001A10C6 /* PodcastSearchController.swift */,
 			);
 			path = Podcast;
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F15D1F2808FD13001A10C6 /* PodcastSearchController.swift in Sources */,
 				016A95EF2805122B00373F36 /* SignUpViewController.swift in Sources */,
 				016A95F6280512A700373F36 /* FristOTPViewController.swift in Sources */,
 				01C787EA27F2FDCA00225B50 /* ViewController.swift in Sources */,
@@ -417,6 +424,7 @@
 				0136FD3127FE755300D7DDFC /* WelcomeViewController.swift in Sources */,
 				016A95FE2805131700373F36 /* SecondOnboardViewController.swift in Sources */,
 				016A95ED280511F900373F36 /* ProfileViewController.swift in Sources */,
+				01F15D212808FDA1001A10C6 /* Podcast.swift in Sources */,
 				016A95F8280512CB00373F36 /* SecondOTPViewController.swift in Sources */,
 				01F15D1D2808E502001A10C6 /* PodcastViewController.swift in Sources */,
 				016A95E528050C3200373F36 /* UserProfile.swift in Sources */,
