@@ -8,6 +8,10 @@
 import UIKit
 import JGProgressHUD
 import Alamofire
+import FirebaseStorage
+import FirebaseAuth
+import Firebase
+import Photos
 
 
 class SignUpCompletionViewController: UIViewController {
@@ -22,12 +26,28 @@ class SignUpCompletionViewController: UIViewController {
     @IBOutlet weak var completeBtn: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
+    
+    var fUID: String = ""
     let dataPicker = UIDatePicker()
+    lazy var storage = Storage.storage()
+    lazy var auth = Auth.auth()
+    var downloadURL:URL?
     // MARK: - Actions
     @IBAction func completeBtn(_ sender: Any) {
         handleSignUp()
     }
     
+    @IBAction func uploadImage(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        //we want this Controller to be delegate
+        imagePicker.delegate = self
+        imagePicker.sourceType =
+        UIImagePickerController.isSourceTypeAvailable(.camera)
+        ? .camera
+        : .photoLibrary
+        imagePicker.allowsEditing = true
+         present(imagePicker, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +56,65 @@ class SignUpCompletionViewController: UIViewController {
         emailTF.autocapitalizationType = .none
         createDatePicker()
         
+        checkPermissions()
+        
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: - Permission Check Function
+    
+    func checkPermissions() {
+        if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.authorized {
+            PHPhotoLibrary.requestAuthorization({ (status: PHAuthorizationStatus) -> Void in
+                ()
+            })
+        }
+        if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
+            
+        } else {
+            PHPhotoLibrary.requestAuthorization(requestAuthorizationHandler)
+        }
+    }
+    // MARK: - Request Handler for permission
+    func requestAuthorizationHandler(status : PHAuthorizationStatus) {
+        if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
+            print("'We have access to photos'")
+        }
+        else {
+            print("We don't have access to photos")
+        }
+    }
+    
+    //MARK: - Upload to firebase
+    
+    func uploadToCloud(fileUrl : URL) {
+        let data = Data()
+        let storageRef = storage.reference()
+        let localFile = fileUrl
+        let photoRef = storageRef.child("uploads/"+auth.currentUser!.uid)
+        let uploadTaks = photoRef.putFile(from: localFile, metadata: nil) { (metadata,err) in
+            guard let metadata = metadata else {
+                self.displayError(err)
+                print(err?.localizedDescription)
+                return
+            }
+            photoRef.downloadURL { url, err in
+                if let url = url {
+                    self.downloadURL = url
+                    print(self.downloadURL)
+                                }
+            }
+            print("'Photo uploaded'")
+        }
+        
+    }
+    
+//    func pullImage() {
+//        let storageRef = storage.reference()
+//        let photoRef = storageRef.child("uploads/"+auth.currentUser!.uid)
+//        downloadURL = avatarImage.sd
+//        print(downloadURL)
+//    }
     
     // MARK: - Date picker Function
     
@@ -55,6 +132,8 @@ class SignUpCompletionViewController: UIViewController {
         dataPicker.preferredDatePickerStyle = .wheels
         dataPicker.datePickerMode = .date
     }
+    
+    // MARK: - Done Button when editing
     
     @objc func donePressed(){
         let formatter = DateFormatter()
@@ -81,7 +160,7 @@ class SignUpCompletionViewController: UIViewController {
         
         
         let url = "https://voxappli.herokuapp.com/api/vox/auth/register/"
-        let params = ["firstname":firstname , "lastname":lastname , "email":email , "password":password , "dob":dob]
+        let params = ["firstname":firstname , "lastname":lastname , "email":email , "password":password , "dob":dob , "avatar":self.downloadURL?.absoluteString]
         
         AF.request(url, method: .post, parameters: params, encoding: JSONEncoding())
             .validate(statusCode: 200..<300)
@@ -90,6 +169,7 @@ class SignUpCompletionViewController: UIViewController {
                 if let err = dataResp.error {
                     print("Failed to sign up : ", err)
                     self.errorLabel.isHidden = false
+                    self.displayError(err)
                     return
                 }
                 print("Successfully signed up")
@@ -97,21 +177,22 @@ class SignUpCompletionViewController: UIViewController {
             }
     }
     
+    // MARK: - Show Alert Function
     func showAlert(title: String, message: String) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
         }
-    
-    
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension SignUpCompletionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let url = info[UIImagePickerController.InfoKey.imageURL] as? URL {
+            print(url)
+            uploadToCloud(fileUrl: url)
+        }
+        guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        avatarImage.image = selectedImage
+        dismiss(animated: true)
     }
-    */
-
 }

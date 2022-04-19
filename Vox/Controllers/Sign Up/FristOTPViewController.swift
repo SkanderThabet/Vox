@@ -44,6 +44,9 @@ class FristOTPViewController: UIViewController {
     
     func countryPickerInit(){
         let cpv = CountryPickerView(frame: CGRect(x: 0, y: 0, width: 120, height: 20))
+        cpv.setCountryByName("Tunisia")
+        cpv.setCountryByCode("TN")
+        cpv.setCountryByPhoneCode("+216")
         let country = cpv.selectedCountry
         
         mobileNumberTF.leftView = cpv

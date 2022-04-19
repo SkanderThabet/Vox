@@ -33,7 +33,9 @@ class SecondOTPViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //
+        if segue.identifier == "OtpToProfileCompletion" {
+            
+        }
     }
     
     private func phoneAuthLogin() {
@@ -65,6 +67,7 @@ class SecondOTPViewController: UIViewController {
                 
                 debugPrint((result?.user.uid)! as String)
                 self.performSegue(withIdentifier: "OtpToProfileCompletion", sender: self)
+                
 //                if(result?.additionalUserInfo?.isNewUser == true) {
 //                    self.performSegue(withIdentifier: "OtpToProfileCompletion", sender: self)
 //                }

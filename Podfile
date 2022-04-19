@@ -32,5 +32,7 @@ target 'Vox' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
+  pod 'FirebaseUI/Storage'
+  
 
 end

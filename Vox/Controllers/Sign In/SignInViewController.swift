@@ -36,22 +36,32 @@ class SignInViewController: UIViewController {
         
         let url = "https://voxappli.herokuapp.com/api/vox/auth/login"
         let params = ["email" : email,"password" : password]
-        AF.request(url, method: .post, parameters: params, encoding: JSONEncoding())
+        AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
             .validate(statusCode: 200..<300)
-            .responseData { (DataResponse)  in
-                
+            .responseJSON { (DataResponse)  in
+                print(DataResponse)
                 hud.dismiss()
                 if let _ = DataResponse.error {
                     self.errorLabel.isHidden = false
                     self.errorLabel.text = "Your credentials are not correct, please try again"
+                    self.displayError(DataResponse.error)
                     print(DataResponse.error as Any)
                     return
                 }
+               
                 
                 self.showAlert(title: "Loggin", message: "Successfully logged in")
-                
+                self.performSegue(withIdentifier: "signInToProfile", sender: self)
                 
             }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "signInToProfile" {
+            guard let toProfile = segue.destination as? ProfileViewController else {
+                return
+        }
+            
+        }
     }
     
     // MARK: - Show alert Function
