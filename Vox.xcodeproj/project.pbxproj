@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0136FD3127FE755300D7DDFC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */; };
+		014E43BF280E071500865ECA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 014E43BE280E071500865ECA /* GoogleService-Info.plist */; };
+		014E43C2280E165C00865ECA /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014E43C1280E165C00865ECA /* Extension.swift */; };
 		016A95E528050C3200373F36 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E428050C3200373F36 /* UserProfile.swift */; };
 		016A95E728050E1500373F36 /* NewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E628050E1500373F36 /* NewAccount.swift */; };
 		016A95E9280510B900373F36 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E8280510B900373F36 /* SignInViewController.swift */; };
@@ -58,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		014E43BE280E071500865ECA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		014E43C1280E165C00865ECA /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		016A95E428050C3200373F36 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		016A95E628050E1500373F36 /* NewAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccount.swift; sourceTree = "<group>"; };
 		016A95E8280510B900373F36 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		014E43C0280E164D00865ECA /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				014E43C1280E165C00865ECA /* Extension.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		01664C2A2805194300B796D4 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +269,7 @@
 		01C787E427F2FDCA00225B50 /* Vox */ = {
 			isa = PBXGroup;
 			children = (
+				014E43C0280E164D00865ECA /* Utility */,
 				01664C2B2805195800B796D4 /* Networking */,
 				016A95E3280509D400373F36 /* Views */,
 				016A95E2280509C600373F36 /* Controllers */,
@@ -271,6 +284,7 @@
 				01C787F327F2FDCA00225B50 /* LaunchScreen.storyboard */,
 				01C787F627F2FDCA00225B50 /* Info.plist */,
 				01C787EE27F2FDCA00225B50 /* Vox.xcdatamodeld */,
+				014E43BE280E071500865ECA /* GoogleService-Info.plist */,
 			);
 			path = Vox;
 			sourceTree = "<group>";
@@ -312,7 +326,6 @@
 				0765961A316336F4BFF67362 /* Pods-VoxTests.debug.xcconfig */,
 				439B925A1AAAFCD7158AB462 /* Pods-VoxTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -436,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C787F527F2FDCA00225B50 /* LaunchScreen.storyboard in Resources */,
+				014E43BF280E071500865ECA /* GoogleService-Info.plist in Resources */,
 				01C787F227F2FDCA00225B50 /* Assets.xcassets in Resources */,
 				01C787ED27F2FDCA00225B50 /* Main.storyboard in Resources */,
 			);
@@ -580,6 +594,7 @@
 				01C787F027F2FDCA00225B50 /* Vox.xcdatamodeld in Sources */,
 				016A95E9280510B900373F36 /* SignInViewController.swift in Sources */,
 				016A95FC2805130200373F36 /* FirstOnboardViewController.swift in Sources */,
+				014E43C2280E165C00865ECA /* Extension.swift in Sources */,
 				016A95EB280510D600373F36 /* HomeViewController.swift in Sources */,
 				016A95FA280512E900373F36 /* SignUpCompletionViewController.swift in Sources */,
 				016A95E728050E1500373F36 /* NewAccount.swift in Sources */,

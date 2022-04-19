@@ -24,6 +24,7 @@ class SignInViewController: UIViewController {
         handleLogin()
     }
     
+    // MARK: - Handle Login Function
     @objc func handleLogin(){
         let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = "Logging in"
@@ -52,6 +53,8 @@ class SignInViewController: UIViewController {
                 
             }
     }
+    
+    // MARK: - Show alert Function
     
     func showAlert(title: String, message: String) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

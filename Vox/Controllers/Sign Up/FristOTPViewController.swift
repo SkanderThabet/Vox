@@ -7,9 +7,11 @@
 
 import UIKit
 import CountryPickerView
+import FirebaseAuth
 
 class FristOTPViewController: UIViewController {
     
+
     
     
     // MARK: - Outlets
@@ -18,11 +20,29 @@ class FristOTPViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func getOtpBtn(_ sender: Any) {
+        checkNumber()
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GetOTP" {
+            let countryCode = cpvTextField.selectedCountry.phoneCode
+            let phoneNumber = "\(countryCode as String)\(mobileNumberTF.text! as String)"
+            guard let secondOTP = segue.destination as? SecondOTPViewController else {
+                return
+        }
+            secondOTP.textValue = phoneNumber
+        }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        countryPickerInit()
         
+        // Do any additional setup after loading the view.
+    }
+    
+    func countryPickerInit(){
         let cpv = CountryPickerView(frame: CGRect(x: 0, y: 0, width: 120, height: 20))
         let country = cpv.selectedCountry
         
@@ -34,9 +54,20 @@ class FristOTPViewController: UIViewController {
         print(country.phoneCode)
         
         mobileNumberTF.showDoneButtonOnKeyboard()
-        // Do any additional setup after loading the view.
     }
     
+    private func checkNumber() {
+        let countryCode = cpvTextField.selectedCountry.phoneCode
+        let phoneNumber = "\(countryCode)\(mobileNumberTF.text! as String)"
+        let alert = UIAlertController(title: "Verification", message: "We will be verifying the phone number : \(phoneNumber)\n" + "Is this OK, or would you like to edit the number ?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            self.performSegue(withIdentifier: "GetOTP", sender: self)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+   
 
     /*
     // MARK: - Navigation
