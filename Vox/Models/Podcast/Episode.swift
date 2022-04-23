@@ -6,7 +6,16 @@
 //
 
 import Foundation
+import FeedKit
 
 struct Episode: Decodable {
+    internal init(feedItem : RSSFeedItem) {
+        self.title = feedItem.title ?? ""
+        self.pubDate = feedItem.pubDate ?? Date()
+        self.description = feedItem.description ?? ""
+    }
+    
     var title: String?
+    var pubDate : Date
+    var description : String?
 }

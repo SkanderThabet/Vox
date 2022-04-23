@@ -44,7 +44,7 @@ class EpisodeControllerTableViewController: UITableViewController {
                     case let .rss(feed):
                         var episodes = [Episode]()
                         feed.items?.forEach({ (feedItem) in
-                            let episode = Episode(title: feedItem.title ?? "")
+                            let episode = Episode(feedItem: feedItem)
                             episodes.append(episode)
                         })
                         self.episodes = episodes
@@ -67,6 +67,8 @@ class EpisodeControllerTableViewController: UITableViewController {
     //MARK: - Setup Work
     fileprivate func setupWork(){
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        let nib = UINib(nibName: "EpisodeCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: cellId)
     }
     
     fileprivate let cellId = "cellId"
@@ -81,13 +83,15 @@ class EpisodeControllerTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! EpisodeCell
         let episode = self.episodes[indexPath.row]
-        cell.textLabel?.text = "\(episode.title ?? "")"
-
+        cell.episode = episode
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
 
     /*
     // Override to support conditional editing of the table view.
