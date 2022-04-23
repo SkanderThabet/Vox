@@ -16,32 +16,35 @@ class APIService {
     
     func fetchEpisodes (feedUrl: String , completionHandler : @escaping ([Episode]) -> ()) {
         guard let url = URL(string: feedUrl) else { return }
-        let parser = FeedParser(URL: url)
-        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
-            // Do your thing, then back to the Main thread
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let feed):
-                    feed.rssFeed
-                    switch feed {
-                    case let .atom(feed):
-                        break
-                    case let .rss(feed):
-                        let episodes = feed.toEpisodes()
-                        completionHandler(episodes)
-                        break
-                    case let .json(feed):
+        DispatchQueue.global(qos: .background).async {
+            let parser = FeedParser(URL: url)
+            parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
+                // Do your thing, then back to the Main thread
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let feed):
+                        feed.rssFeed
+                        switch feed {
+                        case let .atom(feed):
+                            break
+                        case let .rss(feed):
+                            let episodes = feed.toEpisodes()
+                            completionHandler(episodes)
+                            break
+                        case let .json(feed):
+                            break
+                        }
+                        
+                    case .failure(let error):
+                        print(error)
+                        
                         break
                     }
                     
-                case .failure(let error):
-                    print(error)
-                    
-                    break
                 }
-                
             }
         }
+        
     }
     
     
@@ -55,22 +58,22 @@ class APIService {
                 return
             }
             guard let data = DataResponse.data else { return }
-//            let dummyString = String(data: data, encoding: .utf8)
-//            print(dummyString ?? "")
+            //            let dummyString = String(data: data, encoding: .utf8)
+            //            print(dummyString ?? "")
             
             do {
                 let searchResult = try JSONDecoder().decode(SearchResults.self, from: data)
                 completionHandler(searchResult.results)
-//                print("Result count : ", searchResult.resultCount)
+                //                print("Result count : ", searchResult.resultCount)
                 //print specific attr from fetching json api
-//                searchResult.results.forEach({ (podcast) in
-//                    print(podcast.trackName, podcast.artistName)
-//                })
-//                self.podcasts = searchResult.results
-//                self.tableView.reloadData()
+                //                searchResult.results.forEach({ (podcast) in
+                //                    print(podcast.trackName, podcast.artistName)
+                //                })
+                //                self.podcasts = searchResult.results
+                //                self.tableView.reloadData()
             } catch let err {
                 print("Failed to decode",err)
-//                self.displayError(err)
+                //                self.displayError(err)
             }
         }
     }

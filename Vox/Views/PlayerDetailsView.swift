@@ -130,12 +130,11 @@ class PlayerDetailsView: UIView {
     //MARK: - Observe Player Current Time Function
     fileprivate func observePlayerCurrentTime() {
         let interval = CMTimeMake(value: 1, timescale: 2)
-        player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { (time) in
-            self.currentTimeLabel.text = time.toDisplayString()
-            let durationTime = self.player.currentItem?.duration
-            self.durationTimeLabel.text = durationTime?.toDisplayString()
-            
-            self.updateCurrentSlider()
+        player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] (time) in
+            self?.currentTimeLabel.text = time.toDisplayString()
+            let durationTime = self?.player.currentItem?.duration
+            self?.durationTimeLabel.text = durationTime?.toDisplayString()
+            self?.updateCurrentSlider()
         }
     }
     //MARK: - Update Current Slider Function
@@ -151,11 +150,14 @@ class PlayerDetailsView: UIView {
         observePlayerCurrentTime()
         let time = CMTimeMake(value: 1, timescale: 3)
         let times = [NSValue(time: time)]
-        player.addBoundaryTimeObserver(forTimes: times, queue: .main) {
+        player.addBoundaryTimeObserver(forTimes: times, queue: .main) { [weak self] in
             print("Episode started playing")
-            self.enlargeEpisodeImageView()
+            self?.enlargeEpisodeImageView()
         }
         
+    }
+    deinit {
+        print("State of the player ...")
     }
     
 }
