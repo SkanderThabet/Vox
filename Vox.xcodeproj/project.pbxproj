@@ -36,6 +36,7 @@
 		01C7880027F2FDCA00225B50 /* VoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C787FF27F2FDCA00225B50 /* VoxTests.swift */; };
 		01C7880A27F2FDCA00225B50 /* VoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C7880927F2FDCA00225B50 /* VoxUITests.swift */; };
 		01C7880C27F2FDCA00225B50 /* VoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C7880B27F2FDCA00225B50 /* VoxUITestsLaunchTests.swift */; };
+		01D7A38628138D1700D7DF71 /* EpisodeControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D7A38528138D1700D7DF71 /* EpisodeControllerTableViewController.swift */; };
 		01F15D1B2808E3AB001A10C6 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1A2808E3AB001A10C6 /* MainTabBarViewController.swift */; };
 		01F15D1D2808E502001A10C6 /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1C2808E502001A10C6 /* PodcastViewController.swift */; };
 		01F15D1F2808FD13001A10C6 /* PodcastSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1E2808FD13001A10C6 /* PodcastSearchController.swift */; };
@@ -96,6 +97,7 @@
 		01C7880527F2FDCA00225B50 /* VoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C7880927F2FDCA00225B50 /* VoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoxUITests.swift; sourceTree = "<group>"; };
 		01C7880B27F2FDCA00225B50 /* VoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		01D7A38528138D1700D7DF71 /* EpisodeControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeControllerTableViewController.swift; sourceTree = "<group>"; };
 		01F15D1A2808E3AB001A10C6 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		01F15D1C2808E502001A10C6 /* PodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewController.swift; sourceTree = "<group>"; };
 		01F15D1E2808FD13001A10C6 /* PodcastSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastSearchController.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				01F15D1A2808E3AB001A10C6 /* MainTabBarViewController.swift */,
 				01F15D1C2808E502001A10C6 /* PodcastViewController.swift */,
 				01F15D1E2808FD13001A10C6 /* PodcastSearchController.swift */,
+				01D7A38528138D1700D7DF71 /* EpisodeControllerTableViewController.swift */,
 			);
 			path = Podcast;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				01C787F027F2FDCA00225B50 /* Vox.xcdatamodeld in Sources */,
 				016A95E9280510B900373F36 /* SignInViewController.swift in Sources */,
 				016A95FC2805130200373F36 /* FirstOnboardViewController.swift in Sources */,
+				01D7A38628138D1700D7DF71 /* EpisodeControllerTableViewController.swift in Sources */,
 				014E43C2280E165C00865ECA /* Extension.swift in Sources */,
 				016A95EB280510D600373F36 /* HomeViewController.swift in Sources */,
 				016A95FA280512E900373F36 /* SignUpCompletionViewController.swift in Sources */,

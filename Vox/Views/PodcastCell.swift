@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PodcastCell: UITableViewCell {
     //MARK: - Outlets
@@ -18,7 +19,20 @@ class PodcastCell: UITableViewCell {
         didSet {
             podcastTrackName.text = podcast.trackName
             podcastArtistName.text = podcast.artistName
+            podcastEpisodeCount.text = "\(podcast.trackCount ?? 0) Episodes"
+            print("Loading images with url : ", podcast.artworkUrl600 ?? "")
+            guard let url = URL(string: podcast.artworkUrl600 ?? "") else { return }
+//            URLSession.shared.dataTask(with: url) { data, _, _ in
+//                print("Finished downloading image data :  ",data)
+//                guard let data = data else { return }
+//
+//                DispatchQueue.main.async {
+//                    self.podcastImage.image = UIImage(data: data)
+//
+//                }
+//            }.resume()
             
+            podcastImage.sd_setImage(with: url, completed: nil)
         }
     }
     

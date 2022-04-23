@@ -33,6 +33,6 @@ target 'Vox' do
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'FirebaseUI/Storage'
-  
+  pod 'SDWebImage', '~> 5.0'
 
 end

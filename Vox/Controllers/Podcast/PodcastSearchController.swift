@@ -10,11 +10,7 @@ import Alamofire
 
 class PodcastSearchController: UITableViewController , UISearchBarDelegate{
     
-    var podcasts = [
-        Podcast(trackName: "Test", artistName: "Skander"),
-        Podcast(trackName: "Test2", artistName: "Skander2"),
-        Podcast(trackName: "Test3", artistName: "Skander3")
-    ]
+    var podcasts = [Podcast]()
 
     let cellId = "cellId"
     
@@ -48,14 +44,28 @@ class PodcastSearchController: UITableViewController , UISearchBarDelegate{
     }
     
     fileprivate func setupTableView() {
-        //1. register a cell for our tableview
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.tableFooterView = UIView()
         let nib = UINib(nibName: "PodcastCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellId)
     }
 
     
     // MARK: - Table view data source
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "Please type a term for search ..."
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 18,weight: .semibold)
+        return label
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return self.podcasts.count > 0 ? 0 : 250
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
