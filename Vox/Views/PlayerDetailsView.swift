@@ -21,7 +21,8 @@ class PlayerDetailsView: UIView {
     }
     
     //MARK: - Outlets
-
+    
+    @IBOutlet weak var playerMutedVolume: UIImageView!
     @IBOutlet weak var currentTimeSlider: UISlider!
     @IBOutlet weak var durationTimeLabel: UILabel!
     @IBOutlet weak var currentTimeLabel: UILabel!
@@ -62,15 +63,39 @@ class PlayerDetailsView: UIView {
         }
     }
     
-    
-    
     //MARK: - Actions
     @IBAction func playerDismissActionBtn(_ sender: Any) {
         player.pause()
         self.removeFromSuperview()
         
-
+        
     }
+    
+    @IBAction func handleCurrentTimeSlider(_ sender: Any) {
+        let percentage = currentTimeSlider.value
+        guard let duration = player.currentItem?.duration else { return }
+        let durationInSeconds = CMTimeGetSeconds(duration)
+        let seekTimeInSeconds = Float64(percentage) * durationInSeconds
+        let seekTime = CMTimeMakeWithSeconds(seekTimeInSeconds, preferredTimescale: 1)
+        player.seek(to: seekTime)
+    }
+    
+    @IBAction func handleBackwardBtn(_ sender: Any) {
+        let fifteenSeconds = CMTimeMake(value: 15, timescale: 1)
+        let seekTime = CMTimeSubtract(player.currentTime(), fifteenSeconds)
+        player.seek(to: seekTime)
+    }
+    @IBAction func handleForwardBtn(_ sender: Any) {
+        let fifteenSeconds = CMTimeMake(value: 15, timescale: 1)
+        let seekTime = CMTimeAdd(player.currentTime(), fifteenSeconds)
+        player.seek(to: seekTime)
+    }
+    @IBAction func handleVolumeChange(_ sender: UISlider) {
+        player.volume = sender.value
+        
+    }
+    
+    
     //MARK: - enlarge Podcast episode imageview
     fileprivate func enlargeEpisodeImageView() {
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut) {
@@ -102,6 +127,7 @@ class PlayerDetailsView: UIView {
         return avPlayer
     }()
     
+    //MARK: - Observe Player Current Time Function
     fileprivate func observePlayerCurrentTime() {
         let interval = CMTimeMake(value: 1, timescale: 2)
         player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { (time) in
@@ -112,21 +138,17 @@ class PlayerDetailsView: UIView {
             self.updateCurrentSlider()
         }
     }
-    
+    //MARK: - Update Current Slider Function
     fileprivate func updateCurrentSlider(){
         let currentTimeSeconds = CMTimeGetSeconds(player.currentTime())
         let durationSeconds = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(value: 1, timescale: 1))
         let percentage = currentTimeSeconds / durationSeconds
-        
         self.currentTimeSlider.value = Float(percentage)
     }
-    
+    //MARK: - Awake From Nib overriden function
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         observePlayerCurrentTime()
-        
-        
         let time = CMTimeMake(value: 1, timescale: 3)
         let times = [NSValue(time: time)]
         player.addBoundaryTimeObserver(forTimes: times, queue: .main) {
@@ -135,5 +157,5 @@ class PlayerDetailsView: UIView {
         }
         
     }
-
+    
 }
