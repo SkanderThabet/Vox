@@ -91,11 +91,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="256"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDU-2g-awP">
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDU-2g-awP">
                                     <rect key="frame" x="53" y="0.0" width="54" height="256"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="54" id="pV5-Zh-3px"/>
                                     </constraints>
+                                    <color key="tintColor" systemColor="labelColor"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="Button" image="rewind15"/>
                                 </button>
@@ -103,11 +104,12 @@
                                     <rect key="frame" x="110" y="0.0" width="50" height="256"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADG-yq-vKP">
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADG-yq-vKP">
                                     <rect key="frame" x="163" y="0.0" width="54" height="256"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="54" id="HVC-B1-CcL"/>
                                     </constraints>
+                                    <color key="tintColor" systemColor="labelColor"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="Button" image="play"/>
                                 </button>
@@ -115,11 +117,12 @@
                                     <rect key="frame" x="220" y="0.0" width="50" height="256"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Auh-kF-kgA">
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Auh-kF-kgA">
                                     <rect key="frame" x="273" y="0.0" width="54" height="256"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="54" id="aFX-1f-5xL"/>
                                     </constraints>
+                                    <color key="tintColor" systemColor="labelColor"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="Button" image="fastforward15"/>
                                 </button>

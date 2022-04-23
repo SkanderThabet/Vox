@@ -10,6 +10,7 @@ import FeedKit
 
 struct Episode: Decodable {
     internal init(feedItem : RSSFeedItem) {
+        self.streamURL = feedItem.enclosure?.attributes?.url ?? ""
         self.title = feedItem.title ?? ""
         self.pubDate = feedItem.pubDate ?? Date()
         self.description = feedItem.iTunes?.iTunesSubtitle ?? feedItem.description ?? ""
@@ -22,4 +23,5 @@ struct Episode: Decodable {
     var description : String?
     var imageUrl: String?
     var author:String?
+    var streamURL:String?
 }
