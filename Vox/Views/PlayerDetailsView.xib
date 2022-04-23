@@ -37,7 +37,7 @@
                                 <constraint firstAttribute="width" secondItem="uV9-ia-5Xk" secondAttribute="height" id="l6f-SA-ymq"/>
                             </constraints>
                         </imageView>
-                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oIf-MP-CSN">
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oIf-MP-CSN">
                             <rect key="frame" x="-2" y="428" width="384" height="37"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="zgl-jn-H2N"/>
@@ -46,14 +46,14 @@
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFQ-jO-HDM">
                             <rect key="frame" x="0.0" y="466" width="380" height="20"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHb-4w-4O7">
-                                    <rect key="frame" x="0.0" y="0.0" width="312" height="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHb-4w-4O7">
+                                    <rect key="frame" x="0.0" y="0.0" width="330" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:25:54" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0b-1N-YD2">
-                                    <rect key="frame" x="312" y="0.0" width="68" height="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0b-1N-YD2">
+                                    <rect key="frame" x="330" y="0.0" width="50" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                     <nil key="highlightedColor"/>
@@ -63,7 +63,7 @@
                                 <constraint firstItem="L0b-1N-YD2" firstAttribute="centerY" secondItem="GFQ-jO-HDM" secondAttribute="centerY" id="FYs-k8-xO5"/>
                                 <constraint firstAttribute="height" constant="20" id="Oa4-sx-s32"/>
                                 <constraint firstAttribute="trailing" secondItem="L0b-1N-YD2" secondAttribute="trailing" id="RQI-il-emb"/>
-                                <constraint firstItem="L0b-1N-YD2" firstAttribute="leading" secondItem="GFQ-jO-HDM" secondAttribute="leading" constant="312" id="m9M-rk-uVg"/>
+                                <constraint firstItem="L0b-1N-YD2" firstAttribute="leading" secondItem="GFQ-jO-HDM" secondAttribute="leading" constant="330" id="m9M-rk-uVg"/>
                             </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode's title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqj-QB-2Ch">
@@ -162,6 +162,9 @@
             </constraints>
             <connections>
                 <outlet property="backwardBtn" destination="rDU-2g-awP" id="AJk-OI-WLZ"/>
+                <outlet property="currentTimeLabel" destination="pHb-4w-4O7" id="86l-G7-wno"/>
+                <outlet property="currentTimeSlider" destination="oIf-MP-CSN" id="o8G-Vq-nS5"/>
+                <outlet property="durationTimeLabel" destination="L0b-1N-YD2" id="3uG-MR-prj"/>
                 <outlet property="forwardBtn" destination="Auh-kF-kgA" id="S2a-DQ-5HV"/>
                 <outlet property="playPauseBtn" destination="ADG-yq-vKP" id="f22-lN-loI"/>
                 <outlet property="playerDismissBtn" destination="1Qo-gV-OJz" id="Qu2-1c-eng"/>

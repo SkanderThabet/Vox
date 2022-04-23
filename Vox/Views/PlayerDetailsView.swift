@@ -22,7 +22,11 @@ class PlayerDetailsView: UIView {
     
     //MARK: - Outlets
 
+    @IBOutlet weak var currentTimeSlider: UISlider!
+    @IBOutlet weak var durationTimeLabel: UILabel!
+    @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var playerDismissBtn: UIButton!
+    
     @IBOutlet weak var playerImageView: UIImageView! {
         didSet {
             playerImageView.layer.cornerRadius = 5
@@ -98,8 +102,30 @@ class PlayerDetailsView: UIView {
         return avPlayer
     }()
     
+    fileprivate func observePlayerCurrentTime() {
+        let interval = CMTimeMake(value: 1, timescale: 2)
+        player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { (time) in
+            self.currentTimeLabel.text = time.toDisplayString()
+            let durationTime = self.player.currentItem?.duration
+            self.durationTimeLabel.text = durationTime?.toDisplayString()
+            
+            self.updateCurrentSlider()
+        }
+    }
+    
+    fileprivate func updateCurrentSlider(){
+        let currentTimeSeconds = CMTimeGetSeconds(player.currentTime())
+        let durationSeconds = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(value: 1, timescale: 1))
+        let percentage = currentTimeSeconds / durationSeconds
+        
+        self.currentTimeSlider.value = Float(percentage)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        observePlayerCurrentTime()
+        
         
         let time = CMTimeMake(value: 1, timescale: 3)
         let times = [NSValue(time: time)]
