@@ -14,10 +14,12 @@ struct Episode: Decodable {
         self.pubDate = feedItem.pubDate ?? Date()
         self.description = feedItem.iTunes?.iTunesSubtitle ?? feedItem.description ?? ""
         self.imageUrl = feedItem.iTunes?.iTunesImage?.attributes?.href
+        self.author = feedItem.iTunes?.iTunesAuthor ?? feedItem.author ?? ""
     }
     
     var title: String?
     var pubDate : Date
     var description : String?
     var imageUrl: String?
+    var author:String?
 }
