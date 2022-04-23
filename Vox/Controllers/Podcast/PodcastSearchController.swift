@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import Alamofire
 
 class PodcastSearchController: UITableViewController , UISearchBarDelegate{
     
-    let podcasts = [
-        Podcast(name: "Test", artistName: "Skander"),
-        Podcast(name: "Test2", artistName: "Skander2"),
-        Podcast(name: "Test3", artistName: "Skander3")
+    var podcasts = [
+        Podcast(trackName: "Test", artistName: "Skander"),
+        Podcast(trackName: "Test2", artistName: "Skander2"),
+        Podcast(trackName: "Test3", artistName: "Skander3")
     ]
 
     let cellId = "cellId"
@@ -39,13 +40,18 @@ class PodcastSearchController: UITableViewController , UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
-        
         //later implement Alamofire for itunes api search
+        APIService.shared.fetchPodcats(searchText: searchText) { (podcasts) in
+            self.podcasts = podcasts
+            self.tableView.reloadData()
+        }
     }
     
     fileprivate func setupTableView() {
         //1. register a cell for our tableview
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        let nib = UINib(nibName: "PodcastCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: cellId)
     }
 
     
@@ -58,12 +64,20 @@ class PodcastSearchController: UITableViewController , UISearchBarDelegate{
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! PodcastCell
         let podcast = self.podcasts[indexPath.row]
-        cell.textLabel?.text = "\(podcast.name)\n\(podcast.artistName)"
-        cell.textLabel?.numberOfLines = -1
-        cell.imageView?.image = UIImage(named: "Profile Image-1")
+        cell.podcast = podcast
+        
+//        let podcast = self.podcasts[indexPath.row]
+//        cell.textLabel?.text = "\(podcast.trackName ?? "")\n\(podcast.artistName ?? "")"
+//        cell.textLabel?.numberOfLines = -1
+//        cell.imageView?.image = UIImage(named: "Profile Image-1")
+        
+        
 
         return cell
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 132
     }
 }
