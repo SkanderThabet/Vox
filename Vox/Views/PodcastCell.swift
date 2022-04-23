@@ -20,7 +20,7 @@ class PodcastCell: UITableViewCell {
             podcastTrackName.text = podcast.trackName
             podcastArtistName.text = podcast.artistName
             podcastEpisodeCount.text = "\(podcast.trackCount ?? 0) Episodes"
-            print("Loading images with url : ", podcast.artworkUrl600 ?? "")
+//            print("Loading images with url : ", podcast.artworkUrl600 ?? "")
             guard let url = URL(string: podcast.artworkUrl600 ?? "") else { return }
 //            URLSession.shared.dataTask(with: url) { data, _, _ in
 //                print("Finished downloading image data :  ",data)

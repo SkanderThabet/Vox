@@ -10,6 +10,7 @@
 		0136FD3127FE755300D7DDFC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */; };
 		014E43BF280E071500865ECA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 014E43BE280E071500865ECA /* GoogleService-Info.plist */; };
 		014E43C2280E165C00865ECA /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014E43C1280E165C00865ECA /* Extension.swift */; };
+		015333202813998100BF2C97 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0153331F2813998100BF2C97 /* Episode.swift */; };
 		016A95E528050C3200373F36 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E428050C3200373F36 /* UserProfile.swift */; };
 		016A95E728050E1500373F36 /* NewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E628050E1500373F36 /* NewAccount.swift */; };
 		016A95E9280510B900373F36 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E8280510B900373F36 /* SignInViewController.swift */; };
@@ -67,6 +68,7 @@
 		0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		014E43BE280E071500865ECA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		014E43C1280E165C00865ECA /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		0153331F2813998100BF2C97 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		016A95E428050C3200373F36 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		016A95E628050E1500373F36 /* NewAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccount.swift; sourceTree = "<group>"; };
 		016A95E8280510B900373F36 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			children = (
 				01F15D202808FDA1001A10C6 /* Podcast.swift */,
 				01B96A62280F81AC0054985D /* SearchResults.swift */,
+				0153331F2813998100BF2C97 /* Episode.swift */,
 			);
 			path = Podcast;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				016A95E528050C3200373F36 /* UserProfile.swift in Sources */,
 				01C787F027F2FDCA00225B50 /* Vox.xcdatamodeld in Sources */,
 				016A95E9280510B900373F36 /* SignInViewController.swift in Sources */,
+				015333202813998100BF2C97 /* Episode.swift in Sources */,
 				016A95FC2805130200373F36 /* FirstOnboardViewController.swift in Sources */,
 				01D7A38628138D1700D7DF71 /* EpisodeControllerTableViewController.swift in Sources */,
 				014E43C2280E165C00865ECA /* Extension.swift in Sources */,

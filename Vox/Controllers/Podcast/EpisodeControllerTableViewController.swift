@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import FeedKit
 
 class EpisodeControllerTableViewController: UITableViewController {
 
+    var podcast : Podcast? {
+        didSet {
+            fetchEpisodes()
+            navigationItem.title = podcast?.trackName
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.title = "Episodes"
+        setupWork()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -19,28 +26,68 @@ class EpisodeControllerTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    //MARK: - Fetch episodes
+    fileprivate func fetchEpisodes(){
+        guard let feedUrl = podcast?.feedUrl else { return }
+        guard let url = URL(string: feedUrl) else { return }
+        let parser = FeedParser(URL: url)
+        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
+            // Do your thing, then back to the Main thread
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let feed):
+                    feed.rssFeed
+                    switch feed {
+                    case let .atom(feed):
+                        break
+                    case let .rss(feed):
+                        var episodes = [Episode]()
+                        feed.items?.forEach({ (feedItem) in
+                            let episode = Episode(title: feedItem.title ?? "")
+                            episodes.append(episode)
+                        })
+                        self.episodes = episodes
+                        self.tableView.reloadData()
+                        break
+                    case let .json(feed):
+                        break
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+                    self.displayError(error)
+                    break
+                }
+                
+            }
+        }
     }
-
+    
+    //MARK: - Setup Work
+    fileprivate func setupWork(){
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+    }
+    
+    fileprivate let cellId = "cellId"
+    
+    var episodes = [Episode]()
+    
+    // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return episodes.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let episode = self.episodes[indexPath.row]
+        cell.textLabel?.text = "\(episode.title ?? "")"
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
