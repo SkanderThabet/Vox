@@ -61,7 +61,7 @@ class PodcastSearchController: UITableViewController , UISearchBarDelegate{
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let label = UILabel()
-        label.text = "Please type a term for search ..."
+        label.text = self.podcasts.count <= 0 ? "Please type a term for search ..." : ""
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18,weight: .semibold)
         return label

@@ -7,12 +7,43 @@
 
 import Foundation
 import Alamofire
-
+import FeedKit
 
 class APIService {
     //singleton
     
     static let shared = APIService()
+    
+    func fetchEpisodes (feedUrl: String , completionHandler : @escaping ([Episode]) -> ()) {
+        guard let url = URL(string: feedUrl) else { return }
+        let parser = FeedParser(URL: url)
+        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
+            // Do your thing, then back to the Main thread
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let feed):
+                    feed.rssFeed
+                    switch feed {
+                    case let .atom(feed):
+                        break
+                    case let .rss(feed):
+                        let episodes = feed.toEpisodes()
+                        completionHandler(episodes)
+                        break
+                    case let .json(feed):
+                        break
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+                    
+                    break
+                }
+                
+            }
+        }
+    }
+    
     
     func fetchPodcats(searchText : String, completionHandler : @escaping ([Podcast]) -> ()) {
         let url = "https://itunes.apple.com/search"

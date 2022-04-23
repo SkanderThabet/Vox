@@ -30,38 +30,39 @@ class EpisodeControllerTableViewController: UITableViewController {
     //MARK: - Fetch episodes
     fileprivate func fetchEpisodes(){
         guard let feedUrl = podcast?.feedUrl else { return }
-        guard let url = URL(string: feedUrl) else { return }
-        let parser = FeedParser(URL: url)
-        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
-            // Do your thing, then back to the Main thread
+        APIService.shared.fetchEpisodes(feedUrl: feedUrl) { (episodes) in
+            self.episodes = episodes
             DispatchQueue.main.async {
-                switch result {
-                case .success(let feed):
-                    feed.rssFeed
-                    switch feed {
-                    case let .atom(feed):
-                        break
-                    case let .rss(feed):
-                        var episodes = [Episode]()
-                        feed.items?.forEach({ (feedItem) in
-                            let episode = Episode(feedItem: feedItem)
-                            episodes.append(episode)
-                        })
-                        self.episodes = episodes
-                        self.tableView.reloadData()
-                        break
-                    case let .json(feed):
-                        break
-                    }
-                    
-                case .failure(let error):
-                    print(error)
-                    self.displayError(error)
-                    break
-                }
-                
+                self.tableView.reloadData()
             }
         }
+//        guard let url = URL(string: feedUrl) else { return }
+//        let parser = FeedParser(URL: url)
+//        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
+//            // Do your thing, then back to the Main thread
+//            DispatchQueue.main.async {
+//                switch result {
+//                case .success(let feed):
+//                    feed.rssFeed
+//                    switch feed {
+//                    case let .atom(feed):
+//                        break
+//                    case let .rss(feed):
+//                        self.episodes = feed.toEpisodes()
+//                        self.tableView.reloadData()
+//                        break
+//                    case let .json(feed):
+//                        break
+//                    }
+//
+//                case .failure(let error):
+//                    print(error)
+//                    self.displayError(error)
+//                    break
+//                }
+//
+//            }
+//        }
     }
     
     //MARK: - Setup Work

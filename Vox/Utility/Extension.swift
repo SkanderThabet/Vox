@@ -24,3 +24,11 @@ extension UIViewController {
     present(errorAlertController, animated: true, completion: nil)
   }
 }
+
+extension String {
+    func toSecureHTTPS() -> String {
+        return self.contains("https") ? self :
+        self.replacingOccurrences(of: "http", with: "https")
+    }
+    
+}
