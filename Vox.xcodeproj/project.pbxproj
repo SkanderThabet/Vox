@@ -40,6 +40,8 @@
 		01C7880027F2FDCA00225B50 /* VoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C787FF27F2FDCA00225B50 /* VoxTests.swift */; };
 		01C7880A27F2FDCA00225B50 /* VoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C7880927F2FDCA00225B50 /* VoxUITests.swift */; };
 		01C7880C27F2FDCA00225B50 /* VoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C7880B27F2FDCA00225B50 /* VoxUITestsLaunchTests.swift */; };
+		01C7E824281452CC001C828E /* PlayerDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01C7E823281452CC001C828E /* PlayerDetailsView.xib */; };
+		01C7E82628145558001C828E /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C7E82528145558001C828E /* PlayerDetailsView.swift */; };
 		01D7A38628138D1700D7DF71 /* EpisodeControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D7A38528138D1700D7DF71 /* EpisodeControllerTableViewController.swift */; };
 		01F15D1B2808E3AB001A10C6 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1A2808E3AB001A10C6 /* MainTabBarViewController.swift */; };
 		01F15D1D2808E502001A10C6 /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1C2808E502001A10C6 /* PodcastViewController.swift */; };
@@ -105,6 +107,8 @@
 		01C7880527F2FDCA00225B50 /* VoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C7880927F2FDCA00225B50 /* VoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoxUITests.swift; sourceTree = "<group>"; };
 		01C7880B27F2FDCA00225B50 /* VoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		01C7E823281452CC001C828E /* PlayerDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerDetailsView.xib; sourceTree = "<group>"; };
+		01C7E82528145558001C828E /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
 		01D7A38528138D1700D7DF71 /* EpisodeControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeControllerTableViewController.swift; sourceTree = "<group>"; };
 		01F15D1A2808E3AB001A10C6 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		01F15D1C2808E502001A10C6 /* PodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				01B96A68280F9E560054985D /* PodcastCell.swift */,
 				015333212813A52100BF2C97 /* EpisodeCell.swift */,
 				015333222813A52100BF2C97 /* EpisodeCell.xib */,
+				01C7E823281452CC001C828E /* PlayerDetailsView.xib */,
+				01C7E82528145558001C828E /* PlayerDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -496,6 +502,7 @@
 				01C787F227F2FDCA00225B50 /* Assets.xcassets in Resources */,
 				01C787ED27F2FDCA00225B50 /* Main.storyboard in Resources */,
 				01B96A67280F9BC40054985D /* PodcastCell.xib in Resources */,
+				01C7E824281452CC001C828E /* PlayerDetailsView.xib in Resources */,
 				015333242813A52100BF2C97 /* EpisodeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,6 +631,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C7E82628145558001C828E /* PlayerDetailsView.swift in Sources */,
 				01F15D1F2808FD13001A10C6 /* PodcastSearchController.swift in Sources */,
 				016A95EF2805122B00373F36 /* SignUpViewController.swift in Sources */,
 				01B96A69280F9E560054985D /* PodcastCell.swift in Sources */,
