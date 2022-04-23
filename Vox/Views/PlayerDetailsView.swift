@@ -23,7 +23,14 @@ class PlayerDetailsView: UIView {
     //MARK: - Outlets
 
     @IBOutlet weak var playerDismissBtn: UIButton!
-    @IBOutlet weak var playerImageView: UIImageView!
+    @IBOutlet weak var playerImageView: UIImageView! {
+        didSet {
+            playerImageView.layer.cornerRadius = 5
+            playerImageView.clipsToBounds = true
+            let scale:CGFloat = 0.7
+            playerImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+        }
+    }
     @IBOutlet weak var playerSlider: UISlider!
     @IBOutlet weak var playerEpisodeLabel: UILabel!
     @IBOutlet weak var playerEpisodeAuthorLabel: UILabel!
@@ -37,13 +44,17 @@ class PlayerDetailsView: UIView {
             playPauseBtn.addTarget(self, action: #selector(handlePlayPause), for: .touchUpInside)
         }
     }
+    //MARK: - Handle Play & Pause Function
+    
     @objc func handlePlayPause() {
         if player.timeControlStatus == .paused {
             player.play()
             playPauseBtn.setImage(UIImage(named: "pause"), for: .normal)
+            self.enlargeEpisodeImageView()
         } else {
             player.pause()
             playPauseBtn.setImage(UIImage(named: "play"), for: .normal)
+            shrinkEpisodeImageView()
         }
     }
     
@@ -51,7 +62,25 @@ class PlayerDetailsView: UIView {
     
     //MARK: - Actions
     @IBAction func playerDismissActionBtn(_ sender: Any) {
+        player.pause()
         self.removeFromSuperview()
+        
+
+    }
+    //MARK: - enlarge Podcast episode imageview
+    fileprivate func enlargeEpisodeImageView() {
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut) {
+            self.playerImageView.transform = .identity
+        }
+        
+    }
+    //MARK: - shrink Podcast episode imageview
+    fileprivate func shrinkEpisodeImageView() {
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut) {
+            let scale:CGFloat = 0.7
+            self.playerImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+        }
+        
     }
     
     //MARK: - Play episode Function
@@ -68,5 +97,17 @@ class PlayerDetailsView: UIView {
         avPlayer.automaticallyWaitsToMinimizeStalling = false
         return avPlayer
     }()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let time = CMTimeMake(value: 1, timescale: 3)
+        let times = [NSValue(time: time)]
+        player.addBoundaryTimeObserver(forTimes: times, queue: .main) {
+            print("Episode started playing")
+            self.enlargeEpisodeImageView()
+        }
+        
+    }
 
 }
