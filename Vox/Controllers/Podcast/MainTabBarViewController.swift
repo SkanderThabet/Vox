@@ -16,35 +16,49 @@ class MainTabBarViewController: UITabBarController {
         // Do any additional setup after loading the view.
         setupViewControllers()
         setupPlayerDetailsView()
-        perform(#selector(maximizePlayerDetails), with: nil, afterDelay: 1)
+//        perform(#selector(maximizePlayerDetails), with: nil, afterDelay: 1)
     }
     
     @objc func minimizePlayerDetails()  {
+        print(111)
         maximizedTopAnchorConstraint.isActive = false
         minimizedTopAnchorConstraint.isActive = true
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
-        }
+            self.tabBar.isHidden = false
+            self.tabBar.transform = .identity
+            self.playerDetailsView.maximizedStackPlayerView.alpha = 0
+            self.playerDetailsView.miniPlayerView.alpha = 1
+        })
 
     }
     
-    @objc func maximizePlayerDetails() {
+    func maximizePlayerDetails(episode: Episode?) {
+        print(222)
         maximizedTopAnchorConstraint.isActive = true
         maximizedTopAnchorConstraint.constant = 0
         minimizedTopAnchorConstraint.isActive = false
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut) {
-            self.view.layoutIfNeeded()
+        if (episode != nil) {
+            playerDetailsView.episode = episode
         }
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+            self.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
+            self.tabBar.isHidden = true
+            self.playerDetailsView.maximizedStackPlayerView.alpha = 1
+            self.playerDetailsView.miniPlayerView.alpha = 0
+        })
     }
     
     // MARK: - Setup Functions
+    let playerDetailsView = PlayerDetailsView.initFromNib()
     var maximizedTopAnchorConstraint : NSLayoutConstraint!
     var minimizedTopAnchorConstraint : NSLayoutConstraint!
     
-    fileprivate func setupPlayerDetailsView() {
+    func setupPlayerDetailsView() {
         print("Setting up PlayerDetailsView")
-        let playerDetailsView = PlayerDetailsView.initFromNib()
-        playerDetailsView.backgroundColor = .red
+        
+        
         
         //use auto layout
         view.insertSubview(playerDetailsView, belowSubview: tabBar)
@@ -52,8 +66,11 @@ class MainTabBarViewController: UITabBarController {
         //enable auto layout
         playerDetailsView.translatesAutoresizingMaskIntoConstraints = false
         
-        maximizedTopAnchorConstraint = playerDetailsView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height)
+        maximizedTopAnchorConstraint = playerDetailsView.topAnchor.constraint(equalTo: view.topAnchor, constant: 1000)
         maximizedTopAnchorConstraint.isActive = true
+        
+       
+        
         minimizedTopAnchorConstraint = playerDetailsView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: -64)
         
         playerDetailsView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
