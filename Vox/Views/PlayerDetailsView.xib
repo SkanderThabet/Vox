@@ -20,6 +20,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epP-kZ-ZgM">
                     <rect key="frame" x="0.0" y="44" width="428" height="64"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4f8-2i-7ah">
+                            <rect key="frame" x="0.0" y="0.0" width="428" height="0.66666666666666663"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="hbP-q5-0e0"/>
+                            </constraints>
+                        </view>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fTp-dC-AjY">
                             <rect key="frame" x="8" y="8" width="412" height="48"/>
                             <subviews>
@@ -59,8 +66,11 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="4pc-RQ-AW0"/>
+                        <constraint firstItem="4f8-2i-7ah" firstAttribute="leading" secondItem="epP-kZ-ZgM" secondAttribute="leading" id="Cye-bx-NOU"/>
+                        <constraint firstAttribute="trailing" secondItem="4f8-2i-7ah" secondAttribute="trailing" id="H8V-2z-I1m"/>
                         <constraint firstAttribute="trailing" secondItem="fTp-dC-AjY" secondAttribute="trailing" constant="8" id="YaI-Pq-LBB"/>
                         <constraint firstItem="fTp-dC-AjY" firstAttribute="leading" secondItem="epP-kZ-ZgM" secondAttribute="leading" constant="8" id="dI4-Js-RsX"/>
+                        <constraint firstItem="4f8-2i-7ah" firstAttribute="top" secondItem="epP-kZ-ZgM" secondAttribute="top" id="rPO-V7-cJR"/>
                         <constraint firstItem="fTp-dC-AjY" firstAttribute="top" secondItem="epP-kZ-ZgM" secondAttribute="top" constant="8" id="ytw-DF-gJS"/>
                         <constraint firstAttribute="bottom" secondItem="fTp-dC-AjY" secondAttribute="bottom" constant="8" id="zL3-rP-5g4"/>
                     </constraints>
