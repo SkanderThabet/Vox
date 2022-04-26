@@ -27,6 +27,7 @@
 		016A95FE2805131700373F36 /* SecondOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95FD2805131700373F36 /* SecondOnboardViewController.swift */; };
 		016A96002805132000373F36 /* LastOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95FF2805132000373F36 /* LastOnboardViewController.swift */; };
 		0174C6C6281771BC007CF424 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174C6C5281771BC007CF424 /* UIApplication.swift */; };
+		0174C6C828179958007CF424 /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174C6C728179958007CF424 /* FavoritesCollectionViewController.swift */; };
 		01B96A63280F81AC0054985D /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B96A62280F81AC0054985D /* SearchResults.swift */; };
 		01B96A65280F93660054985D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B96A64280F93660054985D /* APIService.swift */; };
 		01B96A67280F9BC40054985D /* PodcastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B96A66280F9BC40054985D /* PodcastCell.xib */; };
@@ -91,6 +92,7 @@
 		016A95FD2805131700373F36 /* SecondOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardViewController.swift; sourceTree = "<group>"; };
 		016A95FF2805132000373F36 /* LastOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastOnboardViewController.swift; sourceTree = "<group>"; };
 		0174C6C5281771BC007CF424 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		0174C6C728179958007CF424 /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
 		01B96A62280F81AC0054985D /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		01B96A64280F93660054985D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		01B96A66280F9BC40054985D /* PodcastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastCell.xib; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				01F15D1C2808E502001A10C6 /* PodcastViewController.swift */,
 				01F15D1E2808FD13001A10C6 /* PodcastSearchController.swift */,
 				01D7A38528138D1700D7DF71 /* EpisodeControllerTableViewController.swift */,
+				0174C6C728179958007CF424 /* FavoritesCollectionViewController.swift */,
 			);
 			path = Podcast;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0174C6C828179958007CF424 /* FavoritesCollectionViewController.swift in Sources */,
 				01C7E82628145558001C828E /* PlayerDetailsView.swift in Sources */,
 				01F15D1F2808FD13001A10C6 /* PodcastSearchController.swift in Sources */,
 				016A95EF2805122B00373F36 /* SignUpViewController.swift in Sources */,
