@@ -26,6 +26,8 @@ extension UIViewController {
   }
 }
 
+
+
 extension String {
     func toSecureHTTPS() -> String {
         return self.contains("https") ? self :

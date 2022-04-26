@@ -7,6 +7,7 @@
 
 import UIKit
 import AVKit
+import MediaPlayer
 
 class PlayerDetailsView: UIView {
     
@@ -190,10 +191,48 @@ class PlayerDetailsView: UIView {
         miniPlayerView.addGestureRecognizer(panGesture)
         maximizedStackPlayerView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleDismissalPan)))
     }
+    
+    fileprivate func setupAudioSession() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch let errSession {
+            print("Failed to activate Session : ",errSession)
+           
+        }
+    }
+    
+    fileprivate func setupRemoteControl() {
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        let commandCenter = MPRemoteCommandCenter.shared()
+        commandCenter.playCommand.isEnabled = true
+        commandCenter.playCommand.addTarget { (_) in
+            print("Should play the podcast")
+            self.player.play()
+            self.playPauseBtn.setImage(UIImage(named: "pause"), for: .normal)
+            self.miniPlayerPauseBtn.setImage(UIImage(named: "pause"), for: .normal)
+            return .success
+        }
+        commandCenter.pauseCommand.isEnabled = true
+        commandCenter.pauseCommand.addTarget { (_) in
+            print("Should pause the podcast")
+            self.player.pause()
+            self.playPauseBtn.setImage(UIImage(named: "play"), for: .normal)
+            self.miniPlayerPauseBtn.setImage(UIImage(named: "play"), for: .normal)
+            return .success
+        }
+        commandCenter.togglePlayPauseCommand.isEnabled = true
+        commandCenter.togglePlayPauseCommand.addTarget { (_) in
+            self.handlePlayPause()
+            return .success
+        }
+        
+    }
     //MARK: - Awake From Nib overriden function
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setupRemoteControl()
+        setupAudioSession()
         setupGesture()
         observePlayerCurrentTime()
         let time = CMTimeMake(value: 1, timescale: 3)
