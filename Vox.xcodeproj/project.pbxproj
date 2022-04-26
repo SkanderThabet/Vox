@@ -26,6 +26,7 @@
 		016A95FC2805130200373F36 /* FirstOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95FB2805130200373F36 /* FirstOnboardViewController.swift */; };
 		016A95FE2805131700373F36 /* SecondOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95FD2805131700373F36 /* SecondOnboardViewController.swift */; };
 		016A96002805132000373F36 /* LastOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95FF2805132000373F36 /* LastOnboardViewController.swift */; };
+		0174C6C6281771BC007CF424 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174C6C5281771BC007CF424 /* UIApplication.swift */; };
 		01B96A63280F81AC0054985D /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B96A62280F81AC0054985D /* SearchResults.swift */; };
 		01B96A65280F93660054985D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B96A64280F93660054985D /* APIService.swift */; };
 		01B96A67280F9BC40054985D /* PodcastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B96A66280F9BC40054985D /* PodcastCell.xib */; };
@@ -89,6 +90,7 @@
 		016A95FB2805130200373F36 /* FirstOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardViewController.swift; sourceTree = "<group>"; };
 		016A95FD2805131700373F36 /* SecondOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardViewController.swift; sourceTree = "<group>"; };
 		016A95FF2805132000373F36 /* LastOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastOnboardViewController.swift; sourceTree = "<group>"; };
+		0174C6C5281771BC007CF424 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		01B96A62280F81AC0054985D /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		01B96A64280F93660054985D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		01B96A66280F9BC40054985D /* PodcastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastCell.xib; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				014E43C1280E165C00865ECA /* Extension.swift */,
 				015333252813B17E00BF2C97 /* RSSFeed.swift */,
+				0174C6C5281771BC007CF424 /* UIApplication.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				01F15D1B2808E3AB001A10C6 /* MainTabBarViewController.swift in Sources */,
 				0136FD3127FE755300D7DDFC /* WelcomeViewController.swift in Sources */,
 				016A95FE2805131700373F36 /* SecondOnboardViewController.swift in Sources */,
+				0174C6C6281771BC007CF424 /* UIApplication.swift in Sources */,
 				016A95ED280511F900373F36 /* ProfileViewController.swift in Sources */,
 				01F15D212808FDA1001A10C6 /* Podcast.swift in Sources */,
 				016A95F8280512CB00373F36 /* SecondOTPViewController.swift in Sources */,

@@ -45,11 +45,13 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hf-w1-eYA">
                                     <rect key="frame" x="308" y="0.0" width="48" height="48"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="48" id="ng0-us-Upl"/>
+                                        <constraint firstAttribute="width" constant="48" id="vFB-He-l3m"/>
                                     </constraints>
                                     <color key="tintColor" systemColor="labelColor"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" image="pause"/>
+                                    <state key="normal" image="pause">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                    </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWq-b4-eYz">
                                     <rect key="frame" x="364" y="0.0" width="48" height="48"/>
@@ -255,6 +257,7 @@
                 <outlet property="currentTimeSlider" destination="oIf-MP-CSN" id="o8G-Vq-nS5"/>
                 <outlet property="durationTimeLabel" destination="L0b-1N-YD2" id="3uG-MR-prj"/>
                 <outlet property="forwardBtn" destination="Auh-kF-kgA" id="S2a-DQ-5HV"/>
+                <outlet property="homepageRectangleImg" destination="coY-zW-Fl7" id="Y0B-Fv-o71"/>
                 <outlet property="maximizedStackPlayerView" destination="HlC-lO-0kO" id="CKu-0i-pcL"/>
                 <outlet property="miniPlayerEpTitleLabel" destination="5RM-SX-NJs" id="9vn-hl-QYW"/>
                 <outlet property="miniPlayerFastforwardBtn" destination="vWq-b4-eYz" id="hoi-Ex-E8u"/>
