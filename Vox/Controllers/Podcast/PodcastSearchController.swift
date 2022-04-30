@@ -64,6 +64,7 @@ class PodcastSearchController: UITableViewController , UISearchBarDelegate{
         label.text = self.podcasts.count <= 0 ? "Please type a term for search ..." : ""
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18,weight: .semibold)
+        label.textColor = .purple
         return label
     }
     

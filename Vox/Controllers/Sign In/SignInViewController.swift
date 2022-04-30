@@ -24,7 +24,66 @@ class SignInViewController: UIViewController {
         handleLogin()
     }
     
-    // MARK: - Handle Login Function
+    
+    public func handleProfileVC(_ json: (Any?)) {
+        let email = (json as! UserProfile).user.email
+        print(email)
+        let firstname = (json as! UserProfile).user.firstname
+        let lastname = (json as! UserProfile).user.lastname
+        let avatar = (json as! UserProfile).user.avatar
+        let dob = (json as! UserProfile).user.dob
+        let username = (json as! UserProfile).user.username
+        let fullname = "\(firstname) \(lastname)"
+        let profileVC = ProfileViewController.sharedInstance()
+        profileVC.email = email
+        profileVC.firstName = firstname
+        profileVC.lastName = lastname
+        profileVC.dob = dob
+        profileVC.userName = username
+        profileVC.avatar = avatar
+        profileVC.fullName = fullname
+        profileVC.status = "Online"
+//        self.navigationController?.pushViewController(profileVC, animated: true)
+        
+    }
+    
+    
+    fileprivate func handleHomeScreenVC(_ json: (Any?)) {
+        let firstname = (json as! UserProfile).user.firstname
+        let lastname = (json as! UserProfile).user.lastname
+        let avatar = (json as! UserProfile).user.avatar
+        let dob = (json as! UserProfile).user.dob
+        let username = (json as! UserProfile).user.username
+        let fullname = "\(firstname) \(lastname)"
+        let homeVC = HomeViewController.sharedInstance()
+        let hour = Calendar.current.component( .hour, from:Date() ) > 11 ? "Good Evening" : "Good Morning"
+        homeVC.greetinLabel = "\(hour),\n\(firstname)"
+        self.navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
+    
+    fileprivate func loginCallingFunction(_ email: String, _ password: String, _ hud: JGProgressHUD) {
+        APIService.shared.callingLoginApi(email: email, password: password, hud) { result in
+            switch result {
+            case .success(let json):
+                print(json as AnyObject)
+                self.handleProfileVC(json)
+                self.handleHomeScreenVC(json)
+                let token = (json as! UserProfile).token
+                print(token)
+                TokenService.tokenInstance.saveToken(token: token)
+                let test = TokenService.tokenInstance.getToken()
+                print(test)
+                
+            case .failure(let err):
+                self.errorLabel.isHidden = false
+                self.errorLabel.text = "Your credentials are not correct, please try again"
+                self.displayError(err)
+                print("Error nav to profile : ",err)
+            }
+        }
+    }
+    
     @objc func handleLogin(){
         let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = "Logging in"
@@ -34,35 +93,10 @@ class SignInViewController: UIViewController {
         guard let password = passwordTF.text else { return }
         errorLabel.isHidden = true
         
-        let url = "https://voxappli.herokuapp.com/api/vox/auth/login"
-        let params = ["email" : email,"password" : password]
-        AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
-            .validate(statusCode: 200..<300)
-            .responseJSON { (DataResponse)  in
-                print(DataResponse)
-                hud.dismiss()
-                if let _ = DataResponse.error {
-                    self.errorLabel.isHidden = false
-                    self.errorLabel.text = "Your credentials are not correct, please try again"
-                    self.displayError(DataResponse.error)
-                    print(DataResponse.error as Any)
-                    return
-                }
-               
-                
-                self.showAlert(title: "Loggin", message: "Successfully logged in")
-                self.performSegue(withIdentifier: "signInToProfile", sender: self)
-                
-            }
+        loginCallingFunction(email, password, hud)
+        
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "signInToProfile" {
-            guard let toProfile = segue.destination as? ProfileViewController else {
-                return
-        }
-            
-        }
-    }
+    
     
     // MARK: - Show alert Function
     
@@ -91,3 +125,12 @@ class SignInViewController: UIViewController {
     */
 
 }
+
+extension SignInViewController {
+    static func sharedInstance() -> SignInViewController {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+        
+    }
+}
+

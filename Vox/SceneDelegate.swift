@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import StreamChat
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -16,6 +16,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        let config = ChatClientConfig(apiKey: .init("dz5f4d5kzrue"))
+
+            /// user id and token for the user
+            let userId = "tutorial-droid"
+            let token: Token =
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidHV0b3JpYWwtZHJvaWQifQ.NhEr0hP9W9nwqV7ZkdShxvi02C5PR7SJE7Cs4y7kyqg"
+
+            /// Step 1: create an instance of ChatClient and share it using the singleton
+            ChatClient.shared = ChatClient(config: config)
+
+            /// Step 2: connect to chat
+            ChatClient.shared.connectUser(
+                userInfo: UserInfo(
+                    id: userId,
+                    name: "Tutorial Droid",
+                    imageURL: URL(string: "https://bit.ly/2TIt8NR")
+                ),
+                token: token
+            )
+
+            /// Step 3: create the ChannelList view controller
+            let channelList = ChatViewController()
+            let query = ChannelListQuery(filter: .containMembers(userIds: [userId]))
+            channelList.controller = ChatClient.shared.channelListController(query: query)
+
+//            /// Step 4: similar to embedding with a navigation controller using Storyboard
+//            window?.rootViewController = UINavigationController(rootViewController: channelList)
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

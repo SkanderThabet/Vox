@@ -16,7 +16,6 @@ class MainTabBarViewController: UITabBarController {
         // Do any additional setup after loading the view.
         setupViewControllers()
         setupPlayerDetailsView()
-//        perform(#selector(maximizePlayerDetails), with: nil, afterDelay: 1)
     }
     
     @objc func minimizePlayerDetails()  {
@@ -85,7 +84,8 @@ class MainTabBarViewController: UITabBarController {
     
     func setupViewControllers() {
         let layout = UICollectionViewFlowLayout()
-        let favoritesController = FavoritesCollectionViewController(collectionViewLayout: layout)
+        let favoritesController = FavoritesController(collectionViewLayout: layout)
+
         viewControllers = [
             generateNavigationController(for: PodcastSearchController(), title: "Search", image: UIImage(named: "search")!),
             generateNavigationController(for: favoritesController, title: "Favorites", image: UIImage(named: "favorites")!),

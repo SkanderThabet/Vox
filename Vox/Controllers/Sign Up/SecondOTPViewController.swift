@@ -28,6 +28,7 @@ class SecondOTPViewController: UIViewController {
         super.viewDidLoad()
         numberReceiverOTPLabel.text = textValue
         phoneAuthLogin()
+        firstDigitTF.showDoneButtonOnKeyboard()
         
         // Do any additional setup after loading the view.
     }
@@ -97,3 +98,5 @@ class SecondOTPViewController: UIViewController {
     */
 
 }
+
+

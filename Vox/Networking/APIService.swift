@@ -8,12 +8,16 @@
 import Foundation
 import Alamofire
 import FeedKit
+import JGProgressHUD
+
+
+
 
 class APIService {
     //singleton
     
     static let shared = APIService()
-    
+    var user : UserProfile?
     func fetchEpisodes (feedUrl: String , completionHandler : @escaping ([Episode]) -> ()) {
         guard let url = URL(string: feedUrl) else { return }
         DispatchQueue.global(qos: .background).async {
@@ -76,5 +80,116 @@ class APIService {
                 //                self.displayError(err)
             }
         }
+    }
+    
+//    func callingLoginApi(email : String, password: String, _ hud: JGProgressHUD, completionHandler : @escaping Handler) {
+//        let url = "https://voxappli.herokuapp.com/api/vox/auth/login"
+//        let params = ["email" : email,"password" : password]
+//
+//        AF.request(url, method: .post, parameters: params, encoder: JSONParameterEncoder.default).response { response in
+//            debugPrint(response)
+//            hud.dismiss()
+//            switch response.result {
+//            case .success(let data):
+//                do {
+//                    let json = try JSONDecoder().decode(UserProfile.self, from: data!)
+////                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
+//                    if (response.response?.statusCode == 200) {
+//                        completionHandler(.success(json))
+//                    } else {
+//                        completionHandler(.failure(.customMessage(message: "Please check your network connectivity")))
+//                    }
+//                } catch let error {
+//                    print(error)
+//                    completionHandler(.failure(.customMessage(message: "Please try again")))
+//                }
+//
+//            case .failure(let error):
+//                print(error)
+//                completionHandler(.failure(.customMessage(message: "Please try again")))
+//            }
+//    }
+//}
+    func callingLoginApi(email : String, password: String, _ hud: JGProgressHUD, completionHandler : @escaping Handler)  {
+        let url = "https://voxappli.herokuapp.com/api/vox/auth/login"
+        let params = ["email" : email,"password" : password]
+        AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
+            .validate(statusCode: 200..<300)
+            .responseData { (DataResponse)  in
+                print(DataResponse)
+                hud.dismiss()
+                if let _ = DataResponse.error {
+                    completionHandler(.failure(.customMessage(message: "Please check your network connectivity")))
+                    print(DataResponse.error as Any)
+                    return
+                }
+                switch DataResponse.result {
+                case .success(let data):
+                    do {
+                        let json = try JSONDecoder().decode(UserProfile.self, from: data )
+                        print(json)
+                        UserDefaults.standard.set(json, forKey: "user")
+                        self.user = UserDefaults.standard.callingUser(forKey: "user")
+                        print("USer : ",self.user!)
+                        completionHandler(.success(json))
+                    } catch let error {
+                        print(error)
+                        completionHandler(.failure(.customMessage(message: "Please Try Again")))
+                        
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+                    completionHandler(.failure(.customMessage(message: "Please Try Again")))
+                    
+                }
+                
+            }
+    }
+    
+    func callingLogOutApi(vc : UIViewController){
+        let headers : HTTPHeaders = [
+            "token": "\(TokenService.tokenInstance.getToken)"
+        ]
+        let url = "https://voxappli.herokuapp.com/api/vox/auth/"
+        AF.request(url, method: .get, headers: headers).response { response in
+            switch response.result {
+            case.success(_):
+                TokenService.tokenInstance.removeToken()
+                vc.navigationController?.popToRootViewController(animated: true)
+                print("Token removed")
+            case .failure(let error):
+                print("Error fetch logged in user : ",error)
+            }
+        }
+        
+        
+    }
+    
+    func callingFetchLoggedUser(completionHandler : @escaping Handler){
+        let url = "https://voxappli.herokuapp.com/api/vox/auth"
+        var urlRequest = URLRequest(url: URL(string: url)!)
+            urlRequest.httpMethod = HTTPMethod.get.rawValue
+            urlRequest = try! JSONEncoding.default.encode(urlRequest, with: nil)
+            urlRequest.setValue("\(TokenService.tokenInstance.getToken())", forHTTPHeaderField: "Authorization")
+
+        AF.request(urlRequest).responseData { response in
+            switch response.result {
+            case.success(let data):
+                do {
+                    let json = try JSONDecoder().decode(UserProfile.self, from: data)
+                    print(json)
+                    completionHandler(.success(response))
+                } catch let error {
+                    print(error)
+                    completionHandler(.failure(.customMessage(message: "Error While Fetching Token for user")))
+                }
+                completionHandler(.success(response))
+            case .failure(let error):
+                completionHandler(.failure(.customMessage(message: "Error While Fetching Token for user")))
+                print(error)
+            }
+        }
+        
     }
 }

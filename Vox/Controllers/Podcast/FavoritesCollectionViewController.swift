@@ -10,10 +10,10 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class FavoritesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
+    
     fileprivate func setupCollectionView() {
-        self.collectionView.backgroundColor = .blue
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView.backgroundColor = .white
+        self.collectionView!.register(FavoritePodcastCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
     override func viewDidLoad() {
@@ -49,7 +49,6 @@ class FavoritesCollectionViewController: UICollectionViewController, UICollectio
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .red
         // Configure the cell
     
         return cell
@@ -57,7 +56,7 @@ class FavoritesCollectionViewController: UICollectionViewController, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (view.frame.width - 3 * 16) / 2
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: width, height: width + 46)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)

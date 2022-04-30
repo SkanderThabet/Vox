@@ -8,6 +8,12 @@
 import UIKit
 import CoreData
 import Firebase
+import IQKeyboardManagerSwift
+import StreamChat
+
+extension ChatClient {
+    static var shared: ChatClient!
+}
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         window?.rootViewController = MainTabBarViewController()
-        
+        IQKeyboardManager.shared.enable = true
         
         
         return true

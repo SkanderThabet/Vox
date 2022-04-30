@@ -26,13 +26,13 @@ class PlayerDetailsView: UIView {
             guard let url = URL(string: episode.imageUrl ?? "") else { return }
             playerImageView.sd_setImage(with: url)
             miniPlayerImageView.sd_setImage(with: url)
-            miniPlayerImageView.sd_setImage(with: url) { image, _, _, _ in
-                let image = self.playerImageView.image ?? UIImage()
-                let artwork = MPMediaItemArtwork(boundsSize: .zero, requestHandler: { (size) -> UIImage in
-                    return image
-                })
-                MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPMediaItemPropertyArtwork] = artwork
-            }
+//            miniPlayerImageView.sd_setImage(with: url) { image, _, _, _ in
+//                let image = self.playerImageView.image ?? UIImage()
+//                let artwork = MPMediaItemArtwork(boundsSize: .zero, requestHandler: { (size) -> UIImage in
+//                    return image
+//                })
+//                MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPMediaItemPropertyArtwork] = artwork
+//            }
         }
     }
     
@@ -42,15 +42,15 @@ class PlayerDetailsView: UIView {
         nowPlayingInfo[MPMediaItemPropertyArtwork] = episode.imageUrl
         nowPlayingInfo[MPMediaItemPropertyTitle] = episode.title
         nowPlayingInfo[MPMediaItemPropertyArtist] = episode.author
-//        guard let url = URL(string: episode.imageUrl ?? "") else { return }
-//        miniPlayerImageView.sd_setImage(with: url) { image, _, _, _ in
-//            guard let image = image else { return }
-//
-//            let artwork = MPMediaItemArtwork(boundsSize: image.size, requestHandler: { (_) -> UIImage in
-//                return image
-//            })
-//            nowPlayingInfo[MPMediaItemPropertyArtwork] = artwork
-//        }
+        guard let url = URL(string: episode.imageUrl ?? "") else { return }
+        miniPlayerImageView.sd_setImage(with: url) { image, _, _, _ in
+            guard let image = image else { return }
+
+            let artwork = MPMediaItemArtwork(boundsSize: image.size, requestHandler: { (_) -> UIImage in
+                return image
+            })
+            nowPlayingInfo[MPMediaItemPropertyArtwork] = artwork
+        }
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
     

@@ -7,25 +7,26 @@
 
 import Foundation
 
-public struct UserProfile : Codable {
-    
-  // MARK: - Properties
-    public let firstname: String
-    public let lastname : String
-    public let dob: String
-    public let username: String
-    public let email: String
-    public let avatar: URL
-    
-  // MARK: - Methods
-  public init(firstname: String, lastname: String, dob: String, username: String, email: String, avatar: URL) {
-      self.firstname = firstname
-      self.lastname = lastname
-      self.dob = dob
-      self.username = username
-      self.email = email
-      self.avatar = avatar
-  }
-    
-    
+// MARK: - UserProfile
+struct UserProfile: Codable {
+    let success: Bool
+    let msg, token: String
+    let user: User
 }
+
+// MARK: - User
+struct User: Codable {
+    let id, username, email, firstname: String
+    let lastname, dob: String
+    let avatar: String
+    let v: Int
+    let updatedAt, password: String
+
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case username, email, firstname, lastname, dob, avatar
+        case v = "__v"
+        case updatedAt, password
+    }
+}
+

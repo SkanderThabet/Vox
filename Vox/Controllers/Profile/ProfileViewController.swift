@@ -21,19 +21,37 @@ class ProfileViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func signOutBtn(_ sender: Any) {
+        APIService.shared.callingLogOutApi(vc: self)
     }
     
+    var fullName, firstName, lastName , status, userName , email , dob , avatar: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        usernameTF.text = userName
+        firstnameTF.text = firstName
+        lastnameTF.text = lastName
+        dobTF.text = dob
+        emailTF.text = email
+        guard let url = URL(string: avatar ?? "") else { return }
+        avatarPlaceHolder.sd_setImage(with: url)
+        avatarPlaceHolder.layer.cornerRadius = 28
+        statusLabel.text = status
+        fullnameLabel.text = fullName
+        
         // Do any additional setup after loading the view.
     }
     
-
+    func showAlert(title: String, message: String) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+    
+    
     /*
     // MARK: - Navigation
-
+     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
@@ -41,4 +59,12 @@ class ProfileViewController: UIViewController {
     }
     */
 
+}
+
+extension ProfileViewController {
+    static func sharedInstance() -> ProfileViewController {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        
+    }
 }
