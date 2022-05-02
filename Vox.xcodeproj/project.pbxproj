@@ -29,7 +29,9 @@
 		016A96002805132000373F36 /* LastOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95FF2805132000373F36 /* LastOnboardViewController.swift */; };
 		0174C6C6281771BC007CF424 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174C6C5281771BC007CF424 /* UIApplication.swift */; };
 		018562FA281DA4690073F814 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018562F9281DA4690073F814 /* ChatViewController.swift */; };
+		018562FD281DA98A0073F814 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018562FC281DA98A0073F814 /* MainMenuTableViewController.swift */; };
 		01928A91281A073E005572E5 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01928A90281A073E005572E5 /* TokenService.swift */; };
+		01B4D6E02820963400843C25 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B4D6DF2820963400843C25 /* MenuController.swift */; };
 		01B96A63280F81AC0054985D /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B96A62280F81AC0054985D /* SearchResults.swift */; };
 		01B96A65280F93660054985D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B96A64280F93660054985D /* APIService.swift */; };
 		01B96A67280F9BC40054985D /* PodcastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B96A66280F9BC40054985D /* PodcastCell.xib */; };
@@ -99,7 +101,9 @@
 		016A95FF2805132000373F36 /* LastOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastOnboardViewController.swift; sourceTree = "<group>"; };
 		0174C6C5281771BC007CF424 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		018562F9281DA4690073F814 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		018562FC281DA98A0073F814 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
 		01928A90281A073E005572E5 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
+		01B4D6DF2820963400843C25 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		01B96A62280F81AC0054985D /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		01B96A64280F93660054985D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		01B96A66280F9BC40054985D /* PodcastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastCell.xib; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 		016A95E2280509C600373F36 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				018562FB281DA9650073F814 /* Main Menu Slider */,
 				018562F8281DA3F10073F814 /* Chat */,
 				01F15D192808E37F001A10C6 /* Podcast */,
 				01664C2A2805194300B796D4 /* Welcome */,
@@ -299,6 +304,15 @@
 				018562F9281DA4690073F814 /* ChatViewController.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		018562FB281DA9650073F814 /* Main Menu Slider */ = {
+			isa = PBXGroup;
+			children = (
+				018562FC281DA98A0073F814 /* MainMenuTableViewController.swift */,
+				01B4D6DF2820963400843C25 /* MenuController.swift */,
+			);
+			path = "Main Menu Slider";
 			sourceTree = "<group>";
 		};
 		01B96A5F280F81630054985D /* User */ = {
@@ -697,6 +711,8 @@
 				01B96A65280F93660054985D /* APIService.swift in Sources */,
 				01C787E827F2FDCA00225B50 /* SceneDelegate.swift in Sources */,
 				01D8B68C2817D5890029CA43 /* FavoritesController.swift in Sources */,
+				01B4D6E02820963400843C25 /* MenuController.swift in Sources */,
+				018562FD281DA98A0073F814 /* MainMenuTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
