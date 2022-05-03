@@ -14,23 +14,52 @@ class MainMenuTableViewController: UITableViewController {
     fileprivate let menuWidth : CGFloat = 300
     fileprivate var isMenuOpened = false
     fileprivate let velocityOpenThresholder: CGFloat = 500
+    let darkCoverView = UIView()
     
-    //MARK: - Menu position
-    fileprivate func initMenuPosition() {
-        menuController.view.frame = CGRect(x: -menuWidth, y: 0, width: menuWidth , height: self.view.frame.height)
-        let mainWindow = UIApplication.shared.keyWindow
-        mainWindow?.addSubview(menuController.view)
-        addChild(menuController)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavItem()
         initMenuPosition()
+        setupPanGesture()
+        setupDarkCoverView()
+    }
+    
+    
+    //MARK: - Setup Functions
+    
+    fileprivate func setupDarkCoverView() {
+        darkCoverView.alpha = 0
+        darkCoverView.backgroundColor = UIColor(white: 0, alpha: 0.8)
+        darkCoverView.isUserInteractionEnabled = false
+        navigationController?.view.addSubview(darkCoverView)
+        darkCoverView.frame = view.frame
         
+        /** in case there's problem with previous ios phones here a fix for dark cover view
+        let mainWindow = UIApplication.shared.keyWindow
+        mainWindow?.addSubview(darkCoverView)
+        darkCoverView.frame = mainWindow?.frame ?? .zero
+         */
+        
+    }
+    
+    fileprivate func setupPanGesture() {
         //Pan Gesture
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         view.addGestureRecognizer(panGesture)
+    }
+    
+    fileprivate func setupNavItem() {
+        navigationItem.title = "Home"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(handleOpen))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hide", style: .plain, target: self, action: #selector(handleHide))
+    }
+    
+    fileprivate func initMenuPosition() {
+        menuController.view.frame = CGRect(x: -menuWidth, y: 0, width: menuWidth , height: self.view.frame.height)
+        let mainWindow = UIApplication.shared.keyWindow
+        mainWindow?.addSubview(menuController.view)
+        addChild(menuController)
     }
     
     //MARK: - Perform Actions Function
@@ -40,9 +69,10 @@ class MainMenuTableViewController: UITableViewController {
             //final position to animate our menuController object
             self.menuController.view.transform = transform
             self.navigationController?.view.transform = transform
+            self.darkCoverView.alpha = transform == .identity ? 0 : 1
         }
     }
-    //MARK: - Handle Open
+    //MARK: - Handle Functions
     @objc func handleOpen() {
         isMenuOpened = true
         print("Open menu")
@@ -53,9 +83,9 @@ class MainMenuTableViewController: UITableViewController {
         isMenuOpened = false
         print("Hide menu")
         performAnimations(transform: .identity)
+        
     }
-    
-    //MARK: - Handle End
+
     fileprivate func handleEnded(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)
         let velocity = gesture.velocity(in: view)
@@ -80,9 +110,8 @@ class MainMenuTableViewController: UITableViewController {
                 handleOpen()
             }
         }
-        
     }
-    //MARK: - Handle Pan
+    
     @objc func handlePan(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)
         var x: CGFloat = translation.x
@@ -90,29 +119,19 @@ class MainMenuTableViewController: UITableViewController {
             if isMenuOpened {
                 x += menuWidth
             }
-            
             x = min(menuWidth, x)
             x = max(0, x)
             let transofrm = CGAffineTransform(translationX: x, y: 0)
             menuController.view.transform = transofrm
             navigationController?.view.transform = transofrm
+            darkCoverView.alpha = x / menuWidth
         } else if gesture.state == .ended {
             handleEnded(gesture : gesture)
         }
-        
     }
-    fileprivate func setupNavItem() {
-        navigationItem.title = "Home"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(handleOpen))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hide", style: .plain, target: self, action: #selector(handleHide))
-    }
+    
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 5
