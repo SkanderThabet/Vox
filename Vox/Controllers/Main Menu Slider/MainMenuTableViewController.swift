@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainMenuTableViewController: UITableViewController {
+class MainMenuTableViewController: UITableViewController, UIGestureRecognizerDelegate {
 
     // MARK: - Constants & Variables
     fileprivate let menuController = MenuController()
@@ -21,7 +21,7 @@ class MainMenuTableViewController: UITableViewController {
         super.viewDidLoad()
         setupNavItem()
         initMenuPosition()
-        setupPanGesture()
+//        setupPanGesture()
         setupDarkCoverView()
     }
     
@@ -46,9 +46,12 @@ class MainMenuTableViewController: UITableViewController {
     fileprivate func setupPanGesture() {
         //Pan Gesture
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+        panGesture.delegate = self
+        
         view.addGestureRecognizer(panGesture)
     }
     
+
     fileprivate func setupNavItem() {
         navigationItem.title = "Home"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(handleOpen))
@@ -60,6 +63,7 @@ class MainMenuTableViewController: UITableViewController {
         let mainWindow = UIApplication.shared.keyWindow
         mainWindow?.addSubview(menuController.view)
         addChild(menuController)
+        
     }
     
     //MARK: - Perform Actions Function

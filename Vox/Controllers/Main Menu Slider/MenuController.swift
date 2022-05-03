@@ -11,9 +11,9 @@ class MenuController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.backgroundColor = .blue
     }
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10

@@ -28,6 +28,7 @@
 		016A95FE2805131700373F36 /* SecondOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95FD2805131700373F36 /* SecondOnboardViewController.swift */; };
 		016A96002805132000373F36 /* LastOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95FF2805132000373F36 /* LastOnboardViewController.swift */; };
 		0174C6C6281771BC007CF424 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174C6C5281771BC007CF424 /* UIApplication.swift */; };
+		017E027F2821A04E00BD2A82 /* BaseSlidingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E027E2821A04E00BD2A82 /* BaseSlidingController.swift */; };
 		018562FA281DA4690073F814 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018562F9281DA4690073F814 /* ChatViewController.swift */; };
 		018562FD281DA98A0073F814 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018562FC281DA98A0073F814 /* MainMenuTableViewController.swift */; };
 		01928A91281A073E005572E5 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01928A90281A073E005572E5 /* TokenService.swift */; };
@@ -100,6 +101,7 @@
 		016A95FD2805131700373F36 /* SecondOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardViewController.swift; sourceTree = "<group>"; };
 		016A95FF2805132000373F36 /* LastOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastOnboardViewController.swift; sourceTree = "<group>"; };
 		0174C6C5281771BC007CF424 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		017E027E2821A04E00BD2A82 /* BaseSlidingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlidingController.swift; sourceTree = "<group>"; };
 		018562F9281DA4690073F814 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		018562FC281DA98A0073F814 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
 		01928A90281A073E005572E5 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 			children = (
 				018562FC281DA98A0073F814 /* MainMenuTableViewController.swift */,
 				01B4D6DF2820963400843C25 /* MenuController.swift */,
+				017E027E2821A04E00BD2A82 /* BaseSlidingController.swift */,
 			);
 			path = "Main Menu Slider";
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				01D8B68C2817D5890029CA43 /* FavoritesController.swift in Sources */,
 				01B4D6E02820963400843C25 /* MenuController.swift in Sources */,
 				018562FD281DA98A0073F814 /* MainMenuTableViewController.swift in Sources */,
+				017E027F2821A04E00BD2A82 /* BaseSlidingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
