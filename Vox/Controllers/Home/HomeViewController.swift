@@ -49,8 +49,9 @@ class HomeViewController: UIViewController {
     var greetinLabel : String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        greetingUserLabel.text = greetinLabel
-        
+        greetingUserLabel.text = greetinLabel ?? ""
+        self.navigationItem.hidesBackButton = true
+        PlayerDetailsView.initFromNib().removeFromSuperview()
         // Do any additional setup after loading the view.
     }
     

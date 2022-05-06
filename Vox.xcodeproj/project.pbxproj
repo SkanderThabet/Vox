@@ -29,6 +29,10 @@
 		016A96002805132000373F36 /* LastOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95FF2805132000373F36 /* LastOnboardViewController.swift */; };
 		0174C6C6281771BC007CF424 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0174C6C5281771BC007CF424 /* UIApplication.swift */; };
 		017E027F2821A04E00BD2A82 /* BaseSlidingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E027E2821A04E00BD2A82 /* BaseSlidingController.swift */; };
+		017E02812821B5F400BD2A82 /* CustomHeaderMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E02802821B5F400BD2A82 /* CustomHeaderMenu.swift */; };
+		017E02832821CAF500BD2A82 /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E02822821CAF500BD2A82 /* SpacerView.swift */; };
+		017E02852821CDC100BD2A82 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E02842821CDC100BD2A82 /* ProfileImageView.swift */; };
+		017E02872821EDDA00BD2A82 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E02862821EDDA00BD2A82 /* MenuItemCell.swift */; };
 		018562FA281DA4690073F814 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018562F9281DA4690073F814 /* ChatViewController.swift */; };
 		018562FD281DA98A0073F814 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018562FC281DA98A0073F814 /* MainMenuTableViewController.swift */; };
 		01928A91281A073E005572E5 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01928A90281A073E005572E5 /* TokenService.swift */; };
@@ -102,6 +106,10 @@
 		016A95FF2805132000373F36 /* LastOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastOnboardViewController.swift; sourceTree = "<group>"; };
 		0174C6C5281771BC007CF424 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		017E027E2821A04E00BD2A82 /* BaseSlidingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlidingController.swift; sourceTree = "<group>"; };
+		017E02802821B5F400BD2A82 /* CustomHeaderMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderMenu.swift; sourceTree = "<group>"; };
+		017E02822821CAF500BD2A82 /* SpacerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = "<group>"; };
+		017E02842821CDC100BD2A82 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		017E02862821EDDA00BD2A82 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		018562F9281DA4690073F814 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		018562FC281DA98A0073F814 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
 		01928A90281A073E005572E5 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
@@ -181,6 +189,8 @@
 				0174C6C5281771BC007CF424 /* UIApplication.swift */,
 				01D8B68D2817D5D50029CA43 /* UserDefault.swift */,
 				013EC7ED28197E4400E9A028 /* Constants.swift */,
+				017E02822821CAF500BD2A82 /* SpacerView.swift */,
+				017E02842821CDC100BD2A82 /* ProfileImageView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -251,6 +261,8 @@
 				015333222813A52100BF2C97 /* EpisodeCell.xib */,
 				01C7E823281452CC001C828E /* PlayerDetailsView.xib */,
 				01C7E82528145558001C828E /* PlayerDetailsView.swift */,
+				017E02802821B5F400BD2A82 /* CustomHeaderMenu.swift */,
+				017E02862821EDDA00BD2A82 /* MenuItemCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -690,7 +702,10 @@
 				0174C6C6281771BC007CF424 /* UIApplication.swift in Sources */,
 				016A95ED280511F900373F36 /* ProfileViewController.swift in Sources */,
 				01D8B68E2817D5D50029CA43 /* UserDefault.swift in Sources */,
+				017E02872821EDDA00BD2A82 /* MenuItemCell.swift in Sources */,
+				017E02852821CDC100BD2A82 /* ProfileImageView.swift in Sources */,
 				01F15D212808FDA1001A10C6 /* Podcast.swift in Sources */,
+				017E02832821CAF500BD2A82 /* SpacerView.swift in Sources */,
 				016A95F8280512CB00373F36 /* SecondOTPViewController.swift in Sources */,
 				01B96A63280F81AC0054985D /* SearchResults.swift in Sources */,
 				01F15D1D2808E502001A10C6 /* PodcastViewController.swift in Sources */,
@@ -698,6 +713,7 @@
 				01C787F027F2FDCA00225B50 /* Vox.xcdatamodeld in Sources */,
 				016A95E9280510B900373F36 /* SignInViewController.swift in Sources */,
 				015333202813998100BF2C97 /* Episode.swift in Sources */,
+				017E02812821B5F400BD2A82 /* CustomHeaderMenu.swift in Sources */,
 				016A95FC2805130200373F36 /* FirstOnboardViewController.swift in Sources */,
 				01D7A38628138D1700D7DF71 /* EpisodeControllerTableViewController.swift in Sources */,
 				014E43C2280E165C00865ECA /* Extension.swift in Sources */,

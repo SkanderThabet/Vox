@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseSlidingController: UIViewController {
+class BaseSlidingController: UIViewController{
     //MARK: - Constants & Variables
     let redView : UIView = {
         let v = UIView()
@@ -29,11 +29,16 @@ class BaseSlidingController: UIViewController {
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
-    fileprivate let menuWidth : CGFloat = 300
-    fileprivate var isMenuOpened = false
-    fileprivate let velocityThreshold: CGFloat = 500
+     let menuWidth : CGFloat = 300
+     var isMenuOpened = false
+     let velocityThreshold: CGFloat = 500
     var redViewLeadingConstraint: NSLayoutConstraint!
+    var rightViewController : UIViewController = UINavigationController(rootViewController: MainMenuTableViewController())
+    var redViewTrailingConstraint : NSLayoutConstraint!
     
+    fileprivate func navTopBarItemTitleState(title: String) {
+        navigationController?.navigationBar.topItem?.title = title
+    }
     
     /**
      vidDidLoad
@@ -43,10 +48,15 @@ class BaseSlidingController: UIViewController {
         view.backgroundColor = .yellow
         setupViews()
         setupPanGesture()
-        
+        navTopBarItemTitleState(title: "Home")
+        self.navigationItem.hidesBackButton = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapDismiss))
+        darkCoverView.addGestureRecognizer(tapGesture)
     }
     
-    
+    @objc func handleTapDismiss() {
+        closeMenu()
+    }
     
     //MARK: - Setup Functions
     fileprivate func setupViews() {
@@ -59,24 +69,26 @@ class BaseSlidingController: UIViewController {
             redView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             redView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
+            
             blueView.topAnchor.constraint(equalTo: view.topAnchor),
-            blueView.trailingAnchor.constraint(equalTo: redView.safeAreaLayoutGuide.leadingAnchor),
+            blueView.trailingAnchor.constraint(equalTo: redView.leadingAnchor),
             blueView.widthAnchor.constraint(equalToConstant: menuWidth),
             blueView.bottomAnchor.constraint(equalTo: redView.bottomAnchor)
             
             
         ])
-        self.redViewLeadingConstraint = redView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0)
+        redViewLeadingConstraint = redView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0)
         redViewLeadingConstraint.isActive = true
-        
+        redViewTrailingConstraint = redView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        redViewTrailingConstraint.isActive = true
         setupViewControllers()
         
     }
     
     fileprivate func setupViewControllers() {
-        let mainMenuController = MainMenuTableViewController()
+//        rightViewController = MainMenuTableViewController()
         let menuController = MenuController()
-        let homeView = mainMenuController.view!
+        let homeView = rightViewController.view!
         let menuView = menuController.view!
         
         homeView.translatesAutoresizingMaskIntoConstraints = false
@@ -102,7 +114,7 @@ class BaseSlidingController: UIViewController {
             darkCoverView.bottomAnchor.constraint(equalTo: redView.bottomAnchor),
             darkCoverView.trailingAnchor.constraint(equalTo: redView.trailingAnchor),
         ])
-        addChild(mainMenuController)
+        addChild(rightViewController)
         addChild(menuController)
     }
     
@@ -113,7 +125,7 @@ class BaseSlidingController: UIViewController {
     }
     
     
-    //MARK: - Handle Function
+    //MARK: - Handle Functions
     
     fileprivate func handleEnded(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)
@@ -121,6 +133,7 @@ class BaseSlidingController: UIViewController {
         if isMenuOpened {
             if abs(velocity.x) > velocityThreshold {
                 closeMenu()
+                
                 return
             }
             if abs(translation.x) < menuWidth / 2 {
@@ -142,16 +155,60 @@ class BaseSlidingController: UIViewController {
         }
     }
     
-    fileprivate func openMenu() {
+     func openMenu() {
         isMenuOpened = true
+        navTopBarItemTitleState(title: "Menu")
         redViewLeadingConstraint.constant = menuWidth
+         redViewTrailingConstraint.constant = menuWidth
         performAnimations()
     }
     
-    fileprivate func closeMenu() {
+     func closeMenu() {
         redViewLeadingConstraint.constant = 0
+         redViewTrailingConstraint.constant = 0
         isMenuOpened = false
+        navTopBarItemTitleState(title: "Home")
         performAnimations()
+    }
+    func didSelectItemMenu(indexPath: IndexPath) {
+        performRightViewCleanUp()
+        closeMenu()
+        switch indexPath.row {
+        case 0:
+            let homeVC = HomeViewController.sharedInstance()
+            rightViewController = homeVC
+            let user = UserDefaults.standard.callingUser(forKey: "user")
+            let userCall = (user!).user
+            let firstname = userCall.firstname
+            let hour = Calendar.current.component( .hour, from:Date() ) > 11 ? "Good Evening" : "Good Morning"
+            homeVC.greetinLabel = "\(hour),\n\(firstname)"
+            
+//            let story = UIStoryboard(name: "Main", bundle:nil)
+//            let vc = story.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+//            UIApplication.shared.windows.first?.rootViewController = vc
+////            UIApplication.shared.windows.first?.makeKeyAndVisible()
+            
+        case 1:
+            print("Second screen")
+        case 2:
+            print("Third screen")
+            rightViewController = MainTabBarViewController()
+            let story = UIStoryboard(name: "Main", bundle:nil)
+            let vc = story.instantiateViewController(withIdentifier: "MainTabBarViewController") as! MainTabBarViewController
+            UIApplication.shared.windows.first?.rootViewController = vc
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+            
+        default:
+            print("show w barra")
+        }
+        redView.addSubview(rightViewController.view)
+        addChild(rightViewController)
+        redView.bringSubviewToFront(darkCoverView)
+        
+    }
+    fileprivate func performRightViewCleanUp() {
+        rightViewController.view.removeFromSuperview()
+        rightViewController.removeFromParent()
     }
     
     fileprivate func performAnimations() {
@@ -159,6 +216,7 @@ class BaseSlidingController: UIViewController {
             // leave a reference link down in desc below
             self.view.layoutIfNeeded()
             self.darkCoverView.alpha = self.isMenuOpened ? 1 : 0
+            self.navigationController?.navigationBar.topItem?.title = self.isMenuOpened ? "Menu" : "Home"
         })
     }
     
@@ -170,10 +228,19 @@ class BaseSlidingController: UIViewController {
         x = max(0, x)
         
         redViewLeadingConstraint.constant = x
+        redViewTrailingConstraint.constant = x
         darkCoverView.alpha = x / menuWidth
         
         if gesture.state == .ended {
             handleEnded(gesture: gesture)
         }
+    }
+}
+
+extension BaseSlidingController {
+    static func sharedInstance() -> BaseSlidingController {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: "BaseSlidingController") as! BaseSlidingController
+        
     }
 }

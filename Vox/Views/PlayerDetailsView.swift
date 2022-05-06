@@ -344,3 +344,5 @@ class PlayerDetailsView: UIView {
     
     
 }
+
+

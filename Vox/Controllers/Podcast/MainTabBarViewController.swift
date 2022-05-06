@@ -13,6 +13,9 @@ class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
         UINavigationBar.appearance().prefersLargeTitles = true
         tabBar.tintColor = .purple
+//        self.navigationItem.hidesBackButton = true
+        
+        
         // Do any additional setup after loading the view.
         setupViewControllers()
         setupPlayerDetailsView()
@@ -89,8 +92,8 @@ class MainTabBarViewController: UITabBarController {
         viewControllers = [
             generateNavigationController(for: PodcastSearchController(), title: "Search", image: UIImage(named: "search")!),
             generateNavigationController(for: favoritesController, title: "Favorites", image: UIImage(named: "favorites")!),
+            generateNavigationController(for: ViewController(), title: "Home", image: UIImage(systemName: "house.fill")!),
             generateNavigationController(for: ViewController(), title: "Download", image: UIImage(named: "downloads")!)
-        
         ]
     }
     
@@ -106,7 +109,7 @@ class MainTabBarViewController: UITabBarController {
         return navController
     }
     
-
+    
     /*
     // MARK: - Navigation
 
@@ -116,5 +119,15 @@ class MainTabBarViewController: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+}
 
+
+
+extension MainTabBarViewController {
+    static func sharedInstance() -> MainTabBarViewController {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: "MainTabBarViewController") as! MainTabBarViewController
+        
+    }
 }

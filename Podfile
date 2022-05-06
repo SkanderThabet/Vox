@@ -37,6 +37,7 @@ target 'Vox' do
   pod 'FeedKit', '~> 9.1'
   pod 'StreamChatUI', '~> 4.13'
   pod 'IQKeyboardManagerSwift'
-
+  pod 'SideMenu', '~> 6.0'
+  pod 'HaishinKit', '~> 1.2.2'
 
 end

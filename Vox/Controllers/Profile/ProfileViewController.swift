@@ -28,6 +28,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         usernameTF.text = userName
         firstnameTF.text = firstName
         lastnameTF.text = lastName
