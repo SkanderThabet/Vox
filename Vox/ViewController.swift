@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         self.tabBarController?.tabBar.isHidden = true
         setHomeVC()
+        
     }
     fileprivate func setHomeVC() {
         let user = UserDefaults.standard.callingUser(forKey: "user")

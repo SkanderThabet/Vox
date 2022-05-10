@@ -18,3 +18,14 @@ struct TokenKey {
 }
 
 var fullName, firstName, lastName , status, userName , email , dob , avatar: String?
+
+struct Preference {
+    static var defaultInstance = Preference()
+    
+    
+    var uri: String? = "rtmp://192.168.1.151/live"
+    var streamName: String? = "live"
+}
+    
+
+

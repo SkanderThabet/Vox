@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012BCC1928255A3200E0E439 /* Pods_Vox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90CB95122C095C47C9BA1D7 /* Pods_Vox.framework */; };
+		012BCC1A28255A3200E0E439 /* Pods_Vox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B90CB95122C095C47C9BA1D7 /* Pods_Vox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0136FD3127FE755300D7DDFC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */; };
 		013EC7EE28197E4400E9A028 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013EC7ED28197E4400E9A028 /* Constants.swift */; };
 		014E43BF280E071500865ECA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 014E43BE280E071500865ECA /* GoogleService-Info.plist */; };
@@ -35,6 +37,9 @@
 		017E02872821EDDA00BD2A82 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E02862821EDDA00BD2A82 /* MenuItemCell.swift */; };
 		018562FA281DA4690073F814 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018562F9281DA4690073F814 /* ChatViewController.swift */; };
 		018562FD281DA98A0073F814 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018562FC281DA98A0073F814 /* MainMenuTableViewController.swift */; };
+		0188A81D282A05B900D91C40 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188A81C282A05B900D91C40 /* LiveViewController.swift */; };
+		0188A81F282A072200D91C40 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188A81E282A072200D91C40 /* VisualEffect.swift */; };
+		0188A821282A07CD00D91C40 /* GetCurrentDeviceIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188A820282A07CD00D91C40 /* GetCurrentDeviceIP.swift */; };
 		01928A91281A073E005572E5 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01928A90281A073E005572E5 /* TokenService.swift */; };
 		01B4D6E02820963400843C25 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B4D6DF2820963400843C25 /* MenuController.swift */; };
 		01B96A63280F81AC0054985D /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B96A62280F81AC0054985D /* SearchResults.swift */; };
@@ -62,7 +67,6 @@
 		01F15D1F2808FD13001A10C6 /* PodcastSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1E2808FD13001A10C6 /* PodcastSearchController.swift */; };
 		01F15D212808FDA1001A10C6 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D202808FDA1001A10C6 /* Podcast.swift */; };
 		71B9767F85870F9C9BB5F9BF /* Pods_VoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A677D562C5F05724318D6E9D /* Pods_VoxTests.framework */; };
-		A9F891EA50772897968C4FCA /* Pods_Vox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90CB95122C095C47C9BA1D7 /* Pods_Vox.framework */; };
 		EC87D49197542C27EF9ED78A /* Pods_Vox_VoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692022CA461C66EEED952617 /* Pods_Vox_VoxUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +86,20 @@
 			remoteInfo = Vox;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		012BCC1B28255A3200E0E439 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				012BCC1A28255A3200E0E439 /* Pods_Vox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +130,9 @@
 		017E02862821EDDA00BD2A82 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		018562F9281DA4690073F814 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		018562FC281DA98A0073F814 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
+		0188A81C282A05B900D91C40 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		0188A81E282A072200D91C40 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
+		0188A820282A07CD00D91C40 /* GetCurrentDeviceIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentDeviceIP.swift; sourceTree = "<group>"; };
 		01928A90281A073E005572E5 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		01B4D6DF2820963400843C25 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		01B96A62280F81AC0054985D /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
@@ -158,7 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9F891EA50772897968C4FCA /* Pods_Vox.framework in Frameworks */,
+				012BCC1928255A3200E0E439 /* Pods_Vox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +212,7 @@
 				013EC7ED28197E4400E9A028 /* Constants.swift */,
 				017E02822821CAF500BD2A82 /* SpacerView.swift */,
 				017E02842821CDC100BD2A82 /* ProfileImageView.swift */,
+				0188A820282A07CD00D91C40 /* GetCurrentDeviceIP.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -238,6 +260,7 @@
 		016A95E2280509C600373F36 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0188A81B282A01DF00D91C40 /* Broadcast Streaming */,
 				018562FB281DA9650073F814 /* Main Menu Slider */,
 				018562F8281DA3F10073F814 /* Chat */,
 				01F15D192808E37F001A10C6 /* Podcast */,
@@ -328,6 +351,15 @@
 				017E027E2821A04E00BD2A82 /* BaseSlidingController.swift */,
 			);
 			path = "Main Menu Slider";
+			sourceTree = "<group>";
+		};
+		0188A81B282A01DF00D91C40 /* Broadcast Streaming */ = {
+			isa = PBXGroup;
+			children = (
+				0188A81C282A05B900D91C40 /* LiveViewController.swift */,
+				0188A81E282A072200D91C40 /* VisualEffect.swift */,
+			);
+			path = "Broadcast Streaming";
 			sourceTree = "<group>";
 		};
 		01B96A5F280F81630054985D /* User */ = {
@@ -458,6 +490,7 @@
 				01C787DF27F2FDCA00225B50 /* Frameworks */,
 				01C787E027F2FDCA00225B50 /* Resources */,
 				6709FB94EEBF07A3A96DA64C /* [CP] Embed Pods Frameworks */,
+				012BCC1B28255A3200E0E439 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -693,6 +726,7 @@
 				01F15D1F2808FD13001A10C6 /* PodcastSearchController.swift in Sources */,
 				01D8B68A2817D5200029CA43 /* FavoritePodcastCell.swift in Sources */,
 				016A95EF2805122B00373F36 /* SignUpViewController.swift in Sources */,
+				0188A81F282A072200D91C40 /* VisualEffect.swift in Sources */,
 				01B96A69280F9E560054985D /* PodcastCell.swift in Sources */,
 				016A95F6280512A700373F36 /* FristOTPViewController.swift in Sources */,
 				01C787EA27F2FDCA00225B50 /* ViewController.swift in Sources */,
@@ -722,7 +756,9 @@
 				016A95FA280512E900373F36 /* SignUpCompletionViewController.swift in Sources */,
 				01928A91281A073E005572E5 /* TokenService.swift in Sources */,
 				016A95E728050E1500373F36 /* NewAccount.swift in Sources */,
+				0188A821282A07CD00D91C40 /* GetCurrentDeviceIP.swift in Sources */,
 				015333262813B17E00BF2C97 /* RSSFeed.swift in Sources */,
+				0188A81D282A05B900D91C40 /* LiveViewController.swift in Sources */,
 				016A96002805132000373F36 /* LastOnboardViewController.swift in Sources */,
 				01C787E627F2FDCA00225B50 /* AppDelegate.swift in Sources */,
 				015333232813A52100BF2C97 /* EpisodeCell.swift in Sources */,

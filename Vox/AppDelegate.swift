@@ -10,10 +10,22 @@ import CoreData
 import Firebase
 import IQKeyboardManagerSwift
 import StreamChat
+import AVFoundation
+import Logboard
+
+/**
+ Below extension is to instantiate ChatClient as shared global var
+ */
 
 extension ChatClient {
     static var shared: ChatClient!
 }
+
+
+/**
+ Below property is to log streaming results
+ */
+let logger = Logboard.with("com.skanderthabet.Vox")
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,8 +40,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.rootViewController = MainTabBarViewController()
 
+        /**
+         IQ activation
+         */
         IQKeyboardManager.shared.enable = true
         
+        /**
+         Below section is to make sure to setup and activate the AVAudioSession.
+         */
+        let session = AVAudioSession.sharedInstance()
+        do {
+            // https://stackoverflow.com/questions/51010390/avaudiosession-setcategory-swift-4-2-ios-12-play-sound-on-silent
+            if #available(iOS 10.0, *) {
+                try session.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker, .allowBluetooth])
+                try session.setCategory(.playback, mode: .moviePlayback)
+            } else {
+                session.perform(NSSelectorFromString("setCategory:withOptions:error:"), with: AVAudioSession.Category.playAndRecord, with: [
+                    AVAudioSession.CategoryOptions.allowBluetooth,
+                    AVAudioSession.CategoryOptions.defaultToSpeaker]
+                )
+                try session.setMode(.default)
+            }
+            try session.setActive(true)
+        } catch {
+            print(error)
+            logger.error(error)
+        }
+        /**
+         Above section is to make sure to setup and activate the AVAudioSession.
+         */
         
         return true
     }

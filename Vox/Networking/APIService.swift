@@ -156,7 +156,8 @@ class APIService {
             switch response.result {
             case.success(_):
                 TokenService.tokenInstance.removeToken()
-                vc.navigationController?.popToRootViewController(animated: true)
+                let welcomeVC = WelcomeViewController.sharedInstance()
+                vc.navigationController?.pushViewController(welcomeVC, animated: true)
                 print("Token removed")
             case .failure(let error):
                 print("Error fetch logged in user : ",error)

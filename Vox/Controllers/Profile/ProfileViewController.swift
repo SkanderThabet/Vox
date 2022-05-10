@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var firstnameTF: UITextField!
     @IBOutlet weak var lastnameTF: UITextField!
     @IBOutlet weak var dobTF: UITextField!
+    @IBOutlet weak var stackViewTF: UIStackView!
     
     // MARK: - Actions
     @IBAction func signOutBtn(_ sender: Any) {
@@ -28,7 +29,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         usernameTF.text = userName
         firstnameTF.text = firstName
         lastnameTF.text = lastName
@@ -40,9 +41,28 @@ class ProfileViewController: UIViewController {
         statusLabel.text = status
         fullnameLabel.text = fullName
         
+        updateUIView(usernameTF)
         // Do any additional setup after loading the view.
     }
-    
+    func updateUIView(_ uiTextField: UITextField) {
+        if isEditing {
+            return uiTextField.isEnabled = true
+        }
+        print("update is called")
+        if !isEditing {
+            uiTextField.resignFirstResponder()      // << here !!
+            // uiTextField.endEditing(true)
+        }
+    }
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+            usernameTF.isEnabled = true
+            emailTF.isEnabled = true
+            firstnameTF.isEnabled = true
+            lastnameTF.isEnabled = true
+            dobTF.isEnabled = true
+            updateUIView(usernameTF)
+    }
     func showAlert(title: String, message: String) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))

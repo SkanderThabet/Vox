@@ -41,7 +41,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func startStreamingBtnAct(_ sender: Any) {
-        handlePVC()
+        let liveVC = LiveViewController.sharedInstance()
+        self.navigationController?.pushViewController(liveVC, animated: true)
     }
     
     

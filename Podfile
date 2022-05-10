@@ -39,5 +39,6 @@ target 'Vox' do
   pod 'IQKeyboardManagerSwift'
   pod 'SideMenu', '~> 6.0'
   pod 'HaishinKit', '~> 1.2.2'
+  pod 'Logboard', '~> 2.2.2'
 
 end

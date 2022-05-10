@@ -19,6 +19,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     
     
+    
     // MARK: - Actions
     @IBAction func signInBtn(_ sender: Any) {
         handleLogin()
@@ -75,6 +76,7 @@ class SignInViewController: UIViewController {
                 let test = TokenService.tokenInstance.getToken()
                 print(test)
                 
+                
             case .failure(let err):
                 self.errorLabel.isHidden = false
                 self.errorLabel.text = "Your credentials are not correct, please try again"
@@ -92,7 +94,6 @@ class SignInViewController: UIViewController {
         guard let email = emailTF.text else { return }
         guard let password = passwordTF.text else { return }
         errorLabel.isHidden = true
-        
         loginCallingFunction(email, password, hud)
         
     }
