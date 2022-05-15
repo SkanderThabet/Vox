@@ -23,6 +23,7 @@ class MenuController: UITableViewController {
         MenuItem(icon: UIImage(systemName: "person.fill")!, title: "Profile"),
         MenuItem(icon: UIImage(named: "Chat messaging-1")!, title: "Messages"),
         MenuItem(icon: UIImage(named: "Podcast")!, title: "Podcast"),
+        
     ]
 
     override func viewDidLoad() {
@@ -58,9 +59,12 @@ class MenuController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         switch indexPath.row {
         case 0:
+            
             handleHVC()
+            
         case 1:
             handlePVC()
         case 2:
@@ -93,7 +97,6 @@ class MenuController: UITableViewController {
             let vc = story.instantiateViewController(withIdentifier: "MainTabBarViewController") as! MainTabBarViewController
             UIApplication.shared.windows.first?.rootViewController = vc
             UIApplication.shared.windows.first?.makeKeyAndVisible()
-            
         default:
             print("show w barra")
         }
@@ -131,6 +134,8 @@ class MenuController: UITableViewController {
         homeVC.greetinLabel = "\(hour),\n\(firstname)"
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
+    
+    
 }
 
 

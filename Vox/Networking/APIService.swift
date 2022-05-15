@@ -147,7 +147,7 @@ class APIService {
             }
     }
     
-    func callingLogOutApi(vc : UIViewController){
+    func callingLogOutApi(){
         let headers : HTTPHeaders = [
             "token": "\(TokenService.tokenInstance.getToken)"
         ]
@@ -156,8 +156,17 @@ class APIService {
             switch response.result {
             case.success(_):
                 TokenService.tokenInstance.removeToken()
-                let welcomeVC = WelcomeViewController.sharedInstance()
-                vc.navigationController?.pushViewController(welcomeVC, animated: true)
+//                let welcomeVC = WelcomeViewController.sharedInstance()
+//                vc.navigationController?.pushViewController(welcomeVC, animated: true)
+                let rootVC = UIApplication.shared.windows.first?.rootViewController
+                if let topVC = UIApplication.getTopViewController(){
+                    if rootVC?.children.first is HomeViewController{
+                        topVC.navigationController?.pushViewController(WelcomeViewController.sharedInstance(), animated: true)
+                    } else {
+                        let welcomeVC = WelcomeViewController.sharedInstance()
+                        topVC.navigationController?.pushViewController(welcomeVC, animated: true)
+                    }
+                }
                 print("Token removed")
             case .failure(let error):
                 print("Error fetch logged in user : ",error)

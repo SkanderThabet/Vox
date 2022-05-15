@@ -35,10 +35,13 @@ target 'Vox' do
   pod 'FirebaseUI/Storage'
   pod 'SDWebImage', '~> 5.0'
   pod 'FeedKit', '~> 9.1'
-  pod 'StreamChatUI', '~> 4.13'
+  pod 'StreamChatUI', '~> 4.14'
   pod 'IQKeyboardManagerSwift'
   pod 'SideMenu', '~> 6.0'
   pod 'HaishinKit', '~> 1.2.2'
   pod 'Logboard', '~> 2.2.2'
+  pod 'paper-onboarding'
+  pod 'SwiftEntryKit', '2.0.0'
+  pod 'SwiftMessages'
 
 end

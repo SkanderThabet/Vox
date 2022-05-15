@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		012BCC1928255A3200E0E439 /* Pods_Vox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90CB95122C095C47C9BA1D7 /* Pods_Vox.framework */; };
-		012BCC1A28255A3200E0E439 /* Pods_Vox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B90CB95122C095C47C9BA1D7 /* Pods_Vox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0136FD3127FE755300D7DDFC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */; };
 		013EC7EE28197E4400E9A028 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013EC7ED28197E4400E9A028 /* Constants.swift */; };
 		014E43BF280E071500865ECA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 014E43BE280E071500865ECA /* GoogleService-Info.plist */; };
@@ -17,6 +15,19 @@
 		015333232813A52100BF2C97 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015333212813A52100BF2C97 /* EpisodeCell.swift */; };
 		015333242813A52100BF2C97 /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015333222813A52100BF2C97 /* EpisodeCell.xib */; };
 		015333262813B17E00BF2C97 /* RSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015333252813B17E00BF2C97 /* RSSFeed.swift */; };
+		01581D48282B20750076274E /* Pods_Vox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B90CB95122C095C47C9BA1D7 /* Pods_Vox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		01581D66282B23F50076274E /* ChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D4F282B23ED0076274E /* ChatClient.swift */; };
+		01581D67282B23F50076274E /* YTMessageLayoutOptionsResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D51282B23EE0076274E /* YTMessageLayoutOptionsResolver.swift */; };
+		01581D68282B23F50076274E /* YTLiveVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D52282B23EE0076274E /* YTLiveVideoViewController.swift */; };
+		01581D69282B23F50076274E /* YTChatComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D54282B23EE0076274E /* YTChatComposerViewController.swift */; };
+		01581D6A282B23F50076274E /* YTChatMessageComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D55282B23EE0076274E /* YTChatMessageComposerView.swift */; };
+		01581D6B282B23F50076274E /* YTChatMessageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D56282B23EF0076274E /* YTChatMessageContentView.swift */; };
+		01581D6C282B23F50076274E /* YTInputChatMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D58282B23EF0076274E /* YTInputChatMessageView.swift */; };
+		01581D70282B23F50076274E /* YTSendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D5E282B23F10076274E /* YTSendButton.swift */; };
+		01581D71282B23F50076274E /* YTLiveChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D5F282B23F20076274E /* YTLiveChatViewController.swift */; };
+		01581D72282B23F50076274E /* YTLiveVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01581D60282B23F20076274E /* YTLiveVideoViewController.xib */; };
+		01581D73282B23F50076274E /* YTScrollToLatestMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D62282B23F20076274E /* YTScrollToLatestMessageButton.swift */; };
+		015B752E28308B7B00198BBA /* Hour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B752D28308B7B00198BBA /* Hour.swift */; };
 		016A95E528050C3200373F36 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E428050C3200373F36 /* UserProfile.swift */; };
 		016A95E728050E1500373F36 /* NewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E628050E1500373F36 /* NewAccount.swift */; };
 		016A95E9280510B900373F36 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E8280510B900373F36 /* SignInViewController.swift */; };
@@ -62,11 +73,14 @@
 		01D8B68A2817D5200029CA43 /* FavoritePodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D8B6892817D5200029CA43 /* FavoritePodcastCell.swift */; };
 		01D8B68C2817D5890029CA43 /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D8B68B2817D5890029CA43 /* FavoritesController.swift */; };
 		01D8B68E2817D5D50029CA43 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D8B68D2817D5D50029CA43 /* UserDefault.swift */; };
+		01E63E8A282A6F4C006DB0C9 /* Pods_Vox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90CB95122C095C47C9BA1D7 /* Pods_Vox.framework */; };
 		01F15D1B2808E3AB001A10C6 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1A2808E3AB001A10C6 /* MainTabBarViewController.swift */; };
 		01F15D1D2808E502001A10C6 /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1C2808E502001A10C6 /* PodcastViewController.swift */; };
 		01F15D1F2808FD13001A10C6 /* PodcastSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1E2808FD13001A10C6 /* PodcastSearchController.swift */; };
 		01F15D212808FDA1001A10C6 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D202808FDA1001A10C6 /* Podcast.swift */; };
+		6D3D2E99D02D23F2F3418429 /* Pods_VoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E63E4A282A6F4B006DB0C9 /* Pods_VoxTests.framework */; };
 		71B9767F85870F9C9BB5F9BF /* Pods_VoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A677D562C5F05724318D6E9D /* Pods_VoxTests.framework */; };
+		7DE32EF7024B1E55837D1D06 /* Pods_Vox_VoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E63E49282A6F4B006DB0C9 /* Pods_Vox_VoxUITests.framework */; };
 		EC87D49197542C27EF9ED78A /* Pods_Vox_VoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692022CA461C66EEED952617 /* Pods_Vox_VoxUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,13 +102,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		012BCC1B28255A3200E0E439 /* Embed Frameworks */ = {
+		01581D49282B20760076274E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				012BCC1A28255A3200E0E439 /* Pods_Vox.framework in Embed Frameworks */,
+				01581D48282B20750076274E /* Pods_Vox.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +124,18 @@
 		015333212813A52100BF2C97 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		015333222813A52100BF2C97 /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
 		015333252813B17E00BF2C97 /* RSSFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeed.swift; sourceTree = "<group>"; };
+		01581D4F282B23ED0076274E /* ChatClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatClient.swift; sourceTree = "<group>"; };
+		01581D51282B23EE0076274E /* YTMessageLayoutOptionsResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTMessageLayoutOptionsResolver.swift; sourceTree = "<group>"; };
+		01581D52282B23EE0076274E /* YTLiveVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTLiveVideoViewController.swift; sourceTree = "<group>"; };
+		01581D54282B23EE0076274E /* YTChatComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTChatComposerViewController.swift; sourceTree = "<group>"; };
+		01581D55282B23EE0076274E /* YTChatMessageComposerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTChatMessageComposerView.swift; sourceTree = "<group>"; };
+		01581D56282B23EF0076274E /* YTChatMessageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTChatMessageContentView.swift; sourceTree = "<group>"; };
+		01581D58282B23EF0076274E /* YTInputChatMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTInputChatMessageView.swift; sourceTree = "<group>"; };
+		01581D5E282B23F10076274E /* YTSendButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTSendButton.swift; sourceTree = "<group>"; };
+		01581D5F282B23F20076274E /* YTLiveChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTLiveChatViewController.swift; sourceTree = "<group>"; };
+		01581D60282B23F20076274E /* YTLiveVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTLiveVideoViewController.xib; sourceTree = "<group>"; };
+		01581D62282B23F20076274E /* YTScrollToLatestMessageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTScrollToLatestMessageButton.swift; sourceTree = "<group>"; };
+		015B752D28308B7B00198BBA /* Hour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hour.swift; sourceTree = "<group>"; };
 		016A95E428050C3200373F36 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		016A95E628050E1500373F36 /* NewAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccount.swift; sourceTree = "<group>"; };
 		016A95E8280510B900373F36 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +185,44 @@
 		01D8B6892817D5200029CA43 /* FavoritePodcastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritePodcastCell.swift; sourceTree = "<group>"; };
 		01D8B68B2817D5890029CA43 /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		01D8B68D2817D5D50029CA43 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		01E63E2C282A6F4B006DB0C9 /* absl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = absl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E2D282A6F4B006DB0C9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E2E282A6F4B006DB0C9 /* openssl_grpc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = openssl_grpc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E2F282A6F4B006DB0C9 /* CountryPickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountryPickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E30282A6F4B006DB0C9 /* CountryPickerView_CountryPickerView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CountryPickerView_CountryPickerView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E31282A6F4B006DB0C9 /* FeedKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeedKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E32282A6F4B006DB0C9 /* FirebaseAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseAnalytics.xcframework; path = Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework; sourceTree = "<group>"; };
+		01E63E33282A6F4B006DB0C9 /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E34282A6F4B006DB0C9 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E35282A6F4B006DB0C9 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E36282A6F4B006DB0C9 /* FirebaseFirestore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseFirestore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E37282A6F4B006DB0C9 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseInstallations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E38282A6F4B006DB0C9 /* FirebaseStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E39282A6F4B006DB0C9 /* FirebaseStorageUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseStorageUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E3A282A6F4B006DB0C9 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
+		01E63E3B282A6F4B006DB0C9 /* GoogleAppMeasurementIdentitySupport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurementIdentitySupport.xcframework; path = Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework; sourceTree = "<group>"; };
+		01E63E3C282A6F4B006DB0C9 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E3D282A6F4B006DB0C9 /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E3E282A6F4B006DB0C9 /* grpcpp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = grpcpp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E3F282A6F4B006DB0C9 /* grpc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = grpc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E40282A6F4B006DB0C9 /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = "gRPCCertificates-Cpp.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E41282A6F4B006DB0C9 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E42282A6F4B006DB0C9 /* HaishinKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HaishinKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E43282A6F4B006DB0C9 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E44282A6F4B006DB0C9 /* JGProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JGProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E45282A6F4B006DB0C9 /* leveldb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = leveldb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E46282A6F4B006DB0C9 /* uv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = uv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E47282A6F4B006DB0C9 /* Logboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Logboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E48282A6F4B006DB0C9 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E49282A6F4B006DB0C9 /* Pods_Vox_VoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Vox_VoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E4A282A6F4B006DB0C9 /* Pods_VoxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_VoxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E4B282A6F4B006DB0C9 /* FBLPromises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBLPromises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E4C282A6F4B006DB0C9 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E4D282A6F4B006DB0C9 /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E4E282A6F4B006DB0C9 /* StreamChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StreamChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E4F282A6F4B006DB0C9 /* StreamChat.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = StreamChat.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E50282A6F4B006DB0C9 /* StreamChatUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StreamChatUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01E63E51282A6F4B006DB0C9 /* StreamChatUIResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = StreamChatUIResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F15D1A2808E3AB001A10C6 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		01F15D1C2808E502001A10C6 /* PodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewController.swift; sourceTree = "<group>"; };
 		01F15D1E2808FD13001A10C6 /* PodcastSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastSearchController.swift; sourceTree = "<group>"; };
@@ -179,7 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				012BCC1928255A3200E0E439 /* Pods_Vox.framework in Frameworks */,
+				01E63E8A282A6F4C006DB0C9 /* Pods_Vox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71B9767F85870F9C9BB5F9BF /* Pods_VoxTests.framework in Frameworks */,
+				6D3D2E99D02D23F2F3418429 /* Pods_VoxTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC87D49197542C27EF9ED78A /* Pods_Vox_VoxUITests.framework in Frameworks */,
+				7DE32EF7024B1E55837D1D06 /* Pods_Vox_VoxUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,8 +279,67 @@
 				017E02822821CAF500BD2A82 /* SpacerView.swift */,
 				017E02842821CDC100BD2A82 /* ProfileImageView.swift */,
 				0188A820282A07CD00D91C40 /* GetCurrentDeviceIP.swift */,
+				015B752D28308B7B00198BBA /* Hour.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		01581D4A282B23C20076274E /* Live Chat Streaming */ = {
+			isa = PBXGroup;
+			children = (
+				01581D4F282B23ED0076274E /* ChatClient.swift */,
+				01581D57282B23EF0076274E /* ChatMessageView */,
+				01581D53282B23EE0076274E /* Composer */,
+				01581D50282B23EE0076274E /* MessageOptionsResolver */,
+				01581D61282B23F20076274E /* ScrollToLatestMessageButton */,
+				01581D5D282B23F10076274E /* SendButton */,
+				01581D56282B23EF0076274E /* YTChatMessageContentView.swift */,
+				01581D5F282B23F20076274E /* YTLiveChatViewController.swift */,
+				01581D52282B23EE0076274E /* YTLiveVideoViewController.swift */,
+				01581D60282B23F20076274E /* YTLiveVideoViewController.xib */,
+			);
+			path = "Live Chat Streaming";
+			sourceTree = "<group>";
+		};
+		01581D50282B23EE0076274E /* MessageOptionsResolver */ = {
+			isa = PBXGroup;
+			children = (
+				01581D51282B23EE0076274E /* YTMessageLayoutOptionsResolver.swift */,
+			);
+			path = MessageOptionsResolver;
+			sourceTree = "<group>";
+		};
+		01581D53282B23EE0076274E /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				01581D54282B23EE0076274E /* YTChatComposerViewController.swift */,
+				01581D55282B23EE0076274E /* YTChatMessageComposerView.swift */,
+			);
+			path = Composer;
+			sourceTree = "<group>";
+		};
+		01581D57282B23EF0076274E /* ChatMessageView */ = {
+			isa = PBXGroup;
+			children = (
+				01581D58282B23EF0076274E /* YTInputChatMessageView.swift */,
+			);
+			path = ChatMessageView;
+			sourceTree = "<group>";
+		};
+		01581D5D282B23F10076274E /* SendButton */ = {
+			isa = PBXGroup;
+			children = (
+				01581D5E282B23F10076274E /* YTSendButton.swift */,
+			);
+			path = SendButton;
+			sourceTree = "<group>";
+		};
+		01581D61282B23F20076274E /* ScrollToLatestMessageButton */ = {
+			isa = PBXGroup;
+			children = (
+				01581D62282B23F20076274E /* YTScrollToLatestMessageButton.swift */,
+			);
+			path = ScrollToLatestMessageButton;
 			sourceTree = "<group>";
 		};
 		01664C2A2805194300B796D4 /* Welcome */ = {
@@ -260,6 +385,7 @@
 		016A95E2280509C600373F36 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				01581D4A282B23C20076274E /* Live Chat Streaming */,
 				0188A81B282A01DF00D91C40 /* Broadcast Streaming */,
 				018562FB281DA9650073F814 /* Main Menu Slider */,
 				018562F8281DA3F10073F814 /* Chat */,
@@ -471,6 +597,44 @@
 		5FEDC6EF89B6749252C0D8A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01E63E2C282A6F4B006DB0C9 /* absl.framework */,
+				01E63E2D282A6F4B006DB0C9 /* Alamofire.framework */,
+				01E63E2E282A6F4B006DB0C9 /* openssl_grpc.framework */,
+				01E63E2F282A6F4B006DB0C9 /* CountryPickerView.framework */,
+				01E63E30282A6F4B006DB0C9 /* CountryPickerView_CountryPickerView.bundle */,
+				01E63E31282A6F4B006DB0C9 /* FeedKit.framework */,
+				01E63E32282A6F4B006DB0C9 /* FirebaseAnalytics.xcframework */,
+				01E63E33282A6F4B006DB0C9 /* FirebaseAuth.framework */,
+				01E63E34282A6F4B006DB0C9 /* FirebaseCore.framework */,
+				01E63E35282A6F4B006DB0C9 /* FirebaseCoreDiagnostics.framework */,
+				01E63E36282A6F4B006DB0C9 /* FirebaseFirestore.framework */,
+				01E63E37282A6F4B006DB0C9 /* FirebaseInstallations.framework */,
+				01E63E38282A6F4B006DB0C9 /* FirebaseStorage.framework */,
+				01E63E39282A6F4B006DB0C9 /* FirebaseStorageUI.framework */,
+				01E63E3A282A6F4B006DB0C9 /* GoogleAppMeasurement.xcframework */,
+				01E63E3B282A6F4B006DB0C9 /* GoogleAppMeasurementIdentitySupport.xcframework */,
+				01E63E3C282A6F4B006DB0C9 /* GoogleDataTransport.framework */,
+				01E63E3D282A6F4B006DB0C9 /* GoogleUtilities.framework */,
+				01E63E3E282A6F4B006DB0C9 /* grpcpp.framework */,
+				01E63E3F282A6F4B006DB0C9 /* grpc.framework */,
+				01E63E40282A6F4B006DB0C9 /* gRPCCertificates-Cpp.bundle */,
+				01E63E41282A6F4B006DB0C9 /* GTMSessionFetcher.framework */,
+				01E63E42282A6F4B006DB0C9 /* HaishinKit.framework */,
+				01E63E43282A6F4B006DB0C9 /* IQKeyboardManagerSwift.framework */,
+				01E63E44282A6F4B006DB0C9 /* JGProgressHUD.framework */,
+				01E63E45282A6F4B006DB0C9 /* leveldb.framework */,
+				01E63E46282A6F4B006DB0C9 /* uv.framework */,
+				01E63E47282A6F4B006DB0C9 /* Logboard.framework */,
+				01E63E48282A6F4B006DB0C9 /* nanopb.framework */,
+				01E63E49282A6F4B006DB0C9 /* Pods_Vox_VoxUITests.framework */,
+				01E63E4A282A6F4B006DB0C9 /* Pods_VoxTests.framework */,
+				01E63E4B282A6F4B006DB0C9 /* FBLPromises.framework */,
+				01E63E4C282A6F4B006DB0C9 /* SDWebImage.framework */,
+				01E63E4D282A6F4B006DB0C9 /* SideMenu.framework */,
+				01E63E4E282A6F4B006DB0C9 /* StreamChat.framework */,
+				01E63E4F282A6F4B006DB0C9 /* StreamChat.bundle */,
+				01E63E50282A6F4B006DB0C9 /* StreamChatUI.framework */,
+				01E63E51282A6F4B006DB0C9 /* StreamChatUIResources.bundle */,
 				B90CB95122C095C47C9BA1D7 /* Pods_Vox.framework */,
 				692022CA461C66EEED952617 /* Pods_Vox_VoxUITests.framework */,
 				A677D562C5F05724318D6E9D /* Pods_VoxTests.framework */,
@@ -490,7 +654,7 @@
 				01C787DF27F2FDCA00225B50 /* Frameworks */,
 				01C787E027F2FDCA00225B50 /* Resources */,
 				6709FB94EEBF07A3A96DA64C /* [CP] Embed Pods Frameworks */,
-				012BCC1B28255A3200E0E439 /* Embed Frameworks */,
+				01581D49282B20760076274E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -593,6 +757,7 @@
 				01C787F227F2FDCA00225B50 /* Assets.xcassets in Resources */,
 				01C787ED27F2FDCA00225B50 /* Main.storyboard in Resources */,
 				01B96A67280F9BC40054985D /* PodcastCell.xib in Resources */,
+				01581D72282B23F50076274E /* YTLiveVideoViewController.xib in Resources */,
 				01C7E824281452CC001C828E /* PlayerDetailsView.xib in Resources */,
 				015333242813A52100BF2C97 /* EpisodeCell.xib in Resources */,
 			);
@@ -724,6 +889,7 @@
 			files = (
 				01C7E82628145558001C828E /* PlayerDetailsView.swift in Sources */,
 				01F15D1F2808FD13001A10C6 /* PodcastSearchController.swift in Sources */,
+				01581D70282B23F50076274E /* YTSendButton.swift in Sources */,
 				01D8B68A2817D5200029CA43 /* FavoritePodcastCell.swift in Sources */,
 				016A95EF2805122B00373F36 /* SignUpViewController.swift in Sources */,
 				0188A81F282A072200D91C40 /* VisualEffect.swift in Sources */,
@@ -732,11 +898,15 @@
 				01C787EA27F2FDCA00225B50 /* ViewController.swift in Sources */,
 				01F15D1B2808E3AB001A10C6 /* MainTabBarViewController.swift in Sources */,
 				0136FD3127FE755300D7DDFC /* WelcomeViewController.swift in Sources */,
+				01581D6B282B23F50076274E /* YTChatMessageContentView.swift in Sources */,
 				016A95FE2805131700373F36 /* SecondOnboardViewController.swift in Sources */,
 				0174C6C6281771BC007CF424 /* UIApplication.swift in Sources */,
 				016A95ED280511F900373F36 /* ProfileViewController.swift in Sources */,
 				01D8B68E2817D5D50029CA43 /* UserDefault.swift in Sources */,
 				017E02872821EDDA00BD2A82 /* MenuItemCell.swift in Sources */,
+				01581D6C282B23F50076274E /* YTInputChatMessageView.swift in Sources */,
+				01581D68282B23F50076274E /* YTLiveVideoViewController.swift in Sources */,
+				015B752E28308B7B00198BBA /* Hour.swift in Sources */,
 				017E02852821CDC100BD2A82 /* ProfileImageView.swift in Sources */,
 				01F15D212808FDA1001A10C6 /* Podcast.swift in Sources */,
 				017E02832821CAF500BD2A82 /* SpacerView.swift in Sources */,
@@ -746,12 +916,14 @@
 				016A95E528050C3200373F36 /* UserProfile.swift in Sources */,
 				01C787F027F2FDCA00225B50 /* Vox.xcdatamodeld in Sources */,
 				016A95E9280510B900373F36 /* SignInViewController.swift in Sources */,
+				01581D73282B23F50076274E /* YTScrollToLatestMessageButton.swift in Sources */,
 				015333202813998100BF2C97 /* Episode.swift in Sources */,
 				017E02812821B5F400BD2A82 /* CustomHeaderMenu.swift in Sources */,
 				016A95FC2805130200373F36 /* FirstOnboardViewController.swift in Sources */,
 				01D7A38628138D1700D7DF71 /* EpisodeControllerTableViewController.swift in Sources */,
 				014E43C2280E165C00865ECA /* Extension.swift in Sources */,
 				016A95EB280510D600373F36 /* HomeViewController.swift in Sources */,
+				01581D6A282B23F50076274E /* YTChatMessageComposerView.swift in Sources */,
 				013EC7EE28197E4400E9A028 /* Constants.swift in Sources */,
 				016A95FA280512E900373F36 /* SignUpCompletionViewController.swift in Sources */,
 				01928A91281A073E005572E5 /* TokenService.swift in Sources */,
@@ -761,9 +933,13 @@
 				0188A81D282A05B900D91C40 /* LiveViewController.swift in Sources */,
 				016A96002805132000373F36 /* LastOnboardViewController.swift in Sources */,
 				01C787E627F2FDCA00225B50 /* AppDelegate.swift in Sources */,
+				01581D67282B23F50076274E /* YTMessageLayoutOptionsResolver.swift in Sources */,
+				01581D71282B23F50076274E /* YTLiveChatViewController.swift in Sources */,
+				01581D69282B23F50076274E /* YTChatComposerViewController.swift in Sources */,
 				015333232813A52100BF2C97 /* EpisodeCell.swift in Sources */,
 				018562FA281DA4690073F814 /* ChatViewController.swift in Sources */,
 				01B96A65280F93660054985D /* APIService.swift in Sources */,
+				01581D66282B23F50076274E /* ChatClient.swift in Sources */,
 				01C787E827F2FDCA00225B50 /* SceneDelegate.swift in Sources */,
 				01D8B68C2817D5890029CA43 /* FavoritesController.swift in Sources */,
 				01B4D6E02820963400843C25 /* MenuController.swift in Sources */,
@@ -859,6 +1035,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = G96V29LG5G;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -920,6 +1097,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = G96V29LG5G;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -933,6 +1111,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -948,9 +1127,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3S38K76AP3;
+				DEVELOPMENT_TEAM = X6YDWXK728;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vox/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Vox Access camera to upload to the cloud";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Vox Access to your microphone to use it for streaming";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We use photos to upload to the cloud";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -961,7 +1143,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.skanderthabet.Vox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skanderthabetEsprit.vox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -977,9 +1159,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3S38K76AP3;
+				DEVELOPMENT_TEAM = X6YDWXK728;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vox/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Vox Access camera to upload to the cloud";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Vox Access to your microphone to use it for streaming";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We use photos to upload to the cloud";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -990,7 +1175,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.skanderthabet.Vox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skanderthabetEsprit.vox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

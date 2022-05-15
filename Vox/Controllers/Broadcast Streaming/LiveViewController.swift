@@ -53,40 +53,19 @@ final class LiveViewController: UIViewController {
             rtmpStream.orientation = orientation
         }
         rtmpStream.captureSettings = [
-            .sessionPreset: AVCaptureSession.Preset.hd1280x720,
-            .continuousAutofocus: true,
-            .continuousExposure: true
+            .fps: 30, // FPS
+            .sessionPreset: AVCaptureSession.Preset.medium, // input video width/height
+            // .isVideoMirrored: false,
+            // .continuousAutofocus: false, // use camera autofocus mode
+            // .continuousExposure: false, //  use camera exposure mode
             // .preferredVideoStabilizationMode: AVCaptureVideoStabilizationMode.auto
         ]
         rtmpStream.videoSettings = [
-            .width: 720,
-            .height: 1280,
-            .profileLevel: kVTProfileLevel_H264_Baseline_3_1,
-            .maxKeyFrameIntervalDuration: 2,
-        ]
-        rtmpStream.audioSettings = [
-            .muted: false, // mute audio
-            .bitrate: 32 * 1000,
-        ]
-        rtmpStream.recorderSettings = [
-            AVMediaType.audio: [
-                AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-                AVSampleRateKey: 0,
-                AVNumberOfChannelsKey: 0,
-                // AVEncoderBitRateKey: 128000,
-            ],
-            AVMediaType.video: [
-                AVVideoCodecKey: AVVideoCodecType.h264,
-                AVVideoHeightKey: 0,
-                AVVideoWidthKey: 0,
-                /*
-                AVVideoCompressionPropertiesKey: [
-                    AVVideoMaxKeyFrameIntervalDurationKey: 2,
-                    AVVideoProfileLevelKey: AVVideoProfileLevelH264Baseline30,
-                    AVVideoAverageBitRateKey: 512000
-                ]
-                */
-            ],
+            .width: 640, // video output width
+            .height: 360, // video output height
+            .bitrate: 160 * 1000, // video output bitrate
+            .profileLevel: kVTProfileLevel_H264_Baseline_3_1, // H264 Profile require "import VideoToolbox"
+            .maxKeyFrameIntervalDuration: 2, // key frame / sec
         ]
         rtmpStream.mixer.recorder.delegate = ExampleRecorderDelegate.shared
 
@@ -113,13 +92,14 @@ final class LiveViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(didRouteChangeNotification(_:)), name: AVAudioSession.routeChangeNotification, object: nil)
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        logger.info("viewWillDisappear")
-        super.viewWillDisappear(animated)
-        rtmpStream.removeObserver(self, forKeyPath: "currentFPS")
-        rtmpStream.close()
-        NotificationCenter.default.removeObserver(self)
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        logger.info("viewWillDisappear")
+//        super.viewWillDisappear(animated)
+//        rtmpStream.removeObserver(self, forKeyPath: "currentFPS")
+//        rtmpStream.close()
+//        NotificationCenter.default.removeObserver(self)
+//
+//    }
 
     @IBAction func rotateCamera(_ sender: UIButton) {
         logger.info("rotateCamera")
@@ -154,7 +134,20 @@ final class LiveViewController: UIViewController {
     }
 
     @IBAction func on(close: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        let user = UserDefaults.standard.callingUser(forKey: "user")
+        let userCall = (user!).user
+        let firstname = userCall.firstname
+        let homeVC = HomeViewController.sharedInstance()
+        let hour = Calendar.current.component( .hour, from:Date() ) > 11 ? "Good Evening" : "Good Morning"
+        homeVC.greetinLabel = "\(hour),\n\(firstname)"
+        rtmpStream.removeObserver(self, forKeyPath: "currentFPS")
+        rtmpStream.close()
+        NotificationCenter.default.removeObserver(self)
+        self.navigationController?.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(homeVC, animated: false)
+        
+        
+        
     }
 
     @IBAction func on(publish: UIButton) {
@@ -266,6 +259,7 @@ final class LiveViewController: UIViewController {
         }
     }
 }
+
 
 extension LiveViewController {
     static func sharedInstance() -> LiveViewController {

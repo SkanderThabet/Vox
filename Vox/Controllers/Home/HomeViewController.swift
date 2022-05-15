@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SwiftMessages
 class HomeViewController: UIViewController {
 
     // MARK: - Outlets
@@ -17,9 +17,27 @@ class HomeViewController: UIViewController {
     // MARK: - Actions
     @IBOutlet weak var startStreamingBtn: UIButton!
     
+    @IBAction func logOutBarButton(_ sender: Any) {
+        let messageView: MessageView = MessageView.viewFromNib(layout: .centeredView)
+        messageView.configureBackgroundView(width: 300)
+        messageView.configureTheme(.info)
+        messageView.configureContent(title: "Sign out!", body: "Are you sure you want to log out ?", iconImage: UIImage(systemName: "rectangle.portrait.and.arrow.right"), iconText: nil, buttonImage: nil, buttonTitle: "Yes") { _ in
+            SwiftMessages.hide()
+            APIService.shared.callingLogOutApi()
+        }
+        messageView.backgroundView.backgroundColor = UIColor.init(white: 0.97, alpha: 1)
+        messageView.backgroundView.layer.cornerRadius = 10
+        var config = SwiftMessages.defaultConfig
+        config.presentationStyle = .center
+        config.duration = .forever
+        config.dimMode = .blur(style: .dark, alpha: 1, interactive: true)
+        config.presentationContext  = .window(windowLevel: UIWindow.Level.statusBar)
+        SwiftMessages.show(config: config, view: messageView)
+        print("Log out clicked")
+    }
+    private let user = UserDefaults.standard.callingUser(forKey: "user")
+    
     fileprivate func handlePVC() {
-        
-        let user = UserDefaults.standard.callingUser(forKey: "user")
         let userCall = (user!).user
         let email = userCall.email
         let firstname = userCall.firstname
@@ -48,25 +66,39 @@ class HomeViewController: UIViewController {
     
     
     var greetinLabel : String?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        greetingUserLabel.text = greetinLabel ?? ""
-        self.navigationItem.hidesBackButton = true
-        PlayerDetailsView.initFromNib().removeFromSuperview()
+    
+    
+    fileprivate func randomImageClickerRecognizer() {
         // Do any additional setup after loading the view.
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        randomChannel.isUserInteractionEnabled = true
+        randomChannel.addGestureRecognizer(tapGestureRecognizer)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let getCorrectTime = Hour.hour.getPriciseDateTime(firstname: (user?.user.firstname)!) 
+        greetingUserLabel.text = getCorrectTime ?? greetinLabel
+        self.navigationItem.hidesBackButton = true
+        PlayerDetailsView.initFromNib().removeFromSuperview()
+        randomImageClickerRecognizer()
+        
     }
-    */
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
 
+        // Your action
+//        let liveChatChannelVC = YTLiveVideoViewController.sharedInstance()
+//        liveChatChannelVC.playPauseButton?.tintColor = UIColor(.white)
+        self.navigationController!.pushViewController(YTLiveVideoViewController(nibName: "YTLiveVideoViewController", bundle: nil), animated: true)
+//        self.navigationController?.pushViewController(liveChatChannelVC, animated: true)
+    }
+
+    
 }
 
 extension HomeViewController {

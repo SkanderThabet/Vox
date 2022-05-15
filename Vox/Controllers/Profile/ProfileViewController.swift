@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func signOutBtn(_ sender: Any) {
-        APIService.shared.callingLogOutApi(vc: self)
+        APIService.shared.callingLogOutApi()
     }
     
     var fullName, firstName, lastName , status, userName , email , dob , avatar: String?

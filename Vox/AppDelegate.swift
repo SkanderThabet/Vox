@@ -10,6 +10,7 @@ import CoreData
 import Firebase
 import IQKeyboardManagerSwift
 import StreamChat
+import StreamChatUI
 import AVFoundation
 import Logboard
 
@@ -18,14 +19,37 @@ import Logboard
  */
 
 extension ChatClient {
+    /// The singleton instance of `ChatClient`
     static var shared: ChatClient!
+    static let sharedLive: ChatClient! = {
+        var components = Components()
+
+        components.channelVC = YTLiveChatViewController.self
+        components.messageListVC = YTLiveChatMessageListViewController.self
+        components.messageComposerVC = YTChatComposerViewController.self
+        components.messageComposerView = YTChatMessageComposerView.self
+        components.scrollToLatestMessageButton = YTScrollToLatestMessageButton.self
+        components.sendButton = YTSendButton.self
+        components.inputMessageView = YTInputChatMessageView.self
+        
+        components.messageLayoutOptionsResolver = YTMessageLayoutOptionsResolver()
+
+        Components.default = components
+
+        let config = ChatClientConfig(apiKey: APIKey("bmrrcjf5bhzt"))
+        
+        let client = ChatClient(config: config)
+        client.connectUser(
+            userInfo: .init(id: "sagar"),
+            token: .development(userId: "sagar")
+        )
+        return client
+    }()
 }
-
-
 /**
  Below property is to log streaming results
  */
-let logger = Logboard.with("com.skanderthabet.Vox")
+let logger = Logboard.with("com.skanderthabet.vox")
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -36,10 +60,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        window = UIWindow()
+//        window = UIWindow()
+//        window?.makeKeyAndVisible()
+//        window?.rootViewController = YTLiveVideoViewController()
+        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.makeKeyAndVisible()
+//        window?.rootViewController = UINavigationController(
+//            rootViewController: YTLiveVideoViewController()
+//        )
+        let vc : UIViewController?
+        if TokenService.tokenInstance.checkForLogin() {
+            vc = HomeViewController.sharedInstance()
+        }
+        else {
+            vc = WelcomeViewController.sharedInstance()
+        }
+        let navVC = UINavigationController(rootViewController: vc!)
         window?.makeKeyAndVisible()
-        window?.rootViewController = MainTabBarViewController()
-
+        window?.rootViewController = navVC
+        
         /**
          IQ activation
          */
@@ -53,7 +92,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // https://stackoverflow.com/questions/51010390/avaudiosession-setcategory-swift-4-2-ios-12-play-sound-on-silent
             if #available(iOS 10.0, *) {
                 try session.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker, .allowBluetooth])
-                try session.setCategory(.playback, mode: .moviePlayback)
             } else {
                 session.perform(NSSelectorFromString("setCategory:withOptions:error:"), with: AVAudioSession.Category.playAndRecord, with: [
                     AVAudioSession.CategoryOptions.allowBluetooth,
@@ -69,6 +107,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /**
          Above section is to make sure to setup and activate the AVAudioSession.
          */
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(.playback, mode: .moviePlayback)
+        } catch {
+            print("Setting category to AVAudioSessionCategoryPlayback failed.")
+        }
         
         return true
     }

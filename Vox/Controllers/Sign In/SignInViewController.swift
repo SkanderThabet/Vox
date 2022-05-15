@@ -8,6 +8,7 @@
 import UIKit
 import JGProgressHUD
 import Alamofire
+import SwiftMessages
 
 class SignInViewController: UIViewController {
     
@@ -63,11 +64,35 @@ class SignInViewController: UIViewController {
     }
     
     
+    fileprivate func showSuccessAlert() {
+        let status = MessageView.viewFromNib(layout: .statusLine)
+        status.backgroundView.backgroundColor = UIColor.systemGreen
+        status.bodyLabel?.textColor = UIColor.white
+        status.configureContent(body: "Connected Successfully")
+        var statusConfig = SwiftMessages.defaultConfig
+        statusConfig.presentationContext = .window(windowLevel: UIWindow.Level.statusBar)
+        SwiftMessages.show(config: statusConfig, view: status)
+    }
+    
+    fileprivate func showErrorAlert() {
+        let error = MessageView.viewFromNib(layout: .cardView)
+        error.configureTheme(.error)
+        error.configureContent(title: "Error", body: "Your credentials are not correct, please try again", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "Dismiss") { button in
+            SwiftMessages.hide()
+        }
+        var config = SwiftMessages.defaultConfig
+        config.dimMode = .gray(interactive: true)
+        config.presentationStyle = .top
+        config.duration = .forever
+        SwiftMessages.show(config: config, view: error)
+    }
+    
     fileprivate func loginCallingFunction(_ email: String, _ password: String, _ hud: JGProgressHUD) {
         APIService.shared.callingLoginApi(email: email, password: password, hud) { result in
             switch result {
             case .success(let json):
                 print(json as AnyObject)
+                self.showSuccessAlert()
                 self.handleProfileVC(json)
                 self.handleHomeScreenVC(json)
                 let token = (json as! UserProfile).token
@@ -80,8 +105,8 @@ class SignInViewController: UIViewController {
             case .failure(let err):
                 self.errorLabel.isHidden = false
                 self.errorLabel.text = "Your credentials are not correct, please try again"
-                self.displayError(err)
-                print("Error nav to profile : ",err)
+                self.showErrorAlert()
+//                print("Error nav to profile : ",self.displayError(err))
             }
         }
     }

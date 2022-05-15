@@ -15,6 +15,8 @@ class ChatViewController: ChatChannelListVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userAvatarView.addTarget(self, action: #selector(handlePVC), for: .touchUpInside)
+        self.title = "Vox"
+        self.navigationItem.backButtonTitle = "Back"
         // Do any additional setup after loading the view.
         
     }
@@ -40,10 +42,4 @@ class ChatViewController: ChatChannelListVC {
         profileVC.status = "Online"
         self.navigationController?.pushViewController(profileVC, animated: true)
     }
-    
-    
-    
-    
-    
-
 }

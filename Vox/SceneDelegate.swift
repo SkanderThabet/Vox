@@ -43,6 +43,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 //            /// Step 4: similar to embedding with a navigation controller using Storyboard
 //            window?.rootViewController = UINavigationController(rootViewController: channelList)
+        let vc : UIViewController?
+        if TokenService.tokenInstance.checkForLogin() {
+            vc = HomeViewController.sharedInstance()
+        }
+        else {
+            vc = WelcomeViewController.sharedInstance()
+        }
+        let navVC = UINavigationController(rootViewController: vc!)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = navVC
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
