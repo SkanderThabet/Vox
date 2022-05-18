@@ -43,5 +43,9 @@ target 'Vox' do
   pod 'paper-onboarding'
   pod 'SwiftEntryKit', '2.0.0'
   pod 'SwiftMessages'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'Nuke', '~> 10.3.3'
+  pod 'GDPerformanceView-Swift', '~> 2.1.1'
+  pod 'atlantis-proxyman', '~> 1.16.0'
 
 end

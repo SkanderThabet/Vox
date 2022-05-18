@@ -47,7 +47,7 @@ final class LiveViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.hidesBackButton = true
         rtmpStream = RTMPStream(connection: rtmpConnection)
         if let orientation = DeviceUtil.videoOrientation(by: UIApplication.shared.statusBarOrientation) {
             rtmpStream.orientation = orientation
@@ -101,6 +101,7 @@ final class LiveViewController: UIViewController {
 //
 //    }
 
+
     @IBAction func rotateCamera(_ sender: UIButton) {
         logger.info("rotateCamera")
         let position: AVCaptureDevice.Position = currentPosition == .back ? .front : .back
@@ -144,7 +145,7 @@ final class LiveViewController: UIViewController {
         rtmpStream.close()
         NotificationCenter.default.removeObserver(self)
         self.navigationController?.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(homeVC, animated: false)
+        self.navigationController?.pushViewController(homeVC, animated: true)
         
         
         
@@ -193,7 +194,7 @@ final class LiveViewController: UIViewController {
 
     @objc
     private func rtmpErrorHandler(_ notification: Notification) {
-        logger.error(notification)
+        print(notification)
         rtmpConnection.connect(Preference.defaultInstance.uri!)
     }
 

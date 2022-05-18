@@ -9,8 +9,7 @@ import Foundation
 import Alamofire
 import FeedKit
 import JGProgressHUD
-
-
+import SwiftyJSON
 
 
 class APIService {
@@ -202,4 +201,67 @@ class APIService {
         }
         
     }
+    
+    func callingSendEmail (email: String,code : String, completed: @escaping (Bool, Any?) -> Void) {
+        print("----code ",code)
+        let url = "https://voxappli.herokuapp.com/api/vox/auth/IosSendMail/"
+            AF.request(url+email,
+                       method: .post, parameters: ["code": code] , encoding: JSONEncoding.default)
+            .validate(statusCode: 200..<300)
+                    .validate(contentType: ["application/json"])
+                    .responseData { response in
+                        switch response.result {
+                        case .success:
+                            let jsonData = JSON(response.data!)
+                            let utilisateur = self.makeItem(jsonItem: jsonData)
+                           
+                            print(utilisateur)
+                            completed(true, utilisateur)
+                        case let .failure(error):
+                            debugPrint(error)
+                            completed(false, nil)
+                        }
+                    }
+            }
+    
+    func ResetPassword(email: String,password : String, completed: @escaping (Bool, Any?) -> Void) {
+        let url = "https://voxappli.herokuapp.com/api/vox/auth/Iosresetpassword/"
+            AF.request(url + email,
+                       method: .post, parameters: ["password": password], encoding: JSONEncoding.default)
+            .validate(statusCode: 200..<300)
+                    .validate(contentType: ["application/json"])
+                    .responseData { response in
+                        switch response.result {
+                        case .success:
+                            let jsonData = JSON(response.data!)
+                            let utilisateur = self.makeItem(jsonItem: jsonData)
+                           
+                            print(utilisateur)
+                            completed(true, utilisateur)
+                        case let .failure(error):
+                            debugPrint(error)
+                            completed(false, nil)
+                        }
+                    }
+            }
+    
+    func makeItem(jsonItem: JSON) -> User {
+            
+           
+            
+            return User(
+                id: jsonItem["_id"].stringValue,
+                username: jsonItem["username"].stringValue,
+                email: jsonItem["email"].stringValue,
+                firstname: jsonItem["firstname"].stringValue,
+                lastname: jsonItem["lastname"].stringValue,
+                dob: jsonItem["dob"].stringValue,
+                avatar: jsonItem["avatar"].stringValue,
+                v: jsonItem["__v"].intValue,
+                updatedAt: jsonItem["updatedAt"].stringValue,
+                password: jsonItem["password"].stringValue
+            )
+
+        
+        }
 }

@@ -14,36 +14,77 @@ import StreamChatUI
 import AVFoundation
 import Logboard
 
+fileprivate func LiveStreamChatConfig() -> ChatClient? {
+    var components = Components()
+    
+    components.channelVC = YTLiveChatViewController.self
+    components.messageListVC = YTLiveChatMessageListViewController.self
+    components.messageComposerVC = YTChatComposerViewController.self
+    components.messageComposerView = YTChatMessageComposerView.self
+    components.scrollToLatestMessageButton = YTScrollToLatestMessageButton.self
+    components.sendButton = YTSendButton.self
+    components.inputMessageView = YTInputChatMessageView.self
+    
+    components.messageLayoutOptionsResolver = YTMessageLayoutOptionsResolver()
+    
+    Components.default = components
+    let user = UserDefaults.standard.callingUser(forKey: "user")
+    
+    let config = ChatClientConfig(apiKey: APIKey("uwx2yzzbyqaf"))
+    
+    let client = ChatClient(config: config)
+    client.connectUser(
+        userInfo: .init(id: user?.user.username ?? ""),
+        token: .development(userId: "\(user?.user.username ?? "")")
+    )
+    return client
+}
+
+fileprivate func ChatMessagingConfig() -> ChatClient? {
+    let user = UserDefaults.standard.callingUser(forKey: "user")
+    
+    let config = ChatClientConfig(apiKey: APIKey("uwx2yzzbyqaf"))
+    
+    // Register custom UI elements
+    var appearance = Appearance()
+    var components = Components()
+
+    appearance.images.openAttachments = UIImage(systemName: "camera.fill")!
+        .withTintColor(.systemBlue)
+
+    components.channelContentView = iMessageChatChannelListItemView.self
+    components.channelCellSeparator = iMessageCellSeparatorView.self
+
+    components.channelVC = iMessageChatChannelViewController.self
+    components.messageListVC = iMessageChatMessageListViewController.self
+    components.channelHeaderView = iMessageChatChannelHeaderView.self
+    components.messageComposerVC = iMessageComposerVC.self
+    components.messageComposerView = iMessageComposerView.self
+    components.messageLayoutOptionsResolver = iMessageChatMessageLayoutOptionsResolver()
+
+    Appearance.default = appearance
+    Components.default = components
+
+    let client = ChatClient(config: config)
+    
+    client.connectUser(
+        userInfo: UserInfo(id: user?.user.username ?? ""),
+        token: .development(userId: "\(user?.user.username ?? "")")
+    )
+    return client
+}
+
 /**
  Below extension is to instantiate ChatClient as shared global var
  */
 
 extension ChatClient {
     /// The singleton instance of `ChatClient`
-    static var shared: ChatClient!
-    static let sharedLive: ChatClient! = {
-        var components = Components()
-
-        components.channelVC = YTLiveChatViewController.self
-        components.messageListVC = YTLiveChatMessageListViewController.self
-        components.messageComposerVC = YTChatComposerViewController.self
-        components.messageComposerView = YTChatMessageComposerView.self
-        components.scrollToLatestMessageButton = YTScrollToLatestMessageButton.self
-        components.sendButton = YTSendButton.self
-        components.inputMessageView = YTInputChatMessageView.self
-        
-        components.messageLayoutOptionsResolver = YTMessageLayoutOptionsResolver()
-
-        Components.default = components
-
-        let config = ChatClientConfig(apiKey: APIKey("bmrrcjf5bhzt"))
-        
-        let client = ChatClient(config: config)
-        client.connectUser(
-            userInfo: .init(id: "sagar"),
-            token: .development(userId: "sagar")
-        )
-        return client
+    static var shared: ChatClient! = {
+        return ChatMessagingConfig()
+    }()
+        static let sharedLive: ChatClient! = {
+            return LiveStreamChatConfig()
     }()
 }
 /**
@@ -64,10 +105,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window?.makeKeyAndVisible()
 //        window?.rootViewController = YTLiveVideoViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.makeKeyAndVisible()
-//        window?.rootViewController = UINavigationController(
-//            rootViewController: YTLiveVideoViewController()
-//        )
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(
+            rootViewController: iMessageChatChannelListViewController()
+        )
+
         let vc : UIViewController?
         if TokenService.tokenInstance.checkForLogin() {
             vc = HomeViewController.sharedInstance()
@@ -102,7 +144,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             try session.setActive(true)
         } catch {
             print(error)
-            logger.error(error)
+            print(error)
         }
         /**
          Above section is to make sure to setup and activate the AVAudioSession.

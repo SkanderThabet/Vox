@@ -24,6 +24,8 @@ class HomeViewController: UIViewController {
         messageView.configureContent(title: "Sign out!", body: "Are you sure you want to log out ?", iconImage: UIImage(systemName: "rectangle.portrait.and.arrow.right"), iconText: nil, buttonImage: nil, buttonTitle: "Yes") { _ in
             SwiftMessages.hide()
             APIService.shared.callingLogOutApi()
+            self.dismiss(animated: true, completion: nil)
+            
         }
         messageView.backgroundView.backgroundColor = UIColor.init(white: 0.97, alpha: 1)
         messageView.backgroundView.layer.cornerRadius = 10

@@ -15,7 +15,7 @@ class SignInViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
-    @IBOutlet weak var forgotPwd: UILabel!
+    @IBOutlet weak var forgotPwd: UIButton!
     @IBOutlet weak var signInBtn: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -24,6 +24,10 @@ class SignInViewController: UIViewController {
     // MARK: - Actions
     @IBAction func signInBtn(_ sender: Any) {
         handleLogin()
+    }
+    
+    @IBAction func forgetPasswordBtn(_ sender: Any) {
+       
     }
     
     
@@ -58,8 +62,8 @@ class SignInViewController: UIViewController {
         let username = (json as! UserProfile).user.username
         let fullname = "\(firstname) \(lastname)"
         let homeVC = HomeViewController.sharedInstance()
-        let hour = Calendar.current.component( .hour, from:Date() ) > 11 ? "Good Evening" : "Good Morning"
-        homeVC.greetinLabel = "\(hour),\n\(firstname)"
+        let hour = Hour.hour.getPriciseDateTime(firstname: firstname)
+        homeVC.greetinLabel = "\(hour)"
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
     

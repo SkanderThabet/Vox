@@ -15,7 +15,6 @@
 		015333232813A52100BF2C97 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015333212813A52100BF2C97 /* EpisodeCell.swift */; };
 		015333242813A52100BF2C97 /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015333222813A52100BF2C97 /* EpisodeCell.xib */; };
 		015333262813B17E00BF2C97 /* RSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015333252813B17E00BF2C97 /* RSSFeed.swift */; };
-		01581D48282B20750076274E /* Pods_Vox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B90CB95122C095C47C9BA1D7 /* Pods_Vox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01581D66282B23F50076274E /* ChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D4F282B23ED0076274E /* ChatClient.swift */; };
 		01581D67282B23F50076274E /* YTMessageLayoutOptionsResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D51282B23EE0076274E /* YTMessageLayoutOptionsResolver.swift */; };
 		01581D68282B23F50076274E /* YTLiveVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D52282B23EE0076274E /* YTLiveVideoViewController.swift */; };
@@ -27,6 +26,7 @@
 		01581D71282B23F50076274E /* YTLiveChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D5F282B23F20076274E /* YTLiveChatViewController.swift */; };
 		01581D72282B23F50076274E /* YTLiveVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01581D60282B23F20076274E /* YTLiveVideoViewController.xib */; };
 		01581D73282B23F50076274E /* YTScrollToLatestMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01581D62282B23F20076274E /* YTScrollToLatestMessageButton.swift */; };
+		01585E1128315CA60029746B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01585E1028315CA60029746B /* OnboardingView.swift */; };
 		015B752E28308B7B00198BBA /* Hour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B752D28308B7B00198BBA /* Hour.swift */; };
 		016A95E528050C3200373F36 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E428050C3200373F36 /* UserProfile.swift */; };
 		016A95E728050E1500373F36 /* NewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A95E628050E1500373F36 /* NewAccount.swift */; };
@@ -52,6 +52,15 @@
 		0188A81F282A072200D91C40 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188A81E282A072200D91C40 /* VisualEffect.swift */; };
 		0188A821282A07CD00D91C40 /* GetCurrentDeviceIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188A820282A07CD00D91C40 /* GetCurrentDeviceIP.swift */; };
 		01928A91281A073E005572E5 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01928A90281A073E005572E5 /* TokenService.swift */; };
+		019D07B328329E0B00A90CE1 /* iMessageChatMessageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D07AA28329E0B00A90CE1 /* iMessageChatMessageContentView.swift */; };
+		019D07B428329E0B00A90CE1 /* iMessageChatChannelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D07AB28329E0B00A90CE1 /* iMessageChatChannelHeaderView.swift */; };
+		019D07B528329E0B00A90CE1 /* iMessageChatMessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D07AC28329E0B00A90CE1 /* iMessageChatMessageListViewController.swift */; };
+		019D07B628329E0B00A90CE1 /* iMessageComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D07AD28329E0B00A90CE1 /* iMessageComposerView.swift */; };
+		019D07B728329E0B00A90CE1 /* iMessageChatChannelListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D07AE28329E0B00A90CE1 /* iMessageChatChannelListItemView.swift */; };
+		019D07B828329E0B00A90CE1 /* iMessageChatChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D07AF28329E0B00A90CE1 /* iMessageChatChannelListViewController.swift */; };
+		019D07B928329E0B00A90CE1 /* iMessageComposerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D07B028329E0B00A90CE1 /* iMessageComposerVC.swift */; };
+		019D07BA28329E0B00A90CE1 /* iMessageChatChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D07B128329E0B00A90CE1 /* iMessageChatChannelViewController.swift */; };
+		019D07BB28329E0B00A90CE1 /* iMessageCellSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D07B228329E0B00A90CE1 /* iMessageCellSeparatorView.swift */; };
 		01B4D6E02820963400843C25 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B4D6DF2820963400843C25 /* MenuController.swift */; };
 		01B96A63280F81AC0054985D /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B96A62280F81AC0054985D /* SearchResults.swift */; };
 		01B96A65280F93660054985D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B96A64280F93660054985D /* APIService.swift */; };
@@ -78,6 +87,13 @@
 		01F15D1D2808E502001A10C6 /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1C2808E502001A10C6 /* PodcastViewController.swift */; };
 		01F15D1F2808FD13001A10C6 /* PodcastSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D1E2808FD13001A10C6 /* PodcastSearchController.swift */; };
 		01F15D212808FDA1001A10C6 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F15D202808FDA1001A10C6 /* Podcast.swift */; };
+		01F2ADD2283445C900A61E24 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F2ADCF283445C900A61E24 /* ResetPasswordViewController.swift */; };
+		01F2ADD3283445C900A61E24 /* GenerateCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F2ADD0283445C900A61E24 /* GenerateCodeViewController.swift */; };
+		01F2ADD4283445C900A61E24 /* ResetEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F2ADD1283445C900A61E24 /* ResetEmailViewController.swift */; };
+		01FCE55728354C1F00AA05EB /* BannerShowingConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE55628354C1F00AA05EB /* BannerShowingConnectionDelegate.swift */; };
+		01FCE55928354C4C00AA05EB /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE55828354C4C00AA05EB /* BannerView.swift */; };
+		01FCE55B28354D9000AA05EB /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE55A28354D9000AA05EB /* ChatPresenter.swift */; };
+		01FCE55D28354EDB00AA05EB /* CreateChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE55C28354EDB00AA05EB /* CreateChatViewController.swift */; };
 		6D3D2E99D02D23F2F3418429 /* Pods_VoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E63E4A282A6F4B006DB0C9 /* Pods_VoxTests.framework */; };
 		71B9767F85870F9C9BB5F9BF /* Pods_VoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A677D562C5F05724318D6E9D /* Pods_VoxTests.framework */; };
 		7DE32EF7024B1E55837D1D06 /* Pods_Vox_VoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E63E49282A6F4B006DB0C9 /* Pods_Vox_VoxUITests.framework */; };
@@ -101,20 +117,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		01581D49282B20760076274E /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				01581D48282B20750076274E /* Pods_Vox.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		0136FD3027FE755300D7DDFC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		013EC7ED28197E4400E9A028 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		01581D5F282B23F20076274E /* YTLiveChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTLiveChatViewController.swift; sourceTree = "<group>"; };
 		01581D60282B23F20076274E /* YTLiveVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTLiveVideoViewController.xib; sourceTree = "<group>"; };
 		01581D62282B23F20076274E /* YTScrollToLatestMessageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTScrollToLatestMessageButton.swift; sourceTree = "<group>"; };
+		01585E1028315CA60029746B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		015B752D28308B7B00198BBA /* Hour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hour.swift; sourceTree = "<group>"; };
 		016A95E428050C3200373F36 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		016A95E628050E1500373F36 /* NewAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccount.swift; sourceTree = "<group>"; };
@@ -160,6 +163,15 @@
 		0188A81E282A072200D91C40 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
 		0188A820282A07CD00D91C40 /* GetCurrentDeviceIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentDeviceIP.swift; sourceTree = "<group>"; };
 		01928A90281A073E005572E5 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
+		019D07AA28329E0B00A90CE1 /* iMessageChatMessageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iMessageChatMessageContentView.swift; path = "../../../../../Downloads/stream-chat-swift-develop/Examples/iMessageClone/iMessageChatMessageContentView.swift"; sourceTree = "<group>"; };
+		019D07AB28329E0B00A90CE1 /* iMessageChatChannelHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iMessageChatChannelHeaderView.swift; path = "../../../../../Downloads/stream-chat-swift-develop/Examples/iMessageClone/iMessageChatChannelHeaderView.swift"; sourceTree = "<group>"; };
+		019D07AC28329E0B00A90CE1 /* iMessageChatMessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iMessageChatMessageListViewController.swift; path = "../../../../../Downloads/stream-chat-swift-develop/Examples/iMessageClone/iMessageChatMessageListViewController.swift"; sourceTree = "<group>"; };
+		019D07AD28329E0B00A90CE1 /* iMessageComposerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iMessageComposerView.swift; path = "../../../../../Downloads/stream-chat-swift-develop/Examples/iMessageClone/iMessageComposerView.swift"; sourceTree = "<group>"; };
+		019D07AE28329E0B00A90CE1 /* iMessageChatChannelListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iMessageChatChannelListItemView.swift; path = "../../../../../Downloads/stream-chat-swift-develop/Examples/iMessageClone/iMessageChatChannelListItemView.swift"; sourceTree = "<group>"; };
+		019D07AF28329E0B00A90CE1 /* iMessageChatChannelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iMessageChatChannelListViewController.swift; path = "../../../../../Downloads/stream-chat-swift-develop/Examples/iMessageClone/iMessageChatChannelListViewController.swift"; sourceTree = "<group>"; };
+		019D07B028329E0B00A90CE1 /* iMessageComposerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iMessageComposerVC.swift; path = "../../../../../Downloads/stream-chat-swift-develop/Examples/iMessageClone/iMessageComposerVC.swift"; sourceTree = "<group>"; };
+		019D07B128329E0B00A90CE1 /* iMessageChatChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iMessageChatChannelViewController.swift; path = "../../../../../Downloads/stream-chat-swift-develop/Examples/iMessageClone/iMessageChatChannelViewController.swift"; sourceTree = "<group>"; };
+		019D07B228329E0B00A90CE1 /* iMessageCellSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iMessageCellSeparatorView.swift; path = "../../../../../Downloads/stream-chat-swift-develop/Examples/iMessageClone/iMessageCellSeparatorView.swift"; sourceTree = "<group>"; };
 		01B4D6DF2820963400843C25 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		01B96A62280F81AC0054985D /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		01B96A64280F93660054985D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -227,6 +239,13 @@
 		01F15D1C2808E502001A10C6 /* PodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewController.swift; sourceTree = "<group>"; };
 		01F15D1E2808FD13001A10C6 /* PodcastSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastSearchController.swift; sourceTree = "<group>"; };
 		01F15D202808FDA1001A10C6 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
+		01F2ADCF283445C900A61E24 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResetPasswordViewController.swift; path = ../../../../../Downloads/ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		01F2ADD0283445C900A61E24 /* GenerateCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenerateCodeViewController.swift; path = ../../../../../Downloads/GenerateCodeViewController.swift; sourceTree = "<group>"; };
+		01F2ADD1283445C900A61E24 /* ResetEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResetEmailViewController.swift; path = ../../../../../Downloads/ResetEmailViewController.swift; sourceTree = "<group>"; };
+		01FCE55628354C1F00AA05EB /* BannerShowingConnectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerShowingConnectionDelegate.swift; sourceTree = "<group>"; };
+		01FCE55828354C4C00AA05EB /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		01FCE55A28354D9000AA05EB /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
+		01FCE55C28354EDB00AA05EB /* CreateChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatViewController.swift; sourceTree = "<group>"; };
 		0765961A316336F4BFF67362 /* Pods-VoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoxTests.debug.xcconfig"; path = "Target Support Files/Pods-VoxTests/Pods-VoxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		439B925A1AAAFCD7158AB462 /* Pods-VoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoxTests.release.xcconfig"; path = "Target Support Files/Pods-VoxTests/Pods-VoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		503C2B50F4E05E09F3353D1B /* Pods-Vox-VoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vox-VoxUITests.debug.xcconfig"; path = "Target Support Files/Pods-Vox-VoxUITests/Pods-Vox-VoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -385,6 +404,7 @@
 		016A95E2280509C600373F36 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				01F2ADCE2834458800A61E24 /* Reset Password */,
 				01581D4A282B23C20076274E /* Live Chat Streaming */,
 				0188A81B282A01DF00D91C40 /* Broadcast Streaming */,
 				018562FB281DA9650073F814 /* Main Menu Slider */,
@@ -446,6 +466,7 @@
 				016A95FB2805130200373F36 /* FirstOnboardViewController.swift */,
 				016A95FD2805131700373F36 /* SecondOnboardViewController.swift */,
 				016A95FF2805132000373F36 /* LastOnboardViewController.swift */,
+				01585E1028315CA60029746B /* OnboardingView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -464,7 +485,20 @@
 		018562F8281DA3F10073F814 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				019D07B228329E0B00A90CE1 /* iMessageCellSeparatorView.swift */,
+				019D07AB28329E0B00A90CE1 /* iMessageChatChannelHeaderView.swift */,
+				019D07AE28329E0B00A90CE1 /* iMessageChatChannelListItemView.swift */,
+				019D07AF28329E0B00A90CE1 /* iMessageChatChannelListViewController.swift */,
+				019D07B128329E0B00A90CE1 /* iMessageChatChannelViewController.swift */,
+				019D07AA28329E0B00A90CE1 /* iMessageChatMessageContentView.swift */,
+				019D07AC28329E0B00A90CE1 /* iMessageChatMessageListViewController.swift */,
+				019D07B028329E0B00A90CE1 /* iMessageComposerVC.swift */,
+				019D07AD28329E0B00A90CE1 /* iMessageComposerView.swift */,
 				018562F9281DA4690073F814 /* ChatViewController.swift */,
+				01FCE55628354C1F00AA05EB /* BannerShowingConnectionDelegate.swift */,
+				01FCE55828354C4C00AA05EB /* BannerView.swift */,
+				01FCE55A28354D9000AA05EB /* ChatPresenter.swift */,
+				01FCE55C28354EDB00AA05EB /* CreateChatViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -581,6 +615,16 @@
 			path = Podcast;
 			sourceTree = "<group>";
 		};
+		01F2ADCE2834458800A61E24 /* Reset Password */ = {
+			isa = PBXGroup;
+			children = (
+				01F2ADD0283445C900A61E24 /* GenerateCodeViewController.swift */,
+				01F2ADD1283445C900A61E24 /* ResetEmailViewController.swift */,
+				01F2ADCF283445C900A61E24 /* ResetPasswordViewController.swift */,
+			);
+			path = "Reset Password";
+			sourceTree = "<group>";
+		};
 		55BA0150DB3CF5116A2A0B41 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,7 +698,6 @@
 				01C787DF27F2FDCA00225B50 /* Frameworks */,
 				01C787E027F2FDCA00225B50 /* Resources */,
 				6709FB94EEBF07A3A96DA64C /* [CP] Embed Pods Frameworks */,
-				01581D49282B20760076274E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -887,17 +930,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01FCE55728354C1F00AA05EB /* BannerShowingConnectionDelegate.swift in Sources */,
 				01C7E82628145558001C828E /* PlayerDetailsView.swift in Sources */,
 				01F15D1F2808FD13001A10C6 /* PodcastSearchController.swift in Sources */,
 				01581D70282B23F50076274E /* YTSendButton.swift in Sources */,
 				01D8B68A2817D5200029CA43 /* FavoritePodcastCell.swift in Sources */,
 				016A95EF2805122B00373F36 /* SignUpViewController.swift in Sources */,
+				019D07BA28329E0B00A90CE1 /* iMessageChatChannelViewController.swift in Sources */,
+				01585E1128315CA60029746B /* OnboardingView.swift in Sources */,
 				0188A81F282A072200D91C40 /* VisualEffect.swift in Sources */,
 				01B96A69280F9E560054985D /* PodcastCell.swift in Sources */,
 				016A95F6280512A700373F36 /* FristOTPViewController.swift in Sources */,
 				01C787EA27F2FDCA00225B50 /* ViewController.swift in Sources */,
 				01F15D1B2808E3AB001A10C6 /* MainTabBarViewController.swift in Sources */,
+				019D07B628329E0B00A90CE1 /* iMessageComposerView.swift in Sources */,
 				0136FD3127FE755300D7DDFC /* WelcomeViewController.swift in Sources */,
+				019D07B728329E0B00A90CE1 /* iMessageChatChannelListItemView.swift in Sources */,
 				01581D6B282B23F50076274E /* YTChatMessageContentView.swift in Sources */,
 				016A95FE2805131700373F36 /* SecondOnboardViewController.swift in Sources */,
 				0174C6C6281771BC007CF424 /* UIApplication.swift in Sources */,
@@ -906,11 +954,15 @@
 				017E02872821EDDA00BD2A82 /* MenuItemCell.swift in Sources */,
 				01581D6C282B23F50076274E /* YTInputChatMessageView.swift in Sources */,
 				01581D68282B23F50076274E /* YTLiveVideoViewController.swift in Sources */,
+				01FCE55B28354D9000AA05EB /* ChatPresenter.swift in Sources */,
 				015B752E28308B7B00198BBA /* Hour.swift in Sources */,
 				017E02852821CDC100BD2A82 /* ProfileImageView.swift in Sources */,
 				01F15D212808FDA1001A10C6 /* Podcast.swift in Sources */,
+				01F2ADD4283445C900A61E24 /* ResetEmailViewController.swift in Sources */,
 				017E02832821CAF500BD2A82 /* SpacerView.swift in Sources */,
+				019D07B928329E0B00A90CE1 /* iMessageComposerVC.swift in Sources */,
 				016A95F8280512CB00373F36 /* SecondOTPViewController.swift in Sources */,
+				019D07B428329E0B00A90CE1 /* iMessageChatChannelHeaderView.swift in Sources */,
 				01B96A63280F81AC0054985D /* SearchResults.swift in Sources */,
 				01F15D1D2808E502001A10C6 /* PodcastViewController.swift in Sources */,
 				016A95E528050C3200373F36 /* UserProfile.swift in Sources */,
@@ -920,28 +972,36 @@
 				015333202813998100BF2C97 /* Episode.swift in Sources */,
 				017E02812821B5F400BD2A82 /* CustomHeaderMenu.swift in Sources */,
 				016A95FC2805130200373F36 /* FirstOnboardViewController.swift in Sources */,
+				01FCE55928354C4C00AA05EB /* BannerView.swift in Sources */,
 				01D7A38628138D1700D7DF71 /* EpisodeControllerTableViewController.swift in Sources */,
 				014E43C2280E165C00865ECA /* Extension.swift in Sources */,
 				016A95EB280510D600373F36 /* HomeViewController.swift in Sources */,
 				01581D6A282B23F50076274E /* YTChatMessageComposerView.swift in Sources */,
 				013EC7EE28197E4400E9A028 /* Constants.swift in Sources */,
+				019D07BB28329E0B00A90CE1 /* iMessageCellSeparatorView.swift in Sources */,
 				016A95FA280512E900373F36 /* SignUpCompletionViewController.swift in Sources */,
 				01928A91281A073E005572E5 /* TokenService.swift in Sources */,
 				016A95E728050E1500373F36 /* NewAccount.swift in Sources */,
+				019D07B828329E0B00A90CE1 /* iMessageChatChannelListViewController.swift in Sources */,
 				0188A821282A07CD00D91C40 /* GetCurrentDeviceIP.swift in Sources */,
+				01F2ADD3283445C900A61E24 /* GenerateCodeViewController.swift in Sources */,
 				015333262813B17E00BF2C97 /* RSSFeed.swift in Sources */,
 				0188A81D282A05B900D91C40 /* LiveViewController.swift in Sources */,
 				016A96002805132000373F36 /* LastOnboardViewController.swift in Sources */,
 				01C787E627F2FDCA00225B50 /* AppDelegate.swift in Sources */,
+				01FCE55D28354EDB00AA05EB /* CreateChatViewController.swift in Sources */,
 				01581D67282B23F50076274E /* YTMessageLayoutOptionsResolver.swift in Sources */,
 				01581D71282B23F50076274E /* YTLiveChatViewController.swift in Sources */,
 				01581D69282B23F50076274E /* YTChatComposerViewController.swift in Sources */,
 				015333232813A52100BF2C97 /* EpisodeCell.swift in Sources */,
+				019D07B528329E0B00A90CE1 /* iMessageChatMessageListViewController.swift in Sources */,
 				018562FA281DA4690073F814 /* ChatViewController.swift in Sources */,
 				01B96A65280F93660054985D /* APIService.swift in Sources */,
 				01581D66282B23F50076274E /* ChatClient.swift in Sources */,
 				01C787E827F2FDCA00225B50 /* SceneDelegate.swift in Sources */,
+				01F2ADD2283445C900A61E24 /* ResetPasswordViewController.swift in Sources */,
 				01D8B68C2817D5890029CA43 /* FavoritesController.swift in Sources */,
+				019D07B328329E0B00A90CE1 /* iMessageChatMessageContentView.swift in Sources */,
 				01B4D6E02820963400843C25 /* MenuController.swift in Sources */,
 				018562FD281DA98A0073F814 /* MainMenuTableViewController.swift in Sources */,
 				017E027F2821A04E00BD2A82 /* BaseSlidingController.swift in Sources */,
