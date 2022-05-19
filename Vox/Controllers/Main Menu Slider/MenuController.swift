@@ -23,6 +23,7 @@ class MenuController: UITableViewController {
         MenuItem(icon: UIImage(systemName: "person.fill")!, title: "Profile"),
         MenuItem(icon: UIImage(named: "Chat messaging-1")!, title: "Messages"),
         MenuItem(icon: UIImage(named: "Podcast")!, title: "Podcast"),
+        MenuItem(icon: UIImage(systemName: "gear")!, title: "Settings")
         
     ]
 
@@ -69,27 +70,21 @@ class MenuController: UITableViewController {
             handlePVC()
         case 2:
             print("Chat")
-//            let config = ChatClientConfig(apiKey: .init("dz5f4d5kzrue"))
-//
-//                /// user id and token for the user
-//                let userId = "tutorial-droid"
-//                let token: Token =
-//                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidHV0b3JpYWwtZHJvaWQifQ.NhEr0hP9W9nwqV7ZkdShxvi02C5PR7SJE7Cs4y7kyqg"
-//            ChatClient.shared = ChatClient(config: config)
-//
-//            /// Step 2: connect to chat
-//            ChatClient.shared.connectUser(
-//                userInfo: UserInfo(
-//                    id: userId,
-//                    name: "Tutorial Droid",
-//                    imageURL: URL(string: "https://bit.ly/2TIt8NR")
-//                ),
-//                token: token
-//            )
+            let user = UserDefaults.standard.callingUser(forKey: "user")
+            
+            let config = ChatClientConfig(apiKey: APIKey("uwx2yzzbyqaf"))
+            let client = ChatClient(config: config)
+            
+            client.connectUser(
+                userInfo: UserInfo(id: user?.user.username ?? ""),
+                token: .development(userId: "\(user?.user.username ?? "")")
+            )
+            
             let channelList = iMessageChatChannelListViewController()
 //            let query = ChannelListQuery(filter: .containMembers(userIds: [userId]))
 //            channelList.controller = ChatClient.shared.channelListController(query: query)
 //            let ChatVC = iMessageChatChannelListViewController.sharedInstance()
+            
             self.navigationController?.pushViewController(channelList, animated: true)
         case 3:
             let podcast = MainTabBarViewController.sharedInstance()
@@ -98,6 +93,10 @@ class MenuController: UITableViewController {
             let vc = story.instantiateViewController(withIdentifier: "MainTabBarViewController") as! MainTabBarViewController
             UIApplication.shared.windows.first?.rootViewController = vc
             UIApplication.shared.windows.first?.makeKeyAndVisible()
+            
+        case 4:
+            let settings = SettingsViewController.sharedInstance()
+            self.navigationController?.pushViewController(settings, animated: true)
         default:
             print("show w barra")
         }

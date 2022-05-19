@@ -104,11 +104,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window = UIWindow()
 //        window?.makeKeyAndVisible()
 //        window?.rootViewController = YTLiveVideoViewController()
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(
-            rootViewController: iMessageChatChannelListViewController()
-        )
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.makeKeyAndVisible()
+//        window?.rootViewController = UINavigationController(
+//            rootViewController: iMessageChatChannelListViewController()
+//        )
 
         let vc : UIViewController?
         if TokenService.tokenInstance.checkForLogin() {

@@ -93,6 +93,8 @@
 		01FCE5672835CB2C00AA05EB /* SimpleUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE5662835CB2C00AA05EB /* SimpleUsersViewController.swift */; };
 		01FCE5692835E28700AA05EB /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE5682835E28700AA05EB /* SampleHandler.swift */; };
 		01FCE56B2835E68A00AA05EB /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE56A2835E68A00AA05EB /* test.swift */; };
+		01FCE56F28361CC200AA05EB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE56E28361CC200AA05EB /* SettingsViewController.swift */; };
+		01FCE57128361DC300AA05EB /* TermsandconditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE57028361DC300AA05EB /* TermsandconditionViewController.swift */; };
 		6D3D2E99D02D23F2F3418429 /* Pods_VoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E63E4A282A6F4B006DB0C9 /* Pods_VoxTests.framework */; };
 		71B9767F85870F9C9BB5F9BF /* Pods_VoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A677D562C5F05724318D6E9D /* Pods_VoxTests.framework */; };
 		7DE32EF7024B1E55837D1D06 /* Pods_Vox_VoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E63E49282A6F4B006DB0C9 /* Pods_Vox_VoxUITests.framework */; };
@@ -244,6 +246,8 @@
 		01FCE5662835CB2C00AA05EB /* SimpleUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUsersViewController.swift; sourceTree = "<group>"; };
 		01FCE5682835E28700AA05EB /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
 		01FCE56A2835E68A00AA05EB /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		01FCE56E28361CC200AA05EB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		01FCE57028361DC300AA05EB /* TermsandconditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsandconditionViewController.swift; sourceTree = "<group>"; };
 		0765961A316336F4BFF67362 /* Pods-VoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoxTests.debug.xcconfig"; path = "Target Support Files/Pods-VoxTests/Pods-VoxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		439B925A1AAAFCD7158AB462 /* Pods-VoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoxTests.release.xcconfig"; path = "Target Support Files/Pods-VoxTests/Pods-VoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		503C2B50F4E05E09F3353D1B /* Pods-Vox-VoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vox-VoxUITests.debug.xcconfig"; path = "Target Support Files/Pods-Vox-VoxUITests/Pods-Vox-VoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -402,6 +406,7 @@
 		016A95E2280509C600373F36 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				01FCE56D28361C8100AA05EB /* Settings */,
 				01F2ADCE2834458800A61E24 /* Reset Password */,
 				01581D4A282B23C20076274E /* Live Chat Streaming */,
 				0188A81B282A01DF00D91C40 /* Broadcast Streaming */,
@@ -620,6 +625,15 @@
 				01F2ADCF283445C900A61E24 /* ResetPasswordViewController.swift */,
 			);
 			path = "Reset Password";
+			sourceTree = "<group>";
+		};
+		01FCE56D28361C8100AA05EB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				01FCE56E28361CC200AA05EB /* SettingsViewController.swift */,
+				01FCE57028361DC300AA05EB /* TermsandconditionViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		55BA0150DB3CF5116A2A0B41 /* Pods */ = {
@@ -935,6 +949,7 @@
 				016A95EF2805122B00373F36 /* SignUpViewController.swift in Sources */,
 				019D07BA28329E0B00A90CE1 /* iMessageChatChannelViewController.swift in Sources */,
 				01585E1128315CA60029746B /* OnboardingView.swift in Sources */,
+				01FCE56F28361CC200AA05EB /* SettingsViewController.swift in Sources */,
 				0188A81F282A072200D91C40 /* VisualEffect.swift in Sources */,
 				01B96A69280F9E560054985D /* PodcastCell.swift in Sources */,
 				016A95F6280512A700373F36 /* FristOTPViewController.swift in Sources */,
@@ -970,6 +985,7 @@
 				015333202813998100BF2C97 /* Episode.swift in Sources */,
 				017E02812821B5F400BD2A82 /* CustomHeaderMenu.swift in Sources */,
 				016A95FC2805130200373F36 /* FirstOnboardViewController.swift in Sources */,
+				01FCE57128361DC300AA05EB /* TermsandconditionViewController.swift in Sources */,
 				01D7A38628138D1700D7DF71 /* EpisodeControllerTableViewController.swift in Sources */,
 				014E43C2280E165C00865ECA /* Extension.swift in Sources */,
 				016A95EB280510D600373F36 /* HomeViewController.swift in Sources */,

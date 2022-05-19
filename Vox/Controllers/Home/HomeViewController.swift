@@ -7,6 +7,8 @@
 
 import UIKit
 import SwiftMessages
+import StreamChat
+import StreamChatUI
 class HomeViewController: UIViewController {
 
     // MARK: - Outlets
@@ -63,6 +65,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func startStreamingBtnAct(_ sender: Any) {
         let liveVC = LiveViewController.sharedInstance()
+        
         self.navigationController?.pushViewController(liveVC, animated: true)
     }
     

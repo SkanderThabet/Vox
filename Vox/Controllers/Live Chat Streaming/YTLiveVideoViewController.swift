@@ -34,7 +34,15 @@ final class YTLiveVideoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let user = UserDefaults.standard.callingUser(forKey: "user")
         
+        let config = ChatClientConfig(apiKey: APIKey("uwx2yzzbyqaf"))
+        
+        let client = ChatClient(config: config)
+        client.connectUser(
+            userInfo: .init(id: user?.user.username ?? ""),
+            token: .development(userId: "\(user?.user.username ?? "")")
+        )
         videoPlayer.play()
         isPlaying = true
         playPauseButton.tintColor = .white
