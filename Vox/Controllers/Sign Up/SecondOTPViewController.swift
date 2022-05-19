@@ -7,7 +7,7 @@
 
 import UIKit
 import FirebaseAuth
-
+import SwiftMessages
 class SecondOTPViewController: UIViewController {
     
     // MARK: - Outlets
@@ -50,13 +50,29 @@ class SecondOTPViewController: UIViewController {
                   self.userDefault.synchronize()
                   
               }
-                  else { return self.displayError(error) }
+                  else { return self.showErrorAlert() }
 
           }
       }
     @IBAction func unwindToContainerVC(segue: UIStoryboardSegue) {
 
         }
+    
+    fileprivate func showErrorAlert() {
+        let error = MessageView.viewFromNib(layout: .cardView)
+        error.configureTheme(.error)
+        error.configureContent(title: "Error", body: "Error occured , please try again", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "Dismiss") { button in
+            SwiftMessages.hide()
+        }
+        var config = SwiftMessages.defaultConfig
+        config.dimMode = .gray(interactive: true)
+        config.prefersStatusBarHidden = true
+        config.presentationContext = .window(windowLevel: .alert)
+        config.presentationStyle = .center
+        config.duration = .forever
+        SwiftMessages.show(config: config, view: error)
+    }
+    
     private func signin() {
         guard let otpCode = firstDigitTF.text else { return }
         guard let verificationID = userDefault.string(forKey: "verificationID") else { return }
@@ -77,7 +93,8 @@ class SecondOTPViewController: UIViewController {
 //                }
             } else {
                 print ("Something went wrong")
-                return self.displayError(error)
+//                return self.displayError(error)
+                return self.showErrorAlert()
                 
             }
      }

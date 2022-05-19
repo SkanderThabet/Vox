@@ -90,10 +90,9 @@
 		01F2ADD2283445C900A61E24 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F2ADCF283445C900A61E24 /* ResetPasswordViewController.swift */; };
 		01F2ADD3283445C900A61E24 /* GenerateCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F2ADD0283445C900A61E24 /* GenerateCodeViewController.swift */; };
 		01F2ADD4283445C900A61E24 /* ResetEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F2ADD1283445C900A61E24 /* ResetEmailViewController.swift */; };
-		01FCE55728354C1F00AA05EB /* BannerShowingConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE55628354C1F00AA05EB /* BannerShowingConnectionDelegate.swift */; };
-		01FCE55928354C4C00AA05EB /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE55828354C4C00AA05EB /* BannerView.swift */; };
-		01FCE55B28354D9000AA05EB /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE55A28354D9000AA05EB /* ChatPresenter.swift */; };
-		01FCE55D28354EDB00AA05EB /* CreateChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE55C28354EDB00AA05EB /* CreateChatViewController.swift */; };
+		01FCE5672835CB2C00AA05EB /* SimpleUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE5662835CB2C00AA05EB /* SimpleUsersViewController.swift */; };
+		01FCE5692835E28700AA05EB /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE5682835E28700AA05EB /* SampleHandler.swift */; };
+		01FCE56B2835E68A00AA05EB /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCE56A2835E68A00AA05EB /* test.swift */; };
 		6D3D2E99D02D23F2F3418429 /* Pods_VoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E63E4A282A6F4B006DB0C9 /* Pods_VoxTests.framework */; };
 		71B9767F85870F9C9BB5F9BF /* Pods_VoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A677D562C5F05724318D6E9D /* Pods_VoxTests.framework */; };
 		7DE32EF7024B1E55837D1D06 /* Pods_Vox_VoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E63E49282A6F4B006DB0C9 /* Pods_Vox_VoxUITests.framework */; };
@@ -242,10 +241,9 @@
 		01F2ADCF283445C900A61E24 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResetPasswordViewController.swift; path = ../../../../../Downloads/ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		01F2ADD0283445C900A61E24 /* GenerateCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenerateCodeViewController.swift; path = ../../../../../Downloads/GenerateCodeViewController.swift; sourceTree = "<group>"; };
 		01F2ADD1283445C900A61E24 /* ResetEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResetEmailViewController.swift; path = ../../../../../Downloads/ResetEmailViewController.swift; sourceTree = "<group>"; };
-		01FCE55628354C1F00AA05EB /* BannerShowingConnectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerShowingConnectionDelegate.swift; sourceTree = "<group>"; };
-		01FCE55828354C4C00AA05EB /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
-		01FCE55A28354D9000AA05EB /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
-		01FCE55C28354EDB00AA05EB /* CreateChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatViewController.swift; sourceTree = "<group>"; };
+		01FCE5662835CB2C00AA05EB /* SimpleUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUsersViewController.swift; sourceTree = "<group>"; };
+		01FCE5682835E28700AA05EB /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
+		01FCE56A2835E68A00AA05EB /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		0765961A316336F4BFF67362 /* Pods-VoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoxTests.debug.xcconfig"; path = "Target Support Files/Pods-VoxTests/Pods-VoxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		439B925A1AAAFCD7158AB462 /* Pods-VoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoxTests.release.xcconfig"; path = "Target Support Files/Pods-VoxTests/Pods-VoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		503C2B50F4E05E09F3353D1B /* Pods-Vox-VoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vox-VoxUITests.debug.xcconfig"; path = "Target Support Files/Pods-Vox-VoxUITests/Pods-Vox-VoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -495,10 +493,7 @@
 				019D07B028329E0B00A90CE1 /* iMessageComposerVC.swift */,
 				019D07AD28329E0B00A90CE1 /* iMessageComposerView.swift */,
 				018562F9281DA4690073F814 /* ChatViewController.swift */,
-				01FCE55628354C1F00AA05EB /* BannerShowingConnectionDelegate.swift */,
-				01FCE55828354C4C00AA05EB /* BannerView.swift */,
-				01FCE55A28354D9000AA05EB /* ChatPresenter.swift */,
-				01FCE55C28354EDB00AA05EB /* CreateChatViewController.swift */,
+				01FCE5662835CB2C00AA05EB /* SimpleUsersViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -518,6 +513,8 @@
 			children = (
 				0188A81C282A05B900D91C40 /* LiveViewController.swift */,
 				0188A81E282A072200D91C40 /* VisualEffect.swift */,
+				01FCE5682835E28700AA05EB /* SampleHandler.swift */,
+				01FCE56A2835E68A00AA05EB /* test.swift */,
 			);
 			path = "Broadcast Streaming";
 			sourceTree = "<group>";
@@ -930,10 +927,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01FCE55728354C1F00AA05EB /* BannerShowingConnectionDelegate.swift in Sources */,
 				01C7E82628145558001C828E /* PlayerDetailsView.swift in Sources */,
 				01F15D1F2808FD13001A10C6 /* PodcastSearchController.swift in Sources */,
 				01581D70282B23F50076274E /* YTSendButton.swift in Sources */,
+				01FCE5692835E28700AA05EB /* SampleHandler.swift in Sources */,
 				01D8B68A2817D5200029CA43 /* FavoritePodcastCell.swift in Sources */,
 				016A95EF2805122B00373F36 /* SignUpViewController.swift in Sources */,
 				019D07BA28329E0B00A90CE1 /* iMessageChatChannelViewController.swift in Sources */,
@@ -951,10 +948,10 @@
 				0174C6C6281771BC007CF424 /* UIApplication.swift in Sources */,
 				016A95ED280511F900373F36 /* ProfileViewController.swift in Sources */,
 				01D8B68E2817D5D50029CA43 /* UserDefault.swift in Sources */,
+				01FCE56B2835E68A00AA05EB /* test.swift in Sources */,
 				017E02872821EDDA00BD2A82 /* MenuItemCell.swift in Sources */,
 				01581D6C282B23F50076274E /* YTInputChatMessageView.swift in Sources */,
 				01581D68282B23F50076274E /* YTLiveVideoViewController.swift in Sources */,
-				01FCE55B28354D9000AA05EB /* ChatPresenter.swift in Sources */,
 				015B752E28308B7B00198BBA /* Hour.swift in Sources */,
 				017E02852821CDC100BD2A82 /* ProfileImageView.swift in Sources */,
 				01F15D212808FDA1001A10C6 /* Podcast.swift in Sources */,
@@ -966,13 +963,13 @@
 				01B96A63280F81AC0054985D /* SearchResults.swift in Sources */,
 				01F15D1D2808E502001A10C6 /* PodcastViewController.swift in Sources */,
 				016A95E528050C3200373F36 /* UserProfile.swift in Sources */,
+				01FCE5672835CB2C00AA05EB /* SimpleUsersViewController.swift in Sources */,
 				01C787F027F2FDCA00225B50 /* Vox.xcdatamodeld in Sources */,
 				016A95E9280510B900373F36 /* SignInViewController.swift in Sources */,
 				01581D73282B23F50076274E /* YTScrollToLatestMessageButton.swift in Sources */,
 				015333202813998100BF2C97 /* Episode.swift in Sources */,
 				017E02812821B5F400BD2A82 /* CustomHeaderMenu.swift in Sources */,
 				016A95FC2805130200373F36 /* FirstOnboardViewController.swift in Sources */,
-				01FCE55928354C4C00AA05EB /* BannerView.swift in Sources */,
 				01D7A38628138D1700D7DF71 /* EpisodeControllerTableViewController.swift in Sources */,
 				014E43C2280E165C00865ECA /* Extension.swift in Sources */,
 				016A95EB280510D600373F36 /* HomeViewController.swift in Sources */,
@@ -989,7 +986,6 @@
 				0188A81D282A05B900D91C40 /* LiveViewController.swift in Sources */,
 				016A96002805132000373F36 /* LastOnboardViewController.swift in Sources */,
 				01C787E627F2FDCA00225B50 /* AppDelegate.swift in Sources */,
-				01FCE55D28354EDB00AA05EB /* CreateChatViewController.swift in Sources */,
 				01581D67282B23F50076274E /* YTMessageLayoutOptionsResolver.swift in Sources */,
 				01581D71282B23F50076274E /* YTLiveChatViewController.swift in Sources */,
 				01581D69282B23F50076274E /* YTChatComposerViewController.swift in Sources */,
@@ -1203,7 +1199,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.skanderthabetEsprit.vox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skanderthabetiOS.Vox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1235,7 +1231,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.skanderthabetEsprit.vox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skanderthabetiOS.Vox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

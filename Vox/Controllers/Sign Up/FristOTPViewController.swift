@@ -8,7 +8,7 @@
 import UIKit
 import CountryPickerView
 import FirebaseAuth
-
+import SwiftMessages
 class FristOTPViewController: UIViewController {
     
 
@@ -59,6 +59,20 @@ class FristOTPViewController: UIViewController {
         
         mobileNumberTF.showDoneButtonOnKeyboard()
     }
+    fileprivate func showErrorAlert() {
+        let error = MessageView.viewFromNib(layout: .messageView)
+        error.configureTheme(.error)
+        error.configureContent(title: "Error", body: "Your phone number is not correct, please try again", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "Dismiss") { button in
+            SwiftMessages.hide()
+        }
+        var config = SwiftMessages.defaultConfig
+        config.dimMode = .gray(interactive: true)
+        config.prefersStatusBarHidden = true
+        config.presentationContext = .window(windowLevel: .statusBar)
+        config.presentationStyle = .top
+        config.duration = .forever
+        SwiftMessages.show(config: config, view: error)
+    }
     
     private func checkNumber() {
         let countryCode = cpvTextField.selectedCountry.phoneCode
@@ -66,7 +80,12 @@ class FristOTPViewController: UIViewController {
         let alert = UIAlertController(title: "Verification", message: "We will be verifying the phone number : \(phoneNumber)\n" + "Is this OK, or would you like to edit the number ?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            self.performSegue(withIdentifier: "GetOTP", sender: self)
+            if phoneNumber.isEmpty || self.mobileNumberTF.text!.count < 8 || self.mobileNumberTF.text?.isEmpty == nil{
+                self.showErrorAlert()
+            } else {
+                self.performSegue(withIdentifier: "GetOTP", sender: self)
+            }
+            
         }))
         present(alert, animated: true, completion: nil)
     }

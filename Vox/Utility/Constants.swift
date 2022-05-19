@@ -23,7 +23,7 @@ struct Preference {
     static var defaultInstance = Preference()
     
     
-    var uri: String? = "rtmp://172.17.4.125/live"
+    var uri: String? = "rtmp://172.17.1.100/live"
     var streamName: String? = "live"
 }
     

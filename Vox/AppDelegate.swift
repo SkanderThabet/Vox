@@ -90,7 +90,7 @@ extension ChatClient {
 /**
  Below property is to log streaming results
  */
-let logger = Logboard.with("com.skanderthabet.vox")
+let logger = Logboard.with("com.skanderthabetiOS.Vox")
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -144,7 +144,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             try session.setActive(true)
         } catch {
             print(error)
-            print(error)
+            
         }
         /**
          Above section is to make sure to setup and activate the AVAudioSession.

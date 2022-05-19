@@ -12,7 +12,7 @@ import FirebaseStorage
 import FirebaseAuth
 import Firebase
 import Photos
-
+import SwiftMessages
 
 class SignUpCompletionViewController: UIViewController {
     
@@ -81,6 +81,7 @@ class SignUpCompletionViewController: UIViewController {
             print("'We have access to photos'")
         }
         else {
+            
             print("We don't have access to photos")
         }
     }
@@ -169,11 +170,13 @@ class SignUpCompletionViewController: UIViewController {
                 if let err = dataResp.error {
                     print("Failed to sign up : ", err)
                     self.errorLabel.isHidden = false
-                    self.displayError(err)
+                    self.showErrorAlert(errorDisplay: "Failed to sign up , please check your fields are not empty")
                     return
                 }
                 print("Successfully signed up")
-                self.showAlert(title: "Sign up", message: "Successfully registered ! ")
+                self.showSuccessAlert()
+                let signVC = SignInViewController.sharedInstance()
+                self.navigationController?.pushViewController(signVC, animated: true)
             }
     }
     
@@ -183,7 +186,33 @@ class SignUpCompletionViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
         }
+    fileprivate func showErrorAlert(errorDisplay : Any) {
+        let error = MessageView.viewFromNib(layout: .messageView)
+        error.configureTheme(.error)
+        error.configureContent(title: "Error", body: "\(errorDisplay)", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "Dismiss") { button in
+            SwiftMessages.hide()
+        }
+        var config = SwiftMessages.defaultConfig
+        config.dimMode = .gray(interactive: true)
+        config.prefersStatusBarHidden = true
+        config.presentationContext = .window(windowLevel: .statusBar)
+        config.presentationStyle = .top
+        config.duration = .forever
+        SwiftMessages.show(config: config, view: error)
+    }
+    fileprivate func showSuccessAlert() {
+        let success = MessageView.viewFromNib(layout: .cardView)
+                success.configureTheme(.success)
+                success.configureDropShadow()
+                success.configureContent(title: "Success", body: "Account created Successfully!")
+                success.button?.isHidden = true
+                var successConfig = SwiftMessages.defaultConfig
+                successConfig.presentationStyle = .top
+        successConfig.presentationContext = .window(windowLevel: UIWindow.Level.normal)
+        SwiftMessages.show(config: successConfig, view: success)
+    }
 }
+
 
 extension SignUpCompletionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

@@ -74,18 +74,21 @@ class SignInViewController: UIViewController {
         status.bodyLabel?.textColor = UIColor.white
         status.configureContent(body: "Connected Successfully")
         var statusConfig = SwiftMessages.defaultConfig
+        statusConfig.prefersStatusBarHidden = true
         statusConfig.presentationContext = .window(windowLevel: UIWindow.Level.statusBar)
         SwiftMessages.show(config: statusConfig, view: status)
     }
     
     fileprivate func showErrorAlert() {
-        let error = MessageView.viewFromNib(layout: .cardView)
+        let error = MessageView.viewFromNib(layout: .messageView)
         error.configureTheme(.error)
         error.configureContent(title: "Error", body: "Your credentials are not correct, please try again", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "Dismiss") { button in
             SwiftMessages.hide()
         }
         var config = SwiftMessages.defaultConfig
         config.dimMode = .gray(interactive: true)
+        config.prefersStatusBarHidden = true
+        config.presentationContext = .window(windowLevel: .statusBar)
         config.presentationStyle = .top
         config.duration = .forever
         SwiftMessages.show(config: config, view: error)

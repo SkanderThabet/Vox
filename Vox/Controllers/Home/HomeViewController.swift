@@ -25,7 +25,8 @@ class HomeViewController: UIViewController {
             SwiftMessages.hide()
             APIService.shared.callingLogOutApi()
             self.dismiss(animated: true, completion: nil)
-            
+            let homeVC = WelcomeViewController.sharedInstance()
+            self.navigationController?.pushViewController(homeVC, animated: true)
         }
         messageView.backgroundView.backgroundColor = UIColor.init(white: 0.97, alpha: 1)
         messageView.backgroundView.layer.cornerRadius = 10

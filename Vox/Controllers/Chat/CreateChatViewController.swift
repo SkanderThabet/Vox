@@ -343,7 +343,7 @@ extension CreateChatViewController: UITableViewDelegate, UITableViewDataSource {
         // Select user
         cell.accessoryImageView.image = UIImage(systemName: "checkmark.circle.fill")
         let token = UISearchToken(
-            icon: cell.avatarView.image?.resized(to: .init(width: 20, height: 20)),
+            icon: cell.avatarView.image?.resizedSwift(to: .init(width: 20, height: 20)),
             text: cell.user?.name ?? cell.user?.id ?? "NoName"
         )
         token.representedObject = cell.user
@@ -381,7 +381,7 @@ extension CreateChatViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension UIImage {
-    func resized(to targetSize: CGSize) -> UIImage {
+    func resizedSwift(to targetSize: CGSize) -> UIImage {
         let size = self.size
         let widthRatio = targetSize.width / size.width
         let heightRatio = targetSize.height / size.height

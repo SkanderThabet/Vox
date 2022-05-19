@@ -140,4 +140,10 @@ extension String
     }
 }
 
+extension UIStoryboard {
+    static let main = UIStoryboard(name: "Main", bundle: nil)
+    static let simpleChat = UIStoryboard(name: "SimpleChat", bundle: nil)
+
+}
+
 
