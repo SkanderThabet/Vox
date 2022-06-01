@@ -20,14 +20,31 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var dobTF: UITextField!
     @IBOutlet weak var stackViewTF: UIStackView!
     
-    // MARK: - Actions
-    @IBAction func signOutBtn(_ sender: Any) {
-        APIService.shared.callingLogOutApi()
-    }
     
+    @IBOutlet weak var updateBtn: UIButton!
+    
+    @IBAction func updateBtnAction(_ sender: Any) {
+        
+        
+//        APIService.shared.callingUpdateUser(email: emailTF.text!, firstname: firstnameTF.text!, lastname: lastnameTF.text!, avatar: "https: //firebasestorage.googleapis.com:443/v0/b/vox-app-93a90.appspot.com/o/uploads%2FGkQqN0T0dUdtFzNfS1ruYaYrJD22?alt=media&token=a04de1c4-192b-4b3f-ae24-c1da42d7e605", dob: dobTF.text!, username: usernameTF.text!, completed: { (success, reponse) in
+//            
+//            
+//            if success {
+//                
+//                print("success")
+//                self.alert(title: "Success", message: "update done successfully")
+//                
+//                
+//                
+//            } else {
+//                self.alert(title: "Warning", message:  "Email incorrect")
+//            }
+//        })
+    }
     var fullName, firstName, lastName , status, userName , email , dob , avatar: String?
     
     override func viewDidLoad() {
+        updateBtn.layer.cornerRadius = 28
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         usernameTF.text = userName
@@ -41,28 +58,11 @@ class ProfileViewController: UIViewController {
         statusLabel.text = status
         fullnameLabel.text = fullName
         
-        updateUIView(usernameTF)
+        
         // Do any additional setup after loading the view.
     }
-    func updateUIView(_ uiTextField: UITextField) {
-        if isEditing {
-            return uiTextField.isEnabled = true
-        }
-        print("update is called")
-        if !isEditing {
-            uiTextField.resignFirstResponder()      // << here !!
-            // uiTextField.endEditing(true)
-        }
-    }
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-            usernameTF.isEnabled = true
-            emailTF.isEnabled = true
-            firstnameTF.isEnabled = true
-            lastnameTF.isEnabled = true
-            dobTF.isEnabled = true
-            updateUIView(usernameTF)
-    }
+    
+    
     func showAlert(title: String, message: String) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))

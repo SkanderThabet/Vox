@@ -143,9 +143,8 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         emailTF.autocapitalizationType = .none
         passwordTF.isSecureTextEntry = true
-        self.navigationItem.hidesBackButton = true
-        self.navigationController?.tabBarItem.isEnabled = false
-        self.navigationItem.backBarButtonItem?.isEnabled = false
+        self.navigationItem.hidesBackButton = false
+        self.navigationController?.navigationBar.backItem?.titleView?.tintColor = .black
         
         // Do any additional setup after loading the view.
     }

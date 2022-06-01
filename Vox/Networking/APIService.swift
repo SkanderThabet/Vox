@@ -214,7 +214,6 @@ class APIService {
                         case .success:
                             let jsonData = JSON(response.data!)
                             let utilisateur = self.makeItem(jsonItem: jsonData)
-                           
                             print(utilisateur)
                             completed(true, utilisateur)
                         case let .failure(error):
@@ -264,4 +263,35 @@ class APIService {
 
         
         }
+//    func callingUpdateUser (email: String,firstname: String, lastname : String, avatar: String, dob: String, username: String, completed: @escaping (Bool, Any?) -> Void) {
+//        
+//        let url = "https://voxappli.herokuapp.com/api/vox/auth/update/"
+//        let params = ["email" : email,"firstname" : firstname, "lastname" : lastname, "avatar": avatar , "dob" : dob , "username": username]
+//            AF.request(url,
+//                       method: .put, parameters: params , encoding: JSONEncoding.default)
+//            .validate(statusCode: 200..<300)
+//                    .validate(contentType: ["application/json"])
+//                    .responseData { response in
+//                        switch response.result {
+//                        case .success(let data):
+//                            do {
+//                                print("--------")
+//                                print(data)
+//                                let json = try JSONDecoder().decode(UserProfile.self, from: data )
+//                                print(json)
+//                                UserDefaults.standard.set(json, forKey: "user")
+//                                self.user = UserDefaults.standard.callingUser(forKey: "user")
+//                                print("USer : ",self.user!)
+//                                completed(true, self.user!)
+//                            } catch let error {
+//                                print(error)
+//                                completed(false, nil)
+//                                
+//                            }
+//                        case .failure(let error):
+//                            print(error)
+//                            
+//                        }
+//                    }
+//            }
 }
