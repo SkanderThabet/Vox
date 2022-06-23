@@ -114,7 +114,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Skander Thabet - [LinkedIn](https://linkedin.com/in/skanderthabet) - skander.thabet@esprit.tn
 
-Project Link: [https://github.com/SkanderThabet/LiveStream_MINI_PROJET](https://github.com/SkanderThabet/LiveStream_MINI_PROJET)
+Project Link: [https://github.com/SkanderThabet/Vox/](https://github.com/SkanderThabet/Vox/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
