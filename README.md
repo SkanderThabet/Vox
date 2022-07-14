@@ -62,6 +62,11 @@
 <div align="center">
   <img src="Vox/Assets.xcassets/Homepage/Apple iPhone 11 Pro Max Presentation (1).imageset/Apple iPhone 11 Pro Max Presentation (1)-1.png" alt="sc1" width="2000">
 </div>
+<div align="center">
+  <img src="https://github.com/SkanderThabet/Vox/blob/main/Vox/Animation%20-%2002%2011.16.54%20PM.gif" alt="Databay showcase gif" title="Databay showcase gif"/>
+</div>
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
